@@ -11,7 +11,7 @@
 /* Mise en page : une colonne étroite qui suit une intervention en trois moments (dicter, rapport, facture). Couleurs et polices reprises du site ateliernaho.ch (look clair assumé). */
 :root{
   --fond:#ffffff; --creme:#F7F4EE; --encre:#111111; --doux:#56646a;
-  --petrole:#0F4A6E; --cuivre:#D6336C; --trait:#e3ddd2;
+  --petrole:#203A71; --cuivre:#DE3146; --trait:#e3ddd2;
   --ok:#2f7a4f; --ok-fond:#e6f2ea; --attente:#9a5a12; --attente-fond:#fbeedd;
   --titre:Georgia,"Times New Roman",serif;
   --texte:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -85,11 +85,11 @@ footer{padding-block:0 40px;font-size:13.5px;color:var(--doux)}
 }
 @media (prefers-reduced-motion:reduce){.ligne{transition:none}}
 .cmp-ligne{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid #e3ddd2}
-.cmp-bascule{display:inline-flex;border:2px solid #0F4A6E;border-radius:10px;overflow:hidden}
-.cmp-bascule button{font:600 15px/1 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding:11px 16px;border:0;background:transparent;color:#0F4A6E;cursor:pointer}
-.cmp-bascule button[aria-pressed="true"]{background:#0F4A6E;color:#fff}
-.cmp-bascule button:focus-visible{outline:3px solid #D6336C;outline-offset:-3px}
-.cmp-txt{font-weight:700;color:#0F4A6E}
+.cmp-bascule{display:inline-flex;border:2px solid #203A71;border-radius:10px;overflow:hidden}
+.cmp-bascule button{font:600 15px/1 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding:11px 16px;border:0;background:transparent;color:#203A71;cursor:pointer}
+.cmp-bascule button[aria-pressed="true"]{background:#203A71;color:#fff}
+.cmp-bascule button:focus-visible{outline:3px solid #DE3146;outline-offset:-3px}
+.cmp-txt{font-weight:700;color:#203A71}
 .cmp-note{font-size:14px;color:#56646a}
 .cmp-liste{list-style:none;margin:0;padding:12px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#fcfbf8}
 .cmp-liste li{display:flex;flex-direction:column;gap:6px;padding:9px 11px;border:1px solid #e3ddd2;border-radius:8px;background:#fff;font-size:14.5px;line-height:1.35}
