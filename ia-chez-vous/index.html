@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L'IA est déjà chez vous · Atelier Naho</title>
+<meta name="description" content="Vos équipes utilisent peut-être déjà ChatGPT ou un autre outil d'IA. Faire le point, poser un cadre qui s'appuie sur la LPD, puis laisser vos équipes construire leurs propres outils dans ce cadre.">
+<meta property="og:title" content="L'IA est déjà chez vous · Atelier Naho">
+<meta property="og:description" content="Faire le point, poser un cadre, puis laisser vos équipes construire leurs propres outils dans ce cadre.">
+<meta property="og:url" content="https://ateliernaho.ch/ia-chez-vous/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="fr_CH">
+<link rel="canonical" href="https://ateliernaho.ch/ia-chez-vous/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--fond:#ffffff;--creme:#F7F4EE;--encre:#111111;--doux:#56646a;--petrole:#203A71;--cuivre:#DE3146;--trait:#e3ddd2}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--petrole)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.etroit{max-width:760px}
+header{padding:18px 0;border-bottom:1px solid var(--trait)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
+.hero{background:var(--creme);padding:64px 0 56px}
+.tagline{color:var(--cuivre);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;margin:0 0 14px}
+h1{font:700 clamp(30px,4.2vw,46px)/1.15 Georgia,"Times New Roman",serif;color:var(--petrole);margin:0 0 18px;max-width:20em}
+.hero p{font-size:clamp(18px,2vw,20px);color:var(--doux);margin:0 0 16px;max-width:36em}
+.hero p.rassure{font-size:17px;color:var(--encre);border-left:3px solid var(--cuivre);padding-left:14px;margin-top:22px}
+section{padding:60px 0}
+.bande{background:var(--creme)}
+h2{font:700 30px/1.25 Georgia,"Times New Roman",serif;color:var(--petrole);margin:0 0 22px}
+h3{font:700 21px/1.3 Georgia,serif;color:var(--petrole);margin:28px 0 8px}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.chiffres li{border-top:3px solid var(--cuivre);padding-top:14px}
+.chiffres b{display:block;font:700 34px/1.1 Georgia,serif;color:var(--petrole);margin-bottom:6px}
+.chiffres span{color:var(--encre)}
+.chiffres small{display:block;color:var(--doux);font-size:14px;margin-top:8px}
+.marche{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start}
+.num{font:700 64px/1 Georgia,serif;color:var(--cuivre)}
+.marche p{margin:0 0 14px}
+ul.q{margin:0 0 14px;padding-left:22px}
+ul.q li{margin-bottom:6px}
+.livre{background:#fff;border-left:3px solid var(--petrole);padding:12px 16px;margin:16px 0 0;color:var(--encre)}
+.livre b{color:var(--petrole)}
+.loi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin:0;padding:0;list-style:none}
+.loi li{padding-left:16px;border-left:3px solid var(--petrole)}
+.loi b{display:block}
+.loi span{color:var(--doux)}
+.contact{background:var(--petrole);color:#fff;border-radius:18px;padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0;opacity:.9;font-size:18px}
+.contact .liens{white-space:nowrap}
+.contact .liens a{display:inline-block;color:var(--petrole);background:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;margin:4px 8px 4px 0}
+.contact .liens a.sec{background:transparent;color:#fff;border:2px solid #fff}
+.sources{font-size:14px;color:var(--doux)}
+.sources ol{padding-left:20px;margin:0}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux)}
+footer p{margin:0 0 6px;max-width:62ch}
+footer img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:860px){
+ .chiffres,.loi{grid-template-columns:1fr}
+ .marche{grid-template-columns:1fr;gap:4px}
+ .num{font-size:44px}
+ section{padding:44px 0}
+ .hero{padding:40px 0 40px}
+ .contact{padding:30px 22px;grid-template-columns:1fr}.contact .liens{white-space:normal}
+}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+@media (max-width:340px){.logo img{height:26px}header .w{gap:8px}.nav-cta{padding:5px 9px;font-size:14px}}
+@media print{.nav-cta,.contact .liens{display:none}}
+
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.illus{width:100%;height:auto;display:block}
+.photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;display:block;margin:0 0 26px}
+.donut{width:84px;height:84px;display:block;margin-bottom:10px}
+.ico{width:52px;height:52px;display:block;margin-top:10px}
+.flux{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0 6px}
+.flux span{background:var(--creme);border-left:4px solid var(--petrole);border-radius:8px;padding:8px 12px;font-size:15px}
+.flux span.fin{background:var(--petrole);color:#fff;border-left-color:var(--cuivre)}
+.flux b{color:var(--cuivre);font-size:20px}
+@media (max-width:860px){.hero .w{grid-template-columns:1fr}.illus{max-width:440px;margin:0 auto}.ico{display:none}.flux{flex-direction:column;align-items:stretch}.flux b{text-align:center;transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho"></a>
+<a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a>
+</div></header>
+
+<div class="hero"><div class="w">
+<div>
+<p class="tagline">L'IA est déjà chez vous</p>
+<h1>Vos équipes utilisent peut-être déjà l'IA. Autant que ce soit dans un cadre.</h1>
+<p>Un collaborateur reformule un mail avec ChatGPT, une autre résume un contrat, un troisième fait traduire une offre. Parfois avec un compte privé, parfois sans en avoir parlé. Si c'est le cas, c'est surtout que l'outil est utile.</p>
+<p>La question utile est plutôt : qu'est-ce qui sort de l'entreprise, et qui en décide ?</p>
+<p class="rassure">Cette page dit ce que l'on sait, ce que dit la loi suisse, et comment avancer en trois marches.</p>
+</div>
+<svg class="illus" viewBox="0 0 480 320" role="img" aria-label="À gauche, des usages de l'IA dispersés, comptes privés et questions. À droite, les mêmes usages rangés dans un cadre : des outils de l'entreprise, relus et validés.">
+<g font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<g opacity=".9">
+<rect x="14" y="40" width="118" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="73" y="65" text-anchor="middle" font-size="13" fill="#56646a">ChatGPT perso</text>
+<rect x="40" y="104" width="104" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="92" y="129" text-anchor="middle" font-size="13" fill="#56646a">un contrat collé</text>
+<rect x="10" y="168" width="122" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="71" y="193" text-anchor="middle" font-size="13" fill="#56646a">une traduction</text>
+<rect x="46" y="232" width="92" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="92" y="257" text-anchor="middle" font-size="13" fill="#56646a">qui décide ?</text>
+</g>
+<path d="M160 160 H206" stroke="#DE3146" stroke-width="3" fill="none"/><path d="M200 152 L212 160 L200 168" stroke="#DE3146" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<rect x="226" y="22" width="240" height="276" rx="18" fill="#fff" stroke="#203A71" stroke-width="3"/>
+<rect x="246" y="10" width="112" height="24" rx="12" fill="#203A71"/><text x="302" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Votre cadre</text>
+<g font-size="13" fill="#111">
+<rect x="246" y="52" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="52" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="79">Outils autorisés</text>
+<rect x="246" y="106" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="106" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="133">Données protégées</text>
+<rect x="246" y="160" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="160" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="187">Vos propres outils</text>
+<rect x="246" y="214" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="214" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="241">Relus avant service</text>
+</g>
+<circle cx="430" cy="282" r="20" fill="#203A71"/><path d="M420 282 l7 7 l13 -14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>
+</div></div>
+
+<section><div class="w">
+<h2>Ce que disent les études</h2>
+<ul class="chiffres">
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="158.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">74 %</text></svg><b>3 sur 4</b><span>des PME suisses utilisent l'IA dans leur travail, ou sont en train de l'essayer.</span><small>Sotomo pour AXA, 336 PME, mars 2026 <a href="#s1">[1]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="71.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">1/3</text></svg><b>1 sur 3</b><span>seulement des PME qui utilisent l'IA ont une règle claire sur la protection des données. Chez les entreprises de 5 à 9 personnes : 23 %.</span><small>Sotomo pour AXA, 300 PME, mars 2025 <a href="#s2">[2]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="55.5 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">26 %</text></svg><b>26 %</b><span>des cas où l'IA est arrivée dans le travail, c'était sans que le supérieur direct le sache.</span><small>Deloitte Suisse, 1 002 personnes, 2023, échantillon non représentatif <a href="#s3">[3]</a></small></li>
+</ul>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<div class="marche">
+<div><div class="num">1</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="#203A71" stroke-width="4"/><path d="M34 34 L48 48" stroke="#DE3146" stroke-width="5" stroke-linecap="round"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-bureau.jpg" alt="Une employée travaille sur son ordinateur portable dans un bureau" loading="lazy">
+<h2>Faire le point</h2>
+<p>Avant de poser une règle, il faut savoir ce qui se passe vraiment. Quelques questions suffisent :</p>
+<ul class="q">
+<li>Qui utilise quel outil, et pour quoi faire ?</li>
+<li>Avec un compte de l'entreprise, ou un compte privé ?</li>
+<li>Qu'est-ce qu'on y colle : des noms de clients, des offres, des salaires, des contrats ?</li>
+<li>En avez-vous déjà parlé en équipe ?</li>
+</ul>
+<p>Nous posons ces questions à vos équipes, de façon simple et sans chercher de coupable. Les gens disent plus volontiers ce qu'ils font quand ils savent que le but est de les aider à le faire bien.</p>
+<p class="livre"><b>Ce que vous recevez :</b> un état des lieux d'une page. Ce qui est utilisé, ce qui est utile, ce qui pose question.</p>
+</div>
+</div>
+</div></section>
+
+<section><div class="w">
+<h2>Ce que dit la loi suisse, en bref</h2>
+<ul class="loi">
+<li><b>La LPD s'applique déjà à l'IA</b><span>Le Préposé fédéral à la protection des données l'a dit en 2023 et l'a confirmé en 2025 : la loi actuelle est « directement applicable aux traitements de données basés sur l'IA ». Il n'y a pas besoin d'attendre une loi spéciale. <a href="#s4">[4]</a></span></li>
+<li><b>Ce qu'on colle dans un outil en ligne part chez un prestataire</b><span>Confier des données personnelles à un prestataire peut relever de la sous-traitance, encadrée par l'art. 9 LPD. Si les données sont traitées à l'étranger, les art. 16 et 17 peuvent aussi s'appliquer. <a href="#s5">[5]</a></span></li>
+<li><b>Le conseil le plus simple</b><span>Le Préposé recommande de supprimer les données personnelles avant de saisir une demande dans un outil d'IA. <a href="#s6">[6]</a></span></li>
+<li><b>L'employeur peut fixer les règles</b><span>Le Code des obligations lui permet d'établir des directives générales sur l'exécution du travail (art. 321d CO). Une directive sur les outils que l'on peut utiliser, l'IA comprise, peut s'appuyer sur cette base. <a href="#s7">[7]</a></span></li>
+</ul>
+<p style="margin:26px 0 0;color:var(--doux)">Et si vous travaillez avec l'Union européenne, le RGPD peut s'ajouter, et le règlement européen sur l'IA peut concerner une entreprise suisse lorsque les résultats d'un système d'IA sont utilisés dans l'UE <a href="#s8">[8]</a>. Cela se vérifie au cas par cas.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<div class="marche">
+<div><div class="num">2</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="34" height="44" rx="4" fill="none" stroke="#203A71" stroke-width="4"/><path d="M18 18 H36 M18 27 H36" stroke="#203A71" stroke-width="3"/><path d="M19 38 l5 5 l10 -11" stroke="#DE3146" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-atelier-outils.jpg" alt="Dans un atelier, des mains tapent sur un ordinateur portable posé à côté des outils" loading="lazy">
+<h2>Poser le cadre</h2>
+<p>Interdire semble ne pas suffire : une grande étude internationale observe que l'usage inapproprié est plus fréquent là où l'IA générative est interdite <a href="#s9">[9]</a>. Mieux vaut dire clairement ce qui est permis.</p>
+<ul class="q">
+<li>Les outils autorisés, avec des comptes au nom de l'entreprise.</li>
+<li>Les données qui n'y vont jamais.</li>
+<li>Qui décide quand un nouvel usage apparaît.</li>
+<li>Comment chacun apprend à s'en servir correctement.</li>
+</ul>
+<p class="livre"><b>Ce que vous recevez :</b> une directive courte, écrite dans les mots de votre entreprise, et une séance pour la présenter à l'équipe.</p>
+</div>
+</div>
+</div></section>
+
+<section><div class="w etroit">
+<div class="marche">
+<div><div class="num">3</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="8" fill="none" stroke="#203A71" stroke-width="3" stroke-dasharray="5 4"/><rect x="12" y="12" width="14" height="14" rx="3" fill="#DE3146"/><rect x="30" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="12" y="30" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="30" width="14" height="14" rx="3" fill="none" stroke="#203A71" stroke-width="2.5"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-collegues.jpg" alt="Deux collègues sourient devant un écran d'ordinateur" loading="lazy">
+<h2>Votre atelier d'outils internes</h2>
+<p>L'IA permet aujourd'hui de construire une petite application métier en peu de temps : un suivi, un calcul, un formulaire, un tableau de bord pensé exactement pour votre façon de travailler. Pour une PME, c'est très utile.</p>
+<p>Le risque, c'est le contraire du cadre : de nombreux petits outils que personne ne connaît, avec des données éparpillées. L'atelier interne règle cela dès le départ :</p>
+<ul class="q">
+<li><b>Des règles écrites d'avance</b>, que chaque nouvel outil respecte.</li>
+<li><b>Un seul endroit</b> où les outils et leurs données vivent.</li>
+<li><b>Une relecture avant la mise en service</b>, par quelqu'un qui n'a pas construit l'outil.</li>
+<li><b>Un responsable et une sortie prévue</b> pour chaque outil : on sait qui s'en occupe, et comment le reprendre si on l'arrête.</li>
+</ul>
+<div class="flux" aria-label="Le chemin d'un outil interne">
+<span>Un collaborateur décrit son besoin</span><b aria-hidden="true">→</b><span>L'outil se construit avec l'IA</span><b aria-hidden="true">→</b><span>Relecture par quelqu'un d'autre</span><b aria-hidden="true">→</b><span class="fin">En service, dans le cadre</span>
+</div>
+<p>Vos collaborateurs décrivent l'outil dont ils ont besoin, il se construit avec l'IA, et il reste dans le cadre. Nous posons ce cadre avec vous et accompagnons les premiers outils jusqu'à ce que vos équipes s'en chargent.</p>
+<p class="livre"><b>Ce que vous recevez :</b> les règles de l'atelier, un endroit unique pour les outils et leurs données, et un circuit de relecture avant chaque mise en service.</p>
+<p class="livre" style="background:var(--creme)"><b>Pourquoi nous :</b> c'est exactement comme cela que nous travaillons chaque jour. Nos propres outils d'IA suivent des règles écrites, un relecteur qui n'a pas écrit le travail le vérifie, et ce qui engage l'entreprise ou touche à des données sensibles passe par une validation humaine. Nous vous le montrons volontiers.</p>
+</div>
+</div>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<h2>Pourquoi quelqu'un de l'extérieur ?</h2>
+<p>Ce travail demande surtout du temps : écouter chacun, mettre les règles par écrit, accompagner les premiers outils. C'est un peu comme une certification ou une mise en conformité : on sait souvent qu'il faudrait le faire, et le temps est difficile à trouver.</p>
+<p>Un regard extérieur a un autre avantage : on raconte plus librement comment on utilise vraiment un outil à quelqu'un qui ne juge pas le travail de l'équipe. Nous prenons ce temps-là pour vous, puis nous vous rendons la main.</p>
+</div></section>
+
+<section style="padding-top:60px"><div class="w">
+<div class="contact">
+<div><h2>Commencer par une heure</h2><p>Une heure chez vous pour faire le point : ce qui est utilisé, ce qui pose question, et la marche par laquelle commencer.</p></div>
+<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+</div>
+<p style="margin:26px 0 0"><a href="/#exemples">Vous cherchez plutôt un outil pour une tâche précise ? Voir nos exemples</a></p>
+</div></section>
+
+<section class="sources"><div class="w">
+<p><b>Sources</b> (consultées le 14.10.2026). Cette page résume des sources publiques ; elle ne remplace pas un avis juridique.</p>
+<ol>
+<li id="s1">AXA, étude PME et marché du travail 2026 (Sotomo), 15.09.2026 : <a href="https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2026/20260915-kmu-arbeitsmarktstudie-kuenstliche-intelligenz.html">axa.ch</a></li>
+<li id="s2">AXA, étude PME et marché du travail 2025 (Sotomo), 08.10.2025 : <a href="https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2025/20251008-kmu-arbeitsmarktstudie-2025-ki.html">axa.ch</a></li>
+<li id="s3">Deloitte Suisse, étude sur l'IA générative au travail, 28.08.2023 : <a href="https://www.deloitte.com/ch/de/about/press-room/ai-study-almost-half-of-all-employees-are-worried-about-losing-their-jobs.html">deloitte.com</a></li>
+<li id="s4">PFPDT, « La loi actuelle sur la protection des données est directement applicable à l'IA », 09.11.2023, et sa mise à jour du 08.05.2025 : <a href="https://www.edoeb.admin.ch/fr/update-loi-actuelle-applicable-ia">edoeb.admin.ch</a></li>
+<li id="s5">Loi fédérale sur la protection des données (LPD), RS 235.1, art. 9, 16 et 17 : <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/fr">fedlex.admin.ch</a></li>
+<li id="s6">PFPDT, « L'IA au quotidien » : <a href="https://www.edoeb.admin.ch/fr/ia-au-quotidien">edoeb.admin.ch</a></li>
+<li id="s7">Code des obligations, RS 220, art. 321d : <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr">fedlex.admin.ch</a></li>
+<li id="s8">Règlement (UE) 2024/1689 sur l'intelligence artificielle, art. 2 par. 1 let. c : <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689">eur-lex.europa.eu</a></li>
+<li id="s9">KPMG et Université de Melbourne, « Trust, attitudes and use of AI: A global study 2025 », 47 pays dont la Suisse, p. 75 : <a href="https://assets.kpmg.com/content/dam/kpmgsites/xx/pdf/2025/05/trust-attitudes-and-use-of-ai-global-report.pdf">kpmg.com</a></li>
+</ol>
+</div></section>
+
+<footer><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Mentions légales.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
+<p><b>Protection des données.</b> Ce site n'utilise ni cookie ni formulaire. Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
+<p>Photos : Unsplash.</p>
+</div></footer>
+</body>
+</html>
