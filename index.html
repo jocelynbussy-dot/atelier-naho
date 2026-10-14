@@ -110,12 +110,15 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 .vid .note{font-size:14px;color:var(--doux);margin-top:14px}
 @media (max-width:860px){.vid{grid-template-columns:1fr}.vid video{max-width:340px;margin:0 auto}}
 @media print{.btn,.nav-cta{display:none}.hero{grid-template-columns:1fr}}
-.btn2{display:inline-block;margin-left:14px;font-weight:600;color:var(--petrole);text-decoration:underline}</style>
+.btn2{display:inline-block;margin-left:14px;font-weight:600;color:var(--petrole);text-decoration:underline}
+.boutons{display:flex;flex-wrap:wrap;gap:12px}
+.btn-sec{background:transparent;color:var(--petrole);border:2px solid var(--petrole);padding:12px 22px}
+.btn-sec:hover{background:var(--petrole);color:#fff}</style>
 </head>
 <body>
 <header><div class="w">
 <a class="logo" href="/"><img src="logo.svg" alt="Atelier Naho"></a>
-<div class="droite"><a class="nav-ex" href="#exemples">Exemples</a><nav class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></nav><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
+<div class="droite"><a class="nav-ex" href="#exemples">Exemples</a><a class="nav-ex" href="/ia-chez-vous/">L'IA chez vous</a><nav class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></nav><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
 </div></header>
 
 <div class="hero">
@@ -123,11 +126,20 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 <p class="tagline"><!--TAGLINE-->Façonner les outils de votre métier.<!--/TAGLINE--></p>
 <h1>Nous construisons des outils d'IA qui font le travail répétitif de votre PME.</h1>
 <p>Le rapport d'intervention dicté dans la camionnette, rédigé pour vous. Les justificatifs de vos clients, triés et classés. Les réponses aux locataires, préparées. L'outil prépare, vous décidez, et il vous appartient.</p>
-<p class="rassure">Oui, il y a de l'IA derrière. Elle prépare, votre équipe vérifie et décide. Et avant de commencer, nous fixons ensemble où vos données sont traitées et à qui elles restent.</p>
-<div><a class="btn" href="#exemples">Voir un exemple</a> <a class="btn2" href="mailto:jocelyn@ateliernaho.ch">Parlons-en</a></div>
+<p>Vos équipes se servent peut-être déjà de ChatGPT ? Nous faisons le point avec vous et posons des règles claires, pour que l'IA travaille pour l'entreprise, et pas à côté d'elle.</p>
+<p class="rassure">Avant de commencer, nous fixons ensemble où vos données sont traitées et à qui elles restent.</p>
+<div class="boutons"><a class="btn" href="/ia-chez-vous/">Vos équipes utilisent déjà l'IA ?</a><a class="btn btn-sec" href="#exemples">Voir un exemple</a></div>
 </div>
 <div class="hero-img" role="img" aria-label="Un artisan façonne une pièce à la lime, vu de près"></div>
 </div>
+
+<section id="aiguillage" style="padding-bottom:0"><div class="w">
+<h2>Par où commencer ?</h2>
+<div class="portes deux">
+<a class="porte" href="/ia-chez-vous/"><div><span class="tag">L'IA est déjà chez vous</span><h3>Vos équipes utilisent peut-être déjà l'IA. Vous voulez la cadrer.</h3><p>Faire le point, poser des règles qui s'appuient sur la LPD, puis laisser vos équipes construire leurs outils dans ce cadre.</p><span class="voir">Voir la démarche →</span></div></a>
+<a class="porte" href="#exemples"><div><span class="tag">Une tâche qui se répète</span><h3>Vous voulez un outil qui fait le travail répétitif.</h3><p>Des rapports, des pièces à trier, des demandes à préparer : voyez des exemples par métier.</p><span class="voir">Voir les exemples →</span></div></a>
+</div>
+</div></section>
 
 
 
