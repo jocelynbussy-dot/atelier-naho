@@ -1,15 +1,16 @@
 # Atelier Naho
 
-> Atelier Naho construit des outils d'IA sur mesure qui font le travail répétitif des PME suisses. L'équipe du client vérifie et décide, et l'outil reste au client.
+> Atelier Naho fabrique de petits logiciels sur mesure pour les PME suisses. Le travail administratif qui revient se fait en grande partie seul, l'équipe du client valide, et le logiciel reste au client.
 
 Atelier Naho est établi à Suchy, dans le canton de Vaud, en Suisse. Le site existe en français et en allemand. Contact : Jocelyn Bussy, jocelyn@ateliernaho.ch, +41 77 269 06 20.
 
 ## Ce que fait Atelier Naho
 
-- Un électricien dicte son intervention sur son téléphone, et l'outil prépare le rapport et le brouillon de facture.
-- Dans une fiduciaire, l'outil trie et classe les justificatifs envoyés par les clients.
-- Dans une régie, l'outil prépare les réponses aux locataires.
-- Autres exemples de ce qui se construit : procédures documentées, devis, suivi des clients, suivi des chantiers, suivi des commandes, formations sécurité.
+- Chez un électricien, ça pourrait être le bon de travail : le monteur dicte son intervention sur son téléphone, le bureau n'a plus qu'à valider le rapport et la facture.
+- Dans une fiduciaire, ça pourrait être la liste des pièces manquantes de chaque client, prête le lundi avec ses relances, à valider d'un clic.
+- Dans une régie, ça pourrait être les messages des locataires du week-end, triés avant lundi, avec les réponses préparées.
+- Ce ne sont que des exemples : presque toute tâche administrative qui revient peut se faire seule, en grande partie. Chaque exemple a sa démo fictive à cliquer (liste plus bas).
+- Autres exemples de ce qui se construit : procédures documentées, devis, suivi des clients, suivi des chantiers, suivi des commandes, formations sécurité, tableau clair des chiffres de l'entreprise.
 
 ## Le nom
 
@@ -18,14 +19,14 @@ Atelier : le sur-mesure, au plus près du métier du client. Naho : mot tahitien
 ## Comment ça se passe
 
 1. Le client raconte ce qui se répète, ce qui se perd, ce qui dépend d'une seule personne. Pas de cahier des charges.
-2. Atelier Naho construit un outil simple, pensé pour le métier du client. Premier outil en service en 1 à 2 semaines.
+2. Atelier Naho construit un petit logiciel, pensé pour le métier du client. Premier outil en service en 1 à 2 semaines.
 3. L'équipe du client l'essaie en conditions réelles. Rien ne démarre sans son accord.
 4. L'outil appartient au client, qui peut tout reprendre à tout moment.
 
 ## Engagements
 
 - Protection des données : Atelier Naho s'appuie sur la loi suisse sur la protection des données (LPD) ; selon le cas, le RGPD peut aussi s'appliquer. Où les données sont traitées et conservées se décide avec le client avant tout démarrage.
-- Chaque outil est relu et testé avant la mise en service, puis suivi dans le temps. L'IA prépare, un humain vérifie.
+- Chaque outil est relu et testé avant la mise en service, puis suivi dans le temps. Ce que le logiciel prépare, une personne de l'équipe du client le valide.
 - La sortie est prévue avant l'entrée : si le client arrête, il repart avec tout, en PDF et en fichiers ouverts.
 
 ## Pages
