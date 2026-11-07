@@ -16,7 +16,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script src="/compteur.js" defer></script>
 <style>
-:root{--fond:#ffffff;--creme:#F7F4EE;--encre:#111111;--doux:#56646a;--petrole:#203A71;--cuivre:#DE3146;--trait:#e3ddd2}
+:root{--fond:#ffffff;--surface:#F2F4F8;--encre:#111111;--doux:#56646a;--petrole:#203A71;--petrole-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--titre:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
@@ -27,30 +27,30 @@ header{padding:18px 0;border-bottom:1px solid var(--trait)}
 header .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo img{height:40px;width:auto;display:block}
 .nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
-.hero{background:var(--creme);padding:64px 0 56px}
-.tagline{color:var(--cuivre);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;margin:0 0 14px}
-h1{font:700 clamp(30px,4.2vw,46px)/1.15 Georgia,"Times New Roman",serif;color:var(--petrole);margin:0 0 18px;max-width:20em}
-.hero p{font-size:clamp(18px,2vw,20px);color:var(--doux);margin:0 0 16px;max-width:36em}
-.hero p.rassure{font-size:17px;color:var(--encre);border-left:3px solid var(--cuivre);padding-left:14px;margin-top:22px}
+.hero{background:var(--petrole);color:#fff;padding:64px 0 56px}
+.tagline{color:#fff;opacity:.85;font-weight:600;font-size:17px;margin:0 0 14px}
+h1{font:800 clamp(30px,4.2vw,46px)/1.1 var(--titre);letter-spacing:-.01em;color:#fff;margin:0 0 18px;max-width:20em}
+.hero p{font-size:clamp(18px,2vw,20px);color:rgba(255,255,255,.9);margin:0 0 16px;max-width:36em}
+.hero p.rassure{font-size:17px;color:#fff;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:10px;margin-top:22px}
 section{padding:60px 0}
-.bande{background:var(--creme)}
-h2{font:700 30px/1.25 Georgia,"Times New Roman",serif;color:var(--petrole);margin:0 0 22px}
-h3{font:700 21px/1.3 Georgia,serif;color:var(--petrole);margin:28px 0 8px}
+.bande{background:var(--surface)}
+h2{font:800 30px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin:0 0 22px}
+h3{font:800 21px/1.3 var(--titre);color:var(--petrole);margin:28px 0 8px}
 .chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
-.chiffres li{border-top:3px solid var(--cuivre);padding-top:14px}
-.chiffres b{display:block;font:700 34px/1.1 Georgia,serif;color:var(--petrole);margin-bottom:6px}
+.chiffres li{border-top:3px solid var(--petrole);padding-top:14px}
+.chiffres b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
 .chiffres span{color:var(--encre)}
 .chiffres small{display:block;color:var(--doux);font-size:14px;margin-top:8px}
 .marche{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start}
-.num{font:700 64px/1 Georgia,serif;color:var(--cuivre)}
+.num{font:800 64px/1 var(--titre);letter-spacing:-.02em;color:var(--petrole)}
 .marche p{margin:0 0 14px}
 ul.q{margin:0 0 14px;padding-left:22px}
 ul.q li{margin-bottom:6px}
-.livre{background:#fff;border-left:3px solid var(--petrole);padding:12px 16px;margin:16px 0 0;color:var(--encre)}
+.livre{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:12px 16px;margin:16px 0 0;color:var(--encre)}
 .livre b{color:var(--petrole)}
 .loi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin:0;padding:0;list-style:none}
-.loi li{padding-left:16px;border-left:3px solid var(--petrole)}
-.loi b{display:block}
+.loi li{padding:0}
+.loi b{display:block;color:var(--petrole)}
 .loi span{color:var(--doux)}
 .contact{background:var(--petrole);color:#fff;border-radius:18px;padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .contact h2{color:#fff;margin:0 0 8px}
@@ -82,9 +82,9 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 .donut{width:84px;height:84px;display:block;margin-bottom:10px}
 .ico{width:52px;height:52px;display:block;margin-top:10px}
 .flux{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0 6px}
-.flux span{background:var(--creme);border-left:4px solid var(--petrole);border-radius:8px;padding:8px 12px;font-size:15px}
-.flux span.fin{background:var(--petrole);color:#fff;border-left-color:var(--cuivre)}
-.flux b{color:var(--cuivre);font-size:20px}
+.flux span{background:var(--surface);border:1px solid var(--trait);border-radius:8px;padding:8px 12px;font-size:15px}
+.flux span.fin{background:var(--petrole);color:#fff;border-color:var(--petrole)}
+.flux b{color:var(--petrole);font-size:20px}
 @media (max-width:860px){.hero .w{grid-template-columns:1fr}.illus{max-width:440px;margin:0 auto}.ico{display:none}.flux{flex-direction:column;align-items:stretch}.flux b{text-align:center;transform:rotate(90deg)}}
 </style>
 </head>
@@ -105,19 +105,19 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 <svg class="illus" viewBox="0 0 480 320" role="img" aria-label="À gauche, des usages de l'IA dispersés, comptes privés et questions. À droite, les mêmes usages rangés dans un cadre : des outils de l'entreprise, relus et validés.">
 <g font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
 <g opacity=".9">
-<rect x="14" y="40" width="118" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="73" y="65" text-anchor="middle" font-size="13" fill="#56646a">ChatGPT perso</text>
-<rect x="40" y="104" width="104" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="92" y="129" text-anchor="middle" font-size="13" fill="#56646a">un contrat collé</text>
-<rect x="10" y="168" width="122" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="71" y="193" text-anchor="middle" font-size="13" fill="#56646a">une traduction</text>
-<rect x="46" y="232" width="92" height="40" rx="20" fill="#fff" stroke="#c9c2b4" stroke-dasharray="4 4"/><text x="92" y="257" text-anchor="middle" font-size="13" fill="#56646a">qui décide ?</text>
+<rect x="14" y="40" width="118" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="73" y="65" text-anchor="middle" font-size="13" fill="#56646a">ChatGPT perso</text>
+<rect x="40" y="104" width="104" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="92" y="129" text-anchor="middle" font-size="13" fill="#56646a">un contrat collé</text>
+<rect x="10" y="168" width="122" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="71" y="193" text-anchor="middle" font-size="13" fill="#56646a">une traduction</text>
+<rect x="46" y="232" width="92" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="92" y="257" text-anchor="middle" font-size="13" fill="#56646a">qui décide ?</text>
 </g>
-<path d="M160 160 H206" stroke="#DE3146" stroke-width="3" fill="none"/><path d="M200 152 L212 160 L200 168" stroke="#DE3146" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<path d="M160 160 H206" stroke="#ffffff" stroke-width="3" fill="none"/><path d="M200 152 L212 160 L200 168" stroke="#ffffff" stroke-width="3" fill="none" stroke-linejoin="round"/>
 <rect x="226" y="22" width="240" height="276" rx="18" fill="#fff" stroke="#203A71" stroke-width="3"/>
 <rect x="246" y="10" width="112" height="24" rx="12" fill="#203A71"/><text x="302" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Votre cadre</text>
 <g font-size="13" fill="#111">
-<rect x="246" y="52" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="52" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="79">Outils autorisés</text>
-<rect x="246" y="106" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="106" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="133">Données protégées</text>
-<rect x="246" y="160" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="160" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="187">Vos propres outils</text>
-<rect x="246" y="214" width="200" height="44" rx="10" fill="#F7F4EE"/><rect x="246" y="214" width="6" height="44" rx="3" fill="#DE3146"/><text x="264" y="241">Relus avant service</text>
+<rect x="246" y="52" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="79">Outils autorisés</text>
+<rect x="246" y="106" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="133">Données protégées</text>
+<rect x="246" y="160" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="187">Vos propres outils</text>
+<rect x="246" y="214" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="241">Relus avant service</text>
 </g>
 <circle cx="430" cy="282" r="20" fill="#203A71"/><path d="M420 282 l7 7 l13 -14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g></svg>
@@ -126,15 +126,15 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 <section><div class="w">
 <h2>Ce que disent les études</h2>
 <ul class="chiffres">
-<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="158.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">74 %</text></svg><b>3 sur 4</b><span>des PME suisses utilisent l'IA dans leur travail, ou sont en train de l'essayer.</span><small>Sotomo pour AXA, 336 PME, mars 2026 <a href="#s1">[1]</a></small></li>
-<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="71.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">1/3</text></svg><b>1 sur 3</b><span>seulement des PME qui utilisent l'IA ont une règle claire sur la protection des données. Chez les entreprises de 5 à 9 personnes : 23 %.</span><small>Sotomo pour AXA, 300 PME, mars 2025 <a href="#s2">[2]</a></small></li>
-<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8e2d6" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#DE3146" stroke-width="12" stroke-dasharray="55.5 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#203A71">26 %</text></svg><b>26 %</b><span>des cas où l'IA est arrivée dans le travail, c'était sans que le supérieur direct le sache.</span><small>Deloitte Suisse, 1 002 personnes, 2023, échantillon non représentatif <a href="#s3">[3]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="158.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">74 %</text></svg><b>3 sur 4</b><span>des PME suisses utilisent l'IA dans leur travail, ou sont en train de l'essayer.</span><small>Sotomo pour AXA, 336 PME, mars 2026 <a href="#s1">[1]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="71.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">1/3</text></svg><b>1 sur 3</b><span>seulement des PME qui utilisent l'IA ont une règle claire sur la protection des données. Chez les entreprises de 5 à 9 personnes : 23 %.</span><small>Sotomo pour AXA, 300 PME, mars 2025 <a href="#s2">[2]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="55.5 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">26 %</text></svg><b>26 %</b><span>des cas où l'IA est arrivée dans le travail, c'était sans que le supérieur direct le sache.</span><small>Deloitte Suisse, 1 002 personnes, 2023, échantillon non représentatif <a href="#s3">[3]</a></small></li>
 </ul>
 </div></section>
 
 <section class="bande"><div class="w etroit">
 <div class="marche">
-<div><div class="num">1</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="#203A71" stroke-width="4"/><path d="M34 34 L48 48" stroke="#DE3146" stroke-width="5" stroke-linecap="round"/></svg></div>
+<div><div class="num">1</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="#203A71" stroke-width="4"/><path d="M34 34 L48 48" stroke="#203A71" stroke-width="5" stroke-linecap="round"/></svg></div>
 <div>
 <img class="photo" src="/img/ia-bureau.jpg" alt="Une employée travaille sur son ordinateur portable dans un bureau" loading="lazy">
 <h2>Faire le point</h2>
@@ -164,7 +164,7 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 
 <section class="bande"><div class="w etroit">
 <div class="marche">
-<div><div class="num">2</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="34" height="44" rx="4" fill="none" stroke="#203A71" stroke-width="4"/><path d="M18 18 H36 M18 27 H36" stroke="#203A71" stroke-width="3"/><path d="M19 38 l5 5 l10 -11" stroke="#DE3146" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div><div class="num">2</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="34" height="44" rx="4" fill="none" stroke="#203A71" stroke-width="4"/><path d="M18 18 H36 M18 27 H36" stroke="#203A71" stroke-width="3"/><path d="M19 38 l5 5 l10 -11" stroke="#203A71" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 <div>
 <img class="photo" src="/img/ia-atelier-outils.jpg" alt="Dans un atelier, des mains tapent sur un ordinateur portable posé à côté des outils" loading="lazy">
 <h2>Poser le cadre</h2>
@@ -182,7 +182,7 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 
 <section><div class="w etroit">
 <div class="marche">
-<div><div class="num">3</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="8" fill="none" stroke="#203A71" stroke-width="3" stroke-dasharray="5 4"/><rect x="12" y="12" width="14" height="14" rx="3" fill="#DE3146"/><rect x="30" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="12" y="30" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="30" width="14" height="14" rx="3" fill="none" stroke="#203A71" stroke-width="2.5"/></svg></div>
+<div><div class="num">3</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="8" fill="none" stroke="#203A71" stroke-width="3" stroke-dasharray="5 4"/><rect x="12" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="12" y="30" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="30" width="14" height="14" rx="3" fill="none" stroke="#203A71" stroke-width="2.5"/></svg></div>
 <div>
 <img class="photo" src="/img/ia-collegues.jpg" alt="Deux collègues sourient devant un écran d'ordinateur" loading="lazy">
 <h2>Votre atelier d'outils internes</h2>
@@ -199,7 +199,7 @@ footer img{height:26px;width:auto;margin-bottom:10px;display:block}
 </div>
 <p>Vos collaborateurs décrivent l'outil dont ils ont besoin, il se construit avec l'IA, et il reste dans le cadre. Nous posons ce cadre avec vous et accompagnons les premiers outils jusqu'à ce que vos équipes s'en chargent.</p>
 <p class="livre"><b>Ce que vous recevez :</b> les règles de l'atelier, un endroit unique pour les outils et leurs données, et un circuit de relecture avant chaque mise en service.</p>
-<p class="livre" style="background:var(--creme)"><b>Pourquoi nous :</b> c'est exactement comme cela que nous travaillons chaque jour. Nos propres outils d'IA suivent des règles écrites, un relecteur qui n'a pas écrit le travail le vérifie, et ce qui engage l'entreprise ou touche à des données sensibles passe par une validation humaine. Nous vous le montrons volontiers.</p>
+<p class="livre" style="background:var(--surface)"><b>Pourquoi nous :</b> c'est exactement comme cela que nous travaillons chaque jour. Nos propres outils d'IA suivent des règles écrites, un relecteur qui n'a pas écrit le travail le vérifie, et ce qui engage l'entreprise ou touche à des données sensibles passe par une validation humaine. Nous vous le montrons volontiers.</p>
 </div>
 </div>
 </div></section>
