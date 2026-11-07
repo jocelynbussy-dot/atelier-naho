@@ -43,3 +43,11 @@ Atelier : le sur-mesure, au plus près du métier du client. Naho : mot tahitien
 - [Régie](https://ateliernaho.ch/exemples/regie/)
 - [Bureau d'architectes](https://ateliernaho.ch/exemples/architecte/)
 - [Saison de conditionnement](https://ateliernaho.ch/exemples/rh/)
+
+<!-- articles -->
+## Articles
+
+- [Nouvelle Sàrl : TVA au forfait (TDFN) et délai de 60 jours](https://ateliernaho.ch/articles/tva-nouvelle-societe/) : Nouvelle Sàrl ou SA : quand s'inscrire à la TVA, et pourquoi la méthode simple se demande dans les 60 jours après le numéro TVA, sinon trois ans d'attente.
+- [Sàrl et SA : annoncer vos ayants droit économiques](https://ateliernaho.ch/articles/registre-ayants-droit/) : Depuis le 1er octobre 2026, chaque Sàrl et chaque SA doit annoncer au registre de transparence les personnes qui la contrôlent. Qui est concerné, jusqu'à quand, comment le faire sur EasyGov.
+- [Flux RSS des articles](https://ateliernaho.ch/articles/flux.xml)
+<!-- /articles -->
