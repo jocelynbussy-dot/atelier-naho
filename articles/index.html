@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog · Atelier Naho</title>
+<meta name="description" content="Obligations, démarches et outils pour les PME suisses, expliqués à partir de ce que nous vivons nous-mêmes.">
+<meta property="og:title" content="Blog · Atelier Naho">
+<meta property="og:description" content="Obligations, démarches et outils pour les PME suisses, expliqués à partir de ce que nous vivons nous-mêmes.">
+<meta property="og:url" content="https://ateliernaho.ch/articles/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="fr_CH">
+<link rel="canonical" href="https://ateliernaho.ch/articles/">
+<link rel="alternate" hreflang="fr" href="https://ateliernaho.ch/articles/">
+<link rel="alternate" hreflang="de" href="https://ateliernaho.ch/de/articles/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--fond:#ffffff;--surface:#F2F4F8;--encre:#111111;--doux:#56646a;--petrole:#203A71;--petrole-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--titre:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--petrole)}
+a:focus-visible{outline:3px solid var(--petrole);outline-offset:2px}
+.w{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;border-bottom:1px solid var(--trait)}
+header .w{max-width:1080px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
+.hero{background:var(--petrole);color:#fff;padding:44px 0 40px}
+.tagline{color:#fff;opacity:.85;font-weight:600;font-size:16px;margin:0 0 14px}
+.tagline a{color:#fff}
+h1{font:800 clamp(28px,4.4vw,42px)/1.1 var(--titre);letter-spacing:-.01em;color:#fff;margin:0 0 18px}
+.hero p{font-size:clamp(18px,2vw,20px);color:rgba(255,255,255,.9);margin:0 0 16px}
+.hero p.rassure{font-size:17px;color:#fff;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:10px;margin:22px 0 0}
+main section{padding:40px 0 8px}
+h2{font:800 25px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin:0 0 16px}
+h3{font:800 21px/1.3 var(--titre);color:var(--petrole);margin:24px 0 8px}
+p{margin:0 0 14px}
+ul.q{margin:0 0 14px;padding-left:22px}
+ul.q li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:16px}
+th{color:var(--doux);font-weight:600;font-size:14px;text-align:left;padding:8px 10px;border-bottom:1px solid var(--trait)}
+td{padding:10px;border-bottom:1px solid var(--trait);vertical-align:top}
+tr:hover td{background:#F7F8FB}
+td b{color:var(--petrole)}
+.livre{background:var(--surface);border:1px solid var(--trait);border-radius:10px;padding:14px 18px;margin:18px 0}
+.livre b{color:var(--petrole)}
+ol.faire{counter-reset:n;list-style:none;margin:0 0 14px;padding:0}
+ol.faire li{counter-increment:n;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--trait)}
+ol.faire li::before{content:counter(n);font:800 30px/1 var(--titre);color:var(--petrole)}
+.date{font-size:14px;color:var(--doux)}
+.contact{background:var(--petrole);color:#fff;border-radius:16px;padding:30px 28px;margin:40px 0}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0 0 16px;opacity:.9}
+.contact a{display:inline-block;color:var(--petrole);background:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px}
+.sources{font-size:14px;color:var(--doux);padding-bottom:24px}
+.sources ol{padding-left:20px;margin:0}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux)}
+footer .w{max-width:1080px}
+footer p{margin:0 0 6px;max-width:62ch}
+footer img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:700px){
+ table,thead,tbody,tr,th,td{display:block}
+ thead{display:none}
+ tr{border-bottom:1px solid var(--trait);padding:8px 0}
+ td{border:0;padding:4px 0}
+ main section{padding:32px 0 4px}
+}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-cta,.contact a{display:none}.hero{background:#fff;color:#000}.hero h1,.hero p,.tagline{color:#000}}
+.liste{list-style:none;margin:0;padding:0}.liste li{border-top:1px solid var(--trait);padding:22px 0}.liste h2{font-size:22px;margin:0 0 6px}.liste h2 a{text-decoration:none}.liste p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho"></a>
+<a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a>
+</div></header>
+<div class="hero"><div class="w">
+<p class="tagline">Blog · <a href="/de/articles/" hreflang="de" lang="de">Deutsch</a></p>
+<h1>Ce que nous apprenons, pour votre PME</h1>
+<p>Chaque fois que nous découvrons une obligation, une démarche ou un outil pour notre propre société, nous l'écrivons ici, sources à l'appui.</p>
+</div></div>
+<main class="w">
+<ul class="liste">
+<li><h2><a href="/articles/registre-ayants-droit/">Sàrl et SA : annoncer vos ayants droit économiques</a></h2><p>Depuis le 1er octobre 2026, chaque Sàrl et chaque SA doit annoncer au registre de transparence les personnes qui la contrôlent. Qui est concerné, jusqu'à quand, comment le faire sur EasyGov.</p><p class="date">7 novembre 2026</p></li>
+</ul>
+</main>
+<footer><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Mentions légales.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
+<p><b>Protection des données.</b> Ce site n'utilise ni cookie ni formulaire. Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
+</div></footer>
+</body>
+</html>
