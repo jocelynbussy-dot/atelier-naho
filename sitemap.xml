@@ -113,6 +113,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ateliernaho.ch/articles/registre-ayants-droit/"/>
   </url>
   <url>
+    <loc>https://ateliernaho.ch/articles/tva-nouvelle-societe/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliernaho.ch/articles/tva-nouvelle-societe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ateliernaho.ch/de/articles/tva-nouvelle-societe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ateliernaho.ch/articles/tva-nouvelle-societe/"/>
+  </url>
+  <url>
+    <loc>https://ateliernaho.ch/de/articles/tva-nouvelle-societe/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliernaho.ch/articles/tva-nouvelle-societe/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ateliernaho.ch/de/articles/tva-nouvelle-societe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ateliernaho.ch/articles/tva-nouvelle-societe/"/>
+  </url>
+  <url>
     <loc>https://ateliernaho.ch/articles/</loc>
     <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ateliernaho.ch/articles/"/>
