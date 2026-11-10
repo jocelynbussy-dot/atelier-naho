@@ -1,6 +1,6 @@
 # Atelier Naho
 
-> Atelier Naho fabrique de petits logiciels sur mesure pour les PME suisses. Le travail administratif qui revient se fait en grande partie seul, l'équipe du client valide, et le logiciel reste au client.
+> Atelier Naho aide les PME suisses à voir où elles en sont (risque informatique avec Tenir le choc et l'autodiagnostic, usage de l'IA, durabilité), puis fabrique avec elles de petits logiciels sur mesure. Le travail administratif qui revient se fait en grande partie seul, l'équipe du client valide, et le logiciel reste au client.
 
 Atelier Naho est établi à Suchy, dans le canton de Vaud, en Suisse. Le site existe en français et en allemand. Contact : Jocelyn Bussy, jocelyn@ateliernaho.ch, +41 77 269 06 20.
 
