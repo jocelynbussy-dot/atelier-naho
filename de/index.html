@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Atelier Naho · Massgeschneiderte Software für Schweizer KMU</title>
-<meta name="description" content="Atelier Naho baut kleine, massgeschneiderte Software für Schweizer KMU. Wiederkehrende Arbeit erledigt sich zu einem grossen Teil von selbst, und die Software gehört Ihnen.">
-<meta property="og:title" content="Atelier Naho · Massgeschneiderte Software für Schweizer KMU">
-<meta property="og:description" content="Atelier Naho baut kleine, massgeschneiderte Software für Schweizer KMU. Wiederkehrende Arbeit erledigt sich zu einem grossen Teil von selbst, und die Software gehört Ihnen.">
+<title>Atelier Naho · Der Service, den ein KMU selten im eigenen Haus hat</title>
+<meta name="description" content="Atelier Naho hilft Schweizer KMU herauszufinden, wo sie stehen (IT-Risiko, Nutzung von KI, Nachhaltigkeit), und baut dann mit ihnen die kleinen Programme, die ihnen fehlen.">
+<meta property="og:title" content="Atelier Naho · Der Service, den ein KMU selten im eigenen Haus hat">
+<meta property="og:description" content="Atelier Naho hilft Schweizer KMU herauszufinden, wo sie stehen (IT-Risiko, Nutzung von KI, Nachhaltigkeit), und baut dann mit ihnen die kleinen Programme, die ihnen fehlen.">
 <meta property="og:url" content="https://ateliernaho.ch/de/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
@@ -23,8 +23,8 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://ateliernaho.ch/#ateliernaho","name":"Atelier Naho","url":"https://ateliernaho.ch/","logo":"https://ateliernaho.ch/logo.svg","image":"https://ateliernaho.ch/img/entete.jpg",
-"slogan":"Werkzeuge nach Mass für Ihren Beruf.",
-"description":"Atelier Naho baut kleine, massgeschneiderte Software für Schweizer KMU. Wiederkehrende Arbeit erledigt sich zu einem grossen Teil von selbst, und die Software gehört Ihnen.",
+"slogan":"Erst Klarheit, dann die passende Software für Ihren Betrieb.",
+"description":"Atelier Naho hilft Schweizer KMU herauszufinden, wo sie stehen (IT-Risiko, Nutzung von KI, Nachhaltigkeit), und baut dann mit ihnen die kleinen Programme, die ihnen fehlen.",
 "email":"jocelyn@ateliernaho.ch","telephone":"+41772690620","founder":{"@type":"Person","name":"Jocelyn Bussy"},
 "address":{"@type":"PostalAddress","streetAddress":"Chemin des Oiseaux 12","postalCode":"1433","addressLocality":"Suchy","addressCountry":"CH"},
 "areaServed":{"@type":"Country","name":"Schweiz"},"knowsLanguage":["fr","de"]}
@@ -75,6 +75,9 @@ h2{font:800 30px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);mar
 .porte p{margin:0;color:var(--doux)}
 a.porte{display:block;text-decoration:none;color:inherit}a.porte:hover{box-shadow:0 0 0 2px var(--petrole)}
 .porte .voir{display:inline-block;margin-top:12px;color:var(--petrole);font-weight:600}
+.aussi{margin:22px 0 0;color:var(--doux)}.aussi a{font-weight:600;white-space:nowrap}
+.produit{background:var(--surface);border:1px solid var(--trait);border-radius:14px;padding:22px 24px;margin:0 0 34px}.produit .tag{font-size:14px;color:var(--doux);font-weight:600}.produit h3{margin:4px 0 8px;font:800 22px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole)}.produit p{margin:0 0 10px;max-width:70ch}.produit .voir{color:var(--petrole);font-weight:600;text-decoration:none}
+h3.sous{font:800 22px/1.2 var(--titre);color:var(--petrole);margin:0 0 6px}
 @media (min-width:861px){.portes.deux{grid-template-columns:repeat(2,1fr)}}
 .nav-ex{color:var(--petrole);font-weight:600;text-decoration:none;white-space:nowrap}
 .nav-blog{color:var(--petrole);font-weight:600;text-decoration:none;white-space:nowrap}
@@ -115,19 +118,55 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 .boutons{display:flex;flex-wrap:wrap;gap:12px}
 .btn-sec{background:transparent;color:#fff;border:2px solid #fff;padding:12px 22px}
 .btn-sec:hover{background:#fff;color:var(--petrole)}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
 </head>
 <body>
-<header><div class="w">
-<a class="logo" href="/de/"><img src="../logo.svg" alt="Atelier Naho"></a>
-<div class="droite"><a class="nav-ex" href="#exemples">Beispiele</a><a class="nav-blog" href="/de/articles/">Blog</a><nav class="lang"><a href="/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></nav><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
+<header class="site"><div class="w">
+<a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
+<nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples">Beispiele</a><a href="/de/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><a href="/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
 </div></header>
 
 <div class="hero">
 <div class="hero-txt">
-<p class="tagline">Werkzeuge nach Mass für Ihren Beruf.</p>
-<h1>Wir bauen kleine, massgeschneiderte Software für Schweizer KMU.</h1>
-<p>Bei einem Elektriker könnte das der Arbeitsrapport sein: Der Monteur diktiert, sobald er beim Kunden fertig ist, das Werkzeug schickt Rapport und Rechnung ins Büro, wo sie nur noch freigegeben werden müssen. In einem Treuhandbüro die Liste der fehlenden Belege, am Montag bereit samt Erinnerungen, mit einem Klick freizugeben.</p>
-<p>Das sind nur Beispiele. Fast jede wiederkehrende Verwaltungsaufgabe kann zu einem grossen Teil von selbst laufen. Auch Ihre Zahlen oder Ihr Lager können mit einem Klick zu einer klaren Übersicht werden.</p>
+<p class="tagline">Erst Klarheit, dann die passende Software für Ihren Betrieb.</p>
+<h1>Der Service, den ein KMU selten im eigenen Haus hat.</h1>
+<p>Grosse Unternehmen haben jemanden, der ihr IT-Risiko, die Nutzung von KI, die Nachhaltigkeit und die digitalen Werkzeuge im Alltag im Blick behält. Wir übernehmen das für Sie, passend zur Grösse Ihres Betriebs.</p>
+<p>Zuerst schauen wir mit Ihnen, wo Sie stehen. Wenn dann eine Aufgabe jede Woche wiederkehrt, bauen wir ein kleines Programm, das sie erledigt: bei einem Elektriker etwa der Arbeitsrapport, den der Monteur nach dem Einsatz beim Kunden diktiert und der samt Rechnung im Büro ankommt, bereit zur Freigabe.</p>
 <p class="rassure">Die Software bereitet vor, Sie geben frei, und sie gehört Ihnen. Bevor wir starten, legen wir gemeinsam fest, wo Ihre Daten bearbeitet werden und bei wem sie bleiben.</p>
 <div class="boutons"><a class="btn" href="#exemples">Demo ansehen</a><a class="btn btn-sec" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
 </div>
@@ -138,8 +177,9 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 
 
 <section id="exemples"><div class="w">
-<h2>Was das bei Ihnen sein könnte</h2>
-<p style="font-size:20px;margin:0 0 24px">Sechs fiktive Beispiele, eines pro Branche. Jede Demo klicken Sie in wenigen Minuten durch, ohne etwas zu installieren.</p>
+<h2>Danach Software, die zu Ihrem Betrieb passt</h2>
+<p style="font-size:20px;margin:0 0 24px">Sobald Sie wissen, wo Sie stehen, bauen wir die Werkzeuge, die fehlen. Die Software bereitet vor, eine Person aus Ihrem Team gibt frei.</p>
+<p style="margin:0 0 20px">Sechs fiktive Beispiele, eines pro Branche. Jede Demo klicken Sie in wenigen Minuten durch, ohne etwas zu installieren.</p>
 <div class="portes deux">
 <a class="porte" href="/de/exemples/fiduciaire/"><div><span class="tag">Treuhand</span><h3>Die Belege Ihrer Kunden kommen an und legen sich von selbst ab.</h3><p>Fiktives Beispiel. Klicken Sie, es gibt nichts zu installieren.</p><span class="voir">Beispiel ansehen →</span></div></a>
 <a class="porte" href="/de/exemples/transmission/"><div><span class="tag">Unternehmensnachfolge</span><h3>Was der Chef weiss, erzählt er. Der Betrieb behält es.</h3><p>Fiktives Beispiel. Klicken Sie, es gibt nichts zu installieren.</p><span class="voir">Beispiel ansehen →</span></div></a>
@@ -148,11 +188,13 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 <a class="porte" href="/de/exemples/architecte/"><div><span class="tag">Architekturbüro</span><h3>Die Anfragen sind sortiert, die Offerten verglichen, die Dossiers nachgeführt. Der Architekt entscheidet und unterschreibt.</h3><p>Fiktives Beispiel. Klicken Sie, es gibt nichts zu installieren.</p><span class="voir">Beispiel ansehen →</span></div></a>
 <a class="porte" href="/de/exemples/rh/"><div><span class="tag">Saison im Abpackbetrieb</span><h3>Die Saisonarbeitenden schreiben in ihrer Sprache. Jedes Anliegen findet seinen Weg zur richtigen Person.</h3><p>Fiktives Beispiel. Klicken Sie, es gibt nichts zu installieren.</p><span class="voir">Beispiel ansehen →</span></div></a>
 </div>
+<h3 class="sous">Ein fertiges Werkzeug für alle Branchen</h3>
+<div class="produit"><div><span class="tag">Zertifizierung, Qualität</span><h3>Ihre Arbeitsanweisungen, aktuell und freigegeben</h3><p>Mit Ihren Teams geschrieben, nach Arbeitsplatz geordnet, mit Versionsstand und nachvollziehbaren Änderungen. Für eine Zertifizierung oder damit die Arbeit auch dann gleich abläuft, wenn jemand ausfällt.</p><a class="voir" href="/procedures/" hreflang="fr" lang="fr">Angebot ansehen (auf Französisch) →</a></div></div>
 </div></section>
 
 <section id="video" class="bande"><div class="w vid">
 <div>
-<h2>Atelier Naho in einer Minute</h2>
+<h2>Werkzeuge nach Mass, in einer Minute erklärt</h2>
 <p style="font-size:20px;margin:0">Ein Elektriker, ein Treuhandbüro, dann unsere Art, das Werkzeug mit Ihnen zu bauen: eine Minute, um zu sehen, wie das aussieht.</p>
 <p class="note">Video mit KI erstellt (NotebookLM), von uns geprüft und freigegeben.</p>
 </div>
