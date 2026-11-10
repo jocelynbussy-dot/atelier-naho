@@ -29,7 +29,11 @@ button{font:inherit;padding:8px 14px;border:0;border-radius:6px;background:var(-
 .q>div:first-child{display:flex;gap:10px;font-weight:600;line-height:1.4}
 .q .num{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8edf4;color:var(--bleu);font-size:15px}
 .q .aide{color:var(--gris);font-size:15px;margin:4px 0 0 38px}
-.opts{margin:12px 0 0 38px;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));grid-auto-rows:1fr;gap:8px}
+.q{container-type:inline-size}
+/* Réponses en rangées égales, jamais 3 + 1 : 4 réponses sur une ligne si la carte est large, sinon 2 + 2 ; 5 réponses en 3 + 2
+   (les trois réponses, puis « sans objet » et « je ne sais pas ») ; une colonne sur téléphone (demande de Jocelyn, 10.11.2026). */
+.opts{margin:12px 0 0 38px;display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:8px}
+@container (min-width:700px){.opts.n4{grid-template-columns:repeat(4,1fr)}.opts.n5{grid-template-columns:repeat(3,1fr)}}
 .opts label{display:flex;align-items:center;gap:8px;min-height:48px;border:1px solid #ccc;border-radius:8px;padding:8px 12px;background:var(--fond);cursor:pointer;line-height:1.3}
 .opts input{margin:0;flex:none}
 .opts label:hover{border-color:var(--bleu)}
@@ -134,11 +138,35 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
 /* Impression : l'habillage met le titre et l'intro dans <main class="page"> ; la règle « body>.entete » de la page ne les voit plus, on les cache ici (feuille sur une seule page A4). */
 @media print{header.site,footer.site,.page>.entete,.page>.lead{display:none!important}.page{padding:0;max-width:none}h1{margin:0}}
 </style>
+
+<style>.passerelle{font-size:16px;background:var(--surface);border-radius:10px;padding:10px 14px}.passerelle a{color:var(--bleu)}</style>
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
 </head>
 <body>
 <header class="site"><div class="w">
-<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho"></a>
-<a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a>
+<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho, retour à l'accueil"></a>
+<nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/">Tenir le choc</a><a href="/autodiagnostic/" aria-current="page">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
 </div></header>
 <main class="page">
 
@@ -147,6 +175,7 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
   <span class="marque">Atelier Naho</span>
 </div>
 <p class="lead">19 questions, une dizaine de minutes. Vous obtenez un niveau de risque, une barre par domaine et les trois points à régler d'abord, sur une feuille à imprimer.</p>
+<p class="ecran passerelle">C'est la version rapide de <a href="/tenir-le-choc/"><b>Tenir le choc</b></a>, notre audit du risque informatique : ici vous répondez seul ; avec l'audit, nous vérifions chez vous, sur preuves, et nous chiffrons ce que coûterait une semaine d'arrêt.</p>
 <div class="cal ecran"><b>Vos réponses restent sur cet ordinateur.</b> Le calcul se fait dans votre navigateur : rien n'est transmis ni enregistré, et fermer la page efface tout. Une seule exception, et c'est vous qui la choisissez : le formulaire « être rappelé », sous le résultat. Nous recevons seulement ce que vous y écrivez. Votre résultat s'y ajoute si vous cochez la case prévue pour cela.</div>
 <div class="cal ecran"><b>Avant de commencer :</b> si vous ne savez pas répondre, choisissez « Je ne sais pas ». Le test la compte comme la réponse la plus risquée, parce qu'un point que personne ne connaît n'est en général pas protégé.</div>
 
@@ -197,7 +226,7 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
     <h2>Être rappelé pour l'entretien offert (facultatif)</h2>
     <div class="lpd lpd-avant">
       <p><b>Vos données, en bref, avant de remplir.</b> <b>Qui les reçoit :</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy. <b>Quoi :</b> ce que vous écrivez dans ce formulaire ; votre résultat seulement si vous cochez la case ; jamais le détail de vos réponses.</p>
-      <p><b>Pourquoi :</b> vous rappeler pour l'entretien demandé, rien d'autre. Pas de lettre d'information, aucune transmission à des tiers. <b>Où :</b> notre serveur en Suisse (Infomaniak). <b>Combien de temps :</b> effacées automatiquement 6 mois après votre demande au plus tard.</p>
+      <p><b>Pourquoi :</b> vous rappeler pour l'entretien demandé, rien d'autre. Pas de lettre d'information, aucune transmission à des tiers. <b>Où :</b> notre serveur et notre agenda, chez Infomaniak en Suisse. <b>Combien de temps :</b> effacées automatiquement 6 mois après votre demande au plus tard. Une copie de sauvegarde de notre agenda chez Infomaniak peut les garder jusqu&#x27;à 30 jours de plus.</p>
       <p><b>Vos droits :</b> pour savoir ce que nous avons gardé, le faire corriger ou effacer plus tôt, écrivez à jocelyn@ateliernaho.ch. Pour éviter qu'un robot envoie des centaines de demandes, nous gardons 24 heures, à part de votre demande, un code calculé à partir de votre connexion et de votre téléphone ou e-mail. Ce code ne permet pas de retrouver votre numéro ou votre adresse ; il est effacé ensuite.</p>
       <p>Cette page s'adresse aux entreprises établies en Suisse : le traitement suit la loi suisse sur la protection des données (LPD).</p>
     </div>
@@ -421,13 +450,13 @@ function construire() {
       const opts = q.o.map((t, k) => [t, k]).concat(q.na ? [[q.na, 0]] : [], [["Je ne sais pas", 3]]).map(([t, k]) =>
         `<label><input type="radio" name="${q.id}" value="${k}">${esc(t)}</label>`).join('');
       h += `<div class="q" id="bloc-${q.id}"><div><span class="num">${n}</span>${esc(q.q)}</div>` +
-           (q.aide ? `<div class="aide">${esc(q.aide)}</div>` : '') + `<div class="opts">${opts}</div></div>`;
+           (q.aide ? `<div class="aide">${esc(q.aide)}</div>` : '') + `<div class="opts n${q.o.length + (q.na ? 2 : 1)}">${opts}</div></div>`;
     });
     h += '</div>';
   });
   const u = QUESTION_UE;
   h += `<div class="dom"><h2>Une dernière question, qui ne compte pas dans le score</h2><div class="q"><div>${esc(u.q)}</div>` +
-       `<div class="opts">${u.o.map((t, k) => `<label><input type="radio" name="ue" value="${k}">${esc(t)}</label>`).join('')}</div></div></div>`;
+       `<div class="opts n${u.o.length}">${u.o.map((t, k) => `<label><input type="radio" name="ue" value="${k}">${esc(t)}</label>`).join('')}</div></div></div>`;
   document.getElementById('questionnaire').innerHTML = h;
 }
 
@@ -594,7 +623,7 @@ window.addEventListener('hashchange', () => { effacer(); exemple(); });
 <footer class="site"><div class="w">
 <img src="/logo.svg" alt="Atelier Naho">
 <p><b>Mentions légales.</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
-<p><b>Protection des données.</b> Cette page n'utilise aucun cookie. Le calcul se fait dans votre navigateur. Seul le formulaire « être rappelé », si vous l'envoyez, nous parvient ; il est gardé sur notre serveur en Suisse (Infomaniak) et effacé 6 mois après votre demande au plus tard.</p>
+<p><b>Protection des données.</b> Cette page n'utilise aucun cookie. Le calcul se fait dans votre navigateur. Seul le formulaire « être rappelé », si vous l'envoyez, nous parvient. Où il est gardé : notre serveur et notre agenda, chez Infomaniak en Suisse. Il est effacé 6 mois après votre demande au plus tard. Une copie de sauvegarde de notre agenda chez Infomaniak peut le garder jusqu&#x27;à 30 jours de plus.</p>
 </div></footer>
 <script id="rappel-script">
 /* Demande de rappel (version en ligne). Ne part qu'au clic sur « Envoyer ma demande », et seulement vers ce site.
