@@ -11,7 +11,7 @@
   var mention=de?'Wir zählen die Besuche mit GoatCounter, einem externen Dienst, der keine Cookies setzt und dessen Server in Finnland und Deutschland stehen. Ihr Browser verbindet sich dabei mit diesem Dienst, der dadurch Ihre IP-Adresse erhält.'
                 :"Nous comptons les visites avec GoatCounter, un service externe qui ne dépose aucun cookie et dont les serveurs sont en Finlande et en Allemagne. Votre navigateur s'y connecte, et ce service reçoit de ce fait votre adresse IP.";
   var s=document.getElementById('dsans');
-  if(s){ s.textContent=(de?'Diese Website verwendet weder Cookies noch Formulare. ':"Ce site n'utilise ni cookie ni formulaire. ")+mention; return; }
+  if(s){ s.textContent=(de?'Diese Website verwendet keine Cookies. ':"Ce site n'utilise aucun cookie. ")+mention; return; }  // 10.11.2026 : le formulaire de rappel est dit hors du span, juste après
   var f=document.querySelector('footer .w');
   if(f) f.appendChild(document.createTextNode(' '+mention));
 })();
