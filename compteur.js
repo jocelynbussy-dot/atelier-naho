@@ -1,6 +1,7 @@
 // Mesure des visites (GoatCounter, sans cookie), commune a l'accueil et aux exemples, FR et DE.
 // GC_CODE vide = aucune mesure, aucun appel. Meme methode que lebattoir.ch.
-// Les liens marques par canal s'ecrivent ?ref=mail, ?ref=linkedin, ?ref=qr
+// Les liens marques par canal s'ecrivent ?ref=mail, ?ref=linkedin, ?ref=qr ; depuis le 10.11.2026 aussi un code par entreprise
+// pour la prospection (?ref=tlc-01...), correspondance gardee dans le fichier du lot, dite dans la note de /autodiagnostic/
 (function(){
   var GC_CODE='coll1';
   if(!GC_CODE || !/(^|\.)ateliernaho\.ch$/.test(location.hostname)) return;
@@ -8,8 +9,8 @@
   g.setAttribute('data-goatcounter','https://'+GC_CODE+'.goatcounter.com/count'); document.head.appendChild(g);
   // La mention ne s'affiche que si la mesure est active.
   var de=document.documentElement.lang==='de';
-  var mention=de?'Wir zählen die Besuche mit GoatCounter, einem externen Dienst, der keine Cookies setzt und dessen Server in Finnland und Deutschland stehen. Ihr Browser verbindet sich dabei mit diesem Dienst, der dadurch Ihre IP-Adresse erhält.'
-                :"Nous comptons les visites avec GoatCounter, un service externe qui ne dépose aucun cookie et dont les serveurs sont en Finlande et en Allemagne. Votre navigateur s'y connecte, et ce service reçoit de ce fait votre adresse IP.";
+  var mention=de?'Wir zählen die Besuche mit GoatCounter, einem externen Dienst, der keine Cookies setzt und dessen Server in Finnland und Deutschland stehen. Ihr Browser verbindet sich dabei mit diesem Dienst, der dadurch Ihre IP-Adresse erhält. Er zählt die aufgerufene Seite, die Seite, von der Sie kommen, und die Grösse Ihres Bildschirms.'
+                :"Nous comptons les visites avec GoatCounter, un service externe qui ne dépose aucun cookie et dont les serveurs sont en Finlande et en Allemagne. Votre navigateur s'y connecte, et ce service reçoit de ce fait votre adresse IP. Il compte la page vue, la page d'où vous venez et la taille de votre écran.";
   var s=document.getElementById('dsans');
   if(s){ s.textContent=(de?'Diese Website verwendet keine Cookies. ':"Ce site n'utilise aucun cookie. ")+mention; return; }  // 10.11.2026 : le formulaire de rappel est dit hors du span, juste après
   var f=document.querySelector('footer .w');
