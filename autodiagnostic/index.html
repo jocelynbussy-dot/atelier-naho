@@ -9,6 +9,7 @@
 <meta name="description" content="19 questions, une dizaine de minutes : votre niveau de risque informatique, une barre par domaine et les trois points à régler d'abord. Gratuit, sans inscription, vos réponses restent sur votre ordinateur.">
 <link rel="canonical" href="https://ateliernaho.ch/autodiagnostic/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
 <style>
 :root{--encre:#1d1d1f;--fond:#fbfaf7;--bleu:#1f3a5f;--jaune:#f2c14e;--vert-pale:#eef3ea;--jaune-pale:#fff4d6;--gris:#777}
 body{font:17px/1.45 system-ui,Segoe UI,sans-serif;max-width:900px;margin:0 auto;padding:16px;color:var(--encre);background:var(--fond)}
@@ -142,6 +143,11 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
 <style>.passerelle{font-size:16px;background:var(--surface);border-radius:10px;padding:10px 14px}.passerelle a{color:var(--bleu)}</style>
 
 
+
+
+
+
+
 <style id="nav-naho">
 header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
 header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
@@ -166,7 +172,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <body>
 <header class="site"><div class="w">
 <a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho, retour à l'accueil"></a>
-<nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/">Tenir le choc</a><a href="/procedures/">Procédures</a><a href="/autodiagnostic/" aria-current="page">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
+<nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/">Tenir le choc</a><a href="/durabilite/">Durabilité</a><a href="/procedures/">Procédures</a><a href="/autodiagnostic/" aria-current="page">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
 <div class="droite"><span class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
 </div></header>
 <main class="page">
@@ -177,7 +183,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 </div>
 <p class="lead">19 questions, une dizaine de minutes. Vous obtenez un niveau de risque, une barre par domaine et les trois points à régler d'abord, sur une feuille à imprimer.</p>
 <p class="ecran passerelle">C'est la version rapide de <a href="/tenir-le-choc/"><b>Tenir le choc</b></a>, notre audit du risque informatique : ici vous répondez seul ; avec l'audit, nous vérifions chez vous, sur preuves, et nous écrivons avec vous la page rouge de votre manuel de crise.</p>
-<div class="cal ecran"><b>Vos réponses restent sur cet ordinateur.</b> Le calcul se fait dans votre navigateur : rien n'est transmis ni enregistré, et fermer la page efface tout. Une seule exception, et c'est vous qui la choisissez : le formulaire « être rappelé », sous le résultat. Nous recevons seulement ce que vous y écrivez. Votre résultat s'y ajoute si vous cochez la case prévue pour cela.</div>
+<div class="cal ecran"><b>Vos réponses restent sur cet ordinateur.</b> Le calcul se fait dans votre navigateur : vos réponses ne sont ni transmises ni enregistrées, et fermer la page les efface. Une seule exception, et c'est vous qui la choisissez : le formulaire « être rappelé », sous le résultat. Nous recevons seulement ce que vous y écrivez. Votre résultat s'y ajoute si vous cochez la case prévue pour cela.</div>
 <div class="cal ecran"><b>Avant de commencer :</b> si vous ne savez pas répondre, choisissez « Je ne sais pas ». Le test la compte comme la réponse la plus risquée, parce qu'un point que personne ne connaît n'est en général pas protégé.</div>
 
 <div id="questionnaire"></div>
@@ -232,7 +238,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
       <p>Cette page s'adresse aux entreprises établies en Suisse : le traitement suit la loi suisse sur la protection des données (LPD).</p>
     </div>
     <p class="note">Votre nom est obligatoire. Pour vous joindre, un téléphone <b>ou</b> un e-mail : l'un des deux suffit. Rien ne part tant que vous n'avez pas cliqué sur « Envoyer ma demande ».</p>
-    <form id="form-rappel" novalidate>
+    <form id="form-rappel" method="post" action="/rappel" novalidate>
       <label class="champ">Votre nom (obligatoire) <input type="text" name="nom" maxlength="80" autocomplete="name"></label>
       <label class="champ">Entreprise (facultatif) <input type="text" name="entreprise" maxlength="100" autocomplete="organization"></label>
       <label class="champ">Téléphone <input type="tel" name="tel" maxlength="30" autocomplete="tel"></label>
@@ -624,7 +630,7 @@ window.addEventListener('hashchange', () => { effacer(); exemple(); });
 <footer class="site"><div class="w">
 <img src="/logo.svg" alt="Atelier Naho">
 <p><b>Mentions légales.</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
-<p><b>Protection des données.</b> Cette page n'utilise aucun cookie. Le calcul se fait dans votre navigateur. Seul le formulaire « être rappelé », si vous l'envoyez, nous parvient. Où il est gardé : notre serveur et notre agenda, chez Infomaniak en Suisse. Il est effacé 6 mois après votre demande au plus tard. Une copie de sauvegarde de notre agenda chez Infomaniak peut le garder jusqu&#x27;à 30 jours de plus.</p>
+<p><b>Protection des données.</b> <span id="dsans">Cette page n'utilise aucun cookie.</span> Vos réponses restent dans votre navigateur, où se fait le calcul : elles ne nous parviennent jamais. Seul le formulaire « être rappelé », si vous l'envoyez, nous parvient avec vos coordonnées. Où il est gardé : notre serveur et notre agenda, chez Infomaniak en Suisse. Il est effacé 6 mois après votre demande au plus tard. Une copie de sauvegarde de notre agenda chez Infomaniak peut le garder jusqu&#x27;à 30 jours de plus. Si vous arrivez par le lien d'un de nos mails, ce lien porte un code propre à votre entreprise. Il nous dit que quelqu'un chez vous a ouvert cette page, et quand, pour savoir si notre message vous a intéressé. GoatCounter voit passer ce code sans savoir à qui il correspond ; la correspondance reste chez nous et est effacée 6 mois après l'envoi au plus tard. Pour ne pas être reconnu, effacez « ?ref=… » de l'adresse.</p>
 </div></footer>
 <script id="rappel-script">
 /* Demande de rappel (version en ligne). Ne part qu'au clic sur « Envoyer ma demande », et seulement vers ce site.
