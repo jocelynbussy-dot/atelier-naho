@@ -1,0 +1,219 @@
+<!doctype html>
+<!-- 09.11.2026, nuit : ecrite, NON PUBLIEE (absente de deploy.py). Relecteur neuf (R18) : A REPRENDRE, 10 defauts, rien de bloque ; reprise faite (prix au forfait, estimation partielle de l entretien, durees en estimation, limite de la restauration, tranche 21 a 50), non relue de nouveau. G0 publiee avant relecture OAV : decision de Jocelyn a la publication. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tenir le choc · Atelier Naho</title>
+<meta name="description" content="Si vos ordinateurs s'arrêtaient demain, combien coûterait une semaine ? Un audit de votre risque informatique, IA comprise, chiffré avec vos chiffres, pour les PME de 10 à 50 personnes.">
+<meta property="og:title" content="Tenir le choc · Atelier Naho">
+<meta property="og:description" content="Votre risque informatique, IA comprise, vérifié avec vos chiffres. Un audit au forfait, pas à l'heure.">
+<meta property="og:url" content="https://ateliernaho.ch/tenir-le-choc/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="fr_CH">
+<link rel="canonical" href="https://ateliernaho.ch/tenir-le-choc/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--fond:#ffffff;--surface:#F2F4F8;--encre:#111111;--doux:#56646a;--petrole:#203A71;--petrole-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--titre:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--petrole)}
+a:focus-visible{outline:3px solid var(--petrole);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.etroit{max-width:760px}
+header{padding:18px 0;border-bottom:1px solid var(--trait)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
+.hero{background:var(--petrole);color:#fff;padding:64px 0 56px}
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.tagline{color:#fff;opacity:.85;font-weight:600;font-size:17px;margin:0 0 14px}
+h1{font:800 clamp(30px,4.2vw,46px)/1.1 var(--titre);letter-spacing:-.01em;color:#fff;margin:0 0 18px;max-width:20em}
+.hero p{font-size:clamp(18px,2vw,20px);color:rgba(255,255,255,.9);margin:0 0 16px;max-width:36em}
+.hero p.rassure{font-size:17px;color:#fff;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:10px;margin-top:22px}
+.btn-sec{display:inline-block;color:#fff;border:2px solid #fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px;margin-top:6px}
+.btn-sec:hover{background:#fff;color:var(--petrole)}
+.illus{width:100%;height:auto;display:block}
+section{padding:60px 0}
+.bande{background:var(--surface)}
+h2{font:800 30px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin:0 0 22px}
+h3{font:800 21px/1.3 var(--titre);color:var(--petrole);margin:0 0 8px}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.chiffres li{border-top:3px solid var(--petrole);padding-top:14px}
+.chiffres b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
+.chiffres small{display:block;color:var(--doux);font-size:14px;margin-top:8px}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.trois li{background:#fff;border:1px solid var(--trait);border-radius:14px;padding:22px}
+.trois .n{display:block;font:800 34px/1.1 var(--titre);color:var(--petrole);margin-bottom:10px}
+.trois p{margin:0}
+.etapes{list-style:none;margin:0;padding:0}
+.etapes li{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--trait)}
+.etapes li:first-child{border-top:0;padding-top:0}
+.num{font:800 64px/1 var(--titre);letter-spacing:-.02em;color:var(--petrole)}
+.etapes p{margin:0 0 8px}
+.qui{color:var(--doux);font-size:15px}
+ul.q{margin:0 0 14px;padding-left:22px}
+ul.q li{margin-bottom:6px}
+.livre{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:12px 16px;margin:16px 0 0;color:var(--encre)}
+.livre b{color:var(--petrole)}
+.prix{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:0 0 18px;padding:0;list-style:none}
+.prix li{border-top:3px solid var(--petrole);padding-top:14px}
+.prix b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
+.eng{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin:0;padding:0;list-style:none}
+.eng b{display:block;color:var(--petrole)}
+.eng span{color:var(--doux)}
+.contact{background:var(--petrole);color:#fff;border-radius:18px;padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0;opacity:.9;font-size:18px}
+.contact .liens{white-space:nowrap}
+.contact .liens a{display:inline-block;color:var(--petrole);background:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;margin:4px 8px 4px 0}
+.contact .liens a.sec{background:transparent;color:#fff;border:2px solid #fff}
+.sources{font-size:14px;color:var(--doux)}
+.sources ol{padding-left:20px;margin:0}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux)}
+footer p{margin:0 0 6px;max-width:62ch}
+footer img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:860px){
+ .hero .w{grid-template-columns:1fr}.illus{max-width:440px;margin:0 auto}
+ .chiffres,.trois,.prix,.eng{grid-template-columns:1fr}
+ .etapes li{grid-template-columns:1fr;gap:4px}
+ .num{font-size:44px}
+ section{padding:44px 0}
+ .hero{padding:40px 0 40px}
+ .contact{padding:30px 22px;grid-template-columns:1fr}.contact .liens{white-space:normal}
+}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+@media (max-width:340px){.logo img{height:26px}header .w{gap:8px}.nav-cta{padding:5px 9px;font-size:14px}}
+@media print{.nav-cta,.contact .liens,.btn-sec{display:none}.hero{background:#fff;color:#111}.hero h1,.hero p,.tagline{color:#111}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho"></a>
+<a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a>
+</div></header>
+
+<div class="hero"><div class="w">
+<div>
+<p class="tagline">Tenir le choc · votre risque informatique, IA comprise</p>
+<h1>Si vos ordinateurs s'arrêtaient demain, combien coûterait une semaine ?</h1>
+<p>Vous avez sans doute une sauvegarde. La question est plutôt de savoir si elle se restaure, en combien de temps, et ce que l'entreprise fait pendant ce temps-là.</p>
+<p>Nous venons le vérifier avec vous, nous le chiffrons avec vos chiffres, et nous vous laissons une liste courte de gestes, dans l'ordre.</p>
+<p class="rassure">Pas de jargon, pas de peur : un chiffre, une note sur une feuille, et ce qu'il faut faire en premier.</p>
+<a class="btn-sec" href="/autodiagnostic/">Faire l'autodiagnostic, une dizaine de minutes</a>
+</div>
+<svg class="illus" viewBox="0 0 480 340" role="img" aria-label="Exemple fictif d'une note de risque d'une feuille : une jauge globale et une barre par domaine, sauvegarde, continuité, accès, mails et faux appels, IA en usage, données personnelles, assurance.">
+<g font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<rect x="20" y="14" width="440" height="312" rx="18" fill="#fff"/>
+<text x="44" y="50" font-size="16" font-weight="800" fill="#203A71">La note d'une feuille</text>
+<rect x="318" y="33" width="118" height="24" rx="12" fill="#F2F4F8"/><text x="377" y="50" text-anchor="middle" font-size="13" fill="#56646a">exemple fictif</text>
+<path d="M60 128 A50 50 0 0 1 160 128" fill="none" stroke="#D9DEE8" stroke-width="14" stroke-linecap="round"/>
+<path d="M60 128 A50 50 0 0 1 128 81" fill="none" stroke="#203A71" stroke-width="14" stroke-linecap="round"/>
+<text x="110" y="124" text-anchor="middle" font-size="22" font-weight="800" fill="#203A71">58</text>
+<text x="110" y="150" text-anchor="middle" font-size="12" fill="#56646a">sur 100</text>
+<text x="190" y="92" font-size="13" fill="#56646a">Pire cas chiffré</text>
+<text x="190" y="116" font-size="20" font-weight="800" fill="#111">une semaine d'arrêt</text>
+<text x="190" y="138" font-size="13" fill="#56646a">avec vos chiffres</text>
+<g font-size="13" fill="#111">
+<text x="44" y="186">Sauvegarde</text><rect x="210" y="176" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="176" width="88" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="206">Continuité</text><rect x="210" y="196" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="196" width="66" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="226">Accès</text><rect x="210" y="216" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="216" width="150" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="246">Mails, faux appels</text><rect x="210" y="236" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="236" width="128" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="266">IA en usage</text><rect x="210" y="256" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="256" width="100" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="286">Données personnelles</text><rect x="210" y="276" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="276" width="140" height="10" rx="5" fill="#203A71"/>
+<text x="44" y="306">Assurance</text><rect x="210" y="296" width="220" height="10" rx="5" fill="#D9DEE8"/><rect x="210" y="296" width="176" height="10" rx="5" fill="#203A71"/>
+</g>
+</g></svg>
+</div></div>
+
+<section><div class="w">
+<h2>Ce que montre une étude récente</h2>
+<ul class="chiffres">
+<li><b>90 %</b><span>des PME suisses de 1 à 49 personnes font des sauvegardes.</span></li>
+<li><b>27 %</b><span>testent régulièrement si ces sauvegardes se restaurent.</span></li>
+<li><b>28 %</b><span>ont un plan d'urgence écrit.</span></li>
+</ul>
+<p style="margin:22px 0 0;color:var(--doux);font-size:15px">Étude PME Cybersécurité 2026 de La Mobilière et de ses partenaires, soutenue par l'Office fédéral de la cybersécurité, 507 dirigeants de PME, publiée le 22.10.2026 <a href="#s1">[1]</a>. Une sauvegarde qui n'a jamais été restaurée, on ne sait pas encore ce qu'elle vaut.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<h2>À qui s'adresse cet audit</h2>
+<p>Aux entreprises romandes de <b>10 à 50 personnes</b> qui n'ont pas d'informaticien à plein temps. Souvent, un prestataire s'occupe des machines, et personne n'a vraiment le temps de vérifier ce qui se passerait le jour où tout s'arrête.</p>
+<p>Et aux entreprises où l'IA est déjà entrée, avec ou sans règle : un mail reformulé, un contrat résumé, une offre traduite. C'est utile, et c'est aussi une porte de plus à regarder.</p>
+<p style="color:var(--doux)">Vous êtes moins de 10 ? Écrivez-nous, nous verrons ensemble ce qui a du sens à votre taille.</p>
+</div></section>
+
+<section><div class="w">
+<h2>Ce que vous obtenez</h2>
+<ul class="trois">
+<li><span class="n">1</span><h3>Un chiffre</h3><p>L'ordre de grandeur de ce que coûterait une semaine d'arrêt, calculé avec vos chiffres : les jours que vous tenez sans ordinateurs, la marge et les salaires d'une journée. Vous en avez une première estimation dès l'entretien offert, sans les frais de reprise ; le chiffre complet vient avec la note.</p></li>
+<li><span class="n">2</span><h3>La note de risque</h3><p>Une seule feuille : une note globale, une barre pour chacun des 7 domaines, les 3 urgences, et le pire cas chiffré en entier, frais de reprise compris.</p></li>
+<li><span class="n">3</span><h3>Les gestes</h3><p>Les 5 gestes prioritaires, dans l'ordre : pour chacun, qui le fait (vous, votre prestataire ou nous), le temps ou le coût à prévoir, et une date visée.</p></li>
+</ul>
+<p class="livre"><b>Les 7 domaines :</b> la sauvegarde, la continuité de l'activité, les accès, les mails et les faux appels, l'IA en usage, les données personnelles, l'assurance. 43 questions, chaque réponse vérifiée sur une preuve que vous nous montrez.</p>
+<p class="livre"><b>Avec la note :</b> des règles d'une page sur l'usage de l'IA dans votre entreprise, et un plan de continuité rempli avec vous, qui dit ce qui s'arrête, combien de jours vous tenez, et qui fait quoi.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<h2>Comment ça se passe</h2>
+<ol class="etapes">
+<li><div class="num">0</div><div><h3>Un entretien offert</h3><p>30 minutes en visio avec vous. Six questions : combien de jours vous tenez sans ordinateurs, la marge et les salaires d'une journée, la dernière fois qu'une sauvegarde a été restaurée, s'il existe une copie hors du réseau, et un plan écrit.</p><p class="qui">Vous repartez avec une première estimation de ce que coûterait une semaine d'arrêt, sans les frais de reprise. Vous décidez ensuite si l'audit vous intéresse.</p></div></li>
+<li><div class="num">1</div><div><h3>Un sondage anonyme</h3><p>Huit questions à votre personnel, sur l'IA qu'ils utilisent et sur les mails et appels douteux qu'ils reçoivent. Anonyme, pour que chacun réponde franchement.</p><p class="qui">5 minutes par personne.</p></div></li>
+<li><div class="num">2</div><div><h3>Le relevé chez vous</h3><p>Nous passons la grille ligne par ligne, avec vous et la personne qui s'occupe de l'informatique. Vous nous montrez, nous notons. Et nous faisons un premier essai de restauration devant vous : vous choisissez un dossier, on chronomètre.</p><p class="qui">Environ une demi-journée.</p></div></li>
+<li><div class="num">3</div><div><h3>La note et les gestes</h3><p>Nous vous remettons la note d'une feuille et les gestes prioritaires, et nous en parlons ensemble.</p><p class="qui">30 minutes en visio. Du premier entretien à la remise, nous visons deux à trois semaines.</p></div></li>
+<li><div class="num">4</div><div><h3>Ensuite, à vous</h3><p>Les gestes, vous les faites vous-même, avec votre prestataire, ou avec nous quand c'est notre métier (règles sur l'IA, plan de continuité). Si vous le souhaitez, nous revenons chaque trimestre : une restauration devant vous, un court exercice de panne, la note remise à jour. Le prix de ce suivi dépend de ce qu'il y a à suivre chez vous : nous en parlons à la remise de la note.</p></div></li>
+</ol>
+</div></section>
+
+<section><div class="w etroit">
+<h2>Le prix de l'audit</h2>
+<ul class="prix">
+<li><b>1'500 francs</b><span>jusqu'à 20 personnes</span></li>
+<li><b>2'500 francs</b><span>de 21 à 50 personnes</span></li>
+</ul>
+<p>Hors TVA. Un forfait annoncé avant de commencer, pas un décompte d'heures. L'entretien de 30 minutes est offert et ne vous engage à rien.</p>
+<!-- 10.11.2026, decision de Jocelyn : encadre G0 retire jusqu a l avis de la permanence OAV. A remettre tel quel apres :
+<p class="livre"><b>Si la note ne vous apprend rien, l'audit vous est remboursé.</b> Si, à la remise de la note, aucun des points rouges ou orange ne vous était inconnu, vous nous le dites par écrit dans les 14 jours, en nommant les points que vous connaissiez déjà, et nous vous remboursons l'audit. Une fois par entreprise ; ce remboursement ne s'applique pas si vous prenez ensuite un suivi avec nous.</p>
+-->
+</div></section>
+
+<section class="bande"><div class="w">
+<h2>Ce que nous promettons, et ce que nous ne promettons pas</h2>
+<ul class="eng">
+<li><b>Nous notons ce qui a été vérifié, et quand</b><span>Chaque point de la note dit ce qui a été montré le jour du relevé. Un point vert veut dire : fait et montré ce jour-là.</span></li>
+<li><b>Nous ne gardons pas vos données</b><span>Vous ouvrez vos systèmes, nous regardons et nous notons. Nous ne copions ni ne conservons aucune donnée personnelle de votre entreprise.</span></li>
+<li><b>Nous ne promettons pas qu'il n'arrivera rien</b><span>Personne ne peut garantir qu'une entreprise ne sera jamais attaquée ni qu'une panne n'arrivera pas. Un essai de restauration sur un dossier ne prouve pas non plus que toutes vos données se récupéreront. Nous vous disons où vous en êtes et par quoi commencer.</span></li>
+<li><b>Nous ne vous disons pas si vous respectez la loi</b><span>Nous situons les points de la loi sur la protection des données qui vous concernent, et nous vous indiquons ceux qui méritent l'avis d'un avocat. Ce n'est pas un avis juridique.</span></li>
+<li><b>Pas de test d'intrusion</b><span>Nous ne lançons ni scan ni attaque simulée. Si un tel test vous serait utile, nous vous le disons, et un spécialiste le fait.</span></li>
+<li><b>Pas de surveillance jour et nuit</b><span>C'est le métier d'un prestataire informatique. Nous ne le remplaçons pas, nous travaillons avec lui.</span></li>
+</ul>
+</div></section>
+
+<section style="padding-top:60px"><div class="w">
+<div class="contact">
+<div><h2>Commencer par 30 minutes</h2><p>Un entretien en visio, offert : vous repartez avec une première estimation de ce que coûterait une semaine d'arrêt chez vous.</p></div>
+<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+</div>
+<p style="margin:26px 0 0"><a href="/autodiagnostic/">Vous préférez d'abord vous faire une idée seul ? L'autodiagnostic, 19 questions, une dizaine de minutes</a></p>
+<p style="margin:8px 0 0"><a href="/ia-chez-vous/">L'IA est déjà chez vous : poser un cadre</a></p>
+</div></section>
+
+<section class="sources"><div class="w">
+<p><b>Source</b> (consultée le 09.11.2026). Cette page décrit notre méthode ; elle ne remplace ni un avis juridique ni l'avis de votre assureur.</p>
+<ol>
+<li id="s1">La Mobilière et partenaires, avec le soutien de l'OFCS, Étude PME Cybersécurité 2026, 22.10.2026 : <a href="https://www.cyberstudie.ch">cyberstudie.ch</a> et <a href="https://www.mobiliere.ch/etude/cybersecurite-suisse">mobiliere.ch</a></li>
+</ol>
+</div></section>
+
+<footer><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Mentions légales.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
+<p><b>Protection des données.</b> Cette page n'utilise aucun cookie. Seul formulaire : la demande de rappel de l'<a href="/autodiagnostic/">autodiagnostic</a>, gardée 6 mois au plus sur notre serveur en Suisse. Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
+</div></footer>
+</body>
+</html>
