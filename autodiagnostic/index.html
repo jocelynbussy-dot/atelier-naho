@@ -69,25 +69,31 @@ input.nom{font:inherit;padding:5px 8px;border:1px solid #ccc;border-radius:6px;w
 .rappel #rappel-etat.non{color:var(--rouge)}
 .lpd{font-size:14px;color:#333;border-top:1px solid var(--trait);margin-top:14px;padding-top:8px}
 .lpd p{margin:4px 0}
+.lpd.lpd-avant{border-top:0;border-bottom:1px solid var(--trait);margin:4px 0 10px;padding:0 0 8px}
 @media print{
-  @page{size:A4;margin:12mm}
+  @page{size:A4;margin:10mm}
   body{background:#fff;font-size:12.5px;padding:0;max-width:none}
   #questionnaire,.barre-bas,.ecran,button,body>.entete,body>.lead{display:none!important}
-  .barres svg{max-height:185px}
+  .barres svg{max-height:160px}
   .jauge-bloc{gap:12px;flex-wrap:nowrap}
   .urg .geste{font-size:11.5px;margin-top:1px}
   .mention{font-size:10px;margin:4px 0 0}
+  #ue{font-size:12px}
   .note{font-size:12px}
   #resultat{display:block!important;margin:0}
   .seulement-imprime{display:block}
-  .carte{border:1px solid #999;padding:8px 12px;margin:6px 0;break-inside:avoid}
-  .jauge-bloc svg{width:200px;flex:none}
+  .carte{border:1px solid #999;padding:6px 12px;margin:5px 0;break-inside:avoid}
+  .jauge-bloc svg{width:170px;flex:none}
   #jauge{flex:none}
   .verdict{font-size:18px}
   h2{font-size:15px;margin:.4em 0 .2em}
-  .urg{padding:4px 0}
+  .urg{padding:3px 0}
+  .urg b{font-size:13px}
+  .urg .note{font-size:11px;margin:0}
   .urg .picto{width:28px;height:28px}
-  .invit{background:#fff;color:#000;border:2px solid #000;padding:8px 12px}
+  .invit{background:#fff;color:#000;border:2px solid #000;padding:6px 12px;font-size:12px;margin-top:6px}
+  #note-cle{font-size:11px;margin:2px 0 0}
+  /* La feuille tient sur une seule page A4 : mesurée le 10.11.2026 en PDF sur les trois exemples (faible, moyen, élevé avec UE). */
   .invit a{color:#000}
 }
 /* 10.11.2026 : style du site (Outputs/atelier-naho-site/STYLE.md), posé par gen_site.py */
@@ -125,7 +131,8 @@ footer.site{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px
 footer.site p{margin:0 0 6px;max-width:62ch}
 footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
 @media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
-@media print{header.site,footer.site{display:none!important}.page{padding:0;max-width:none}h1{margin:0}}
+/* Impression : l'habillage met le titre et l'intro dans <main class="page"> ; la règle « body>.entete » de la page ne les voit plus, on les cache ici (feuille sur une seule page A4). */
+@media print{header.site,footer.site,.page>.entete,.page>.lead{display:none!important}.page{padding:0;max-width:none}h1{margin:0}}
 </style>
 </head>
 <body>
@@ -140,14 +147,15 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
   <span class="marque">Atelier Naho</span>
 </div>
 <p class="lead">19 questions, une dizaine de minutes. Vous obtenez un niveau de risque, une barre par domaine et les trois points à régler d'abord, sur une feuille à imprimer.</p>
-<div class="cal ecran"><b>Vos réponses restent sur cet ordinateur.</b> Le calcul se fait dans votre navigateur : rien n'est transmis ni enregistré, fermer la page efface tout. Seule exception, si vous la choisissez : sous le résultat, vous pouvez demander à être rappelé, et seul ce que vous mettez dans ce formulaire nous parvient, et votre résultat si vous cochez la case prévue. Si vous ne savez pas répondre, choisissez « je ne sais pas » : c'est une réponse utile.</div>
+<div class="cal ecran"><b>Vos réponses restent sur cet ordinateur.</b> Le calcul se fait dans votre navigateur : rien n'est transmis ni enregistré, et fermer la page efface tout. Une seule exception, et c'est vous qui la choisissez : le formulaire « être rappelé », sous le résultat. Nous recevons seulement ce que vous y écrivez. Votre résultat s'y ajoute si vous cochez la case prévue pour cela.</div>
+<div class="cal ecran"><b>Avant de commencer :</b> si vous ne savez pas répondre, choisissez « Je ne sais pas ». Le test la compte comme la réponse la plus risquée, parce qu'un point que personne ne connaît n'est en général pas protégé.</div>
 
 <div id="questionnaire"></div>
 
 <div class="barre-bas">
   <span class="compte" id="compte">0 réponse sur 19</span>
   <button onclick="montrer()">Voir mon résultat</button>
-  <button class="sec" onclick="effacer()">Tout effacer</button>
+  <button class="sec" onclick="if (confirm('Effacer toutes vos réponses ? On ne peut pas revenir en arrière.')) effacer()">Tout effacer</button>
 </div>
 
 <section id="resultat" aria-live="polite">
@@ -169,6 +177,7 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
   <div class="carte barres">
     <h2>Par domaine</h2>
     <div id="barres"></div>
+    <p class="note" id="note-cle" style="display:none">« Point clé » : une seule réponse à ce point suffit à mettre le domaine en « urgent », parce qu'elle peut causer à elle seule un gros dégât (par exemple pas de sauvegarde du tout).</p>
   </div>
 
   <div class="carte">
@@ -180,31 +189,31 @@ footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
 
   <div class="invit">
     <b>Un entretien offert pour reprendre ce résultat avec vous.</b><br>
-    30 minutes en visio. On chiffre avec vos chiffres ce que vous coûterait une semaine d'arrêt, et on reprend vos trois points. Vous gardez la feuille, que vous fassiez appel à nous ou non.<br>
+    30 minutes en appel vidéo, depuis votre ordinateur (Teams, Zoom ou autre, selon ce que vous avez). On calcule avec vos chiffres ce que vous coûterait une semaine d'arrêt, et on reprend vos trois points. Vous gardez la feuille, que vous fassiez appel à nous ou non.<br>
     Atelier Naho · Jocelyn Bussy · <a href="mailto:jocelyn@ateliernaho.ch">jocelyn@ateliernaho.ch</a> · ateliernaho.ch
   </div>
 
   <div class="carte rappel ecran" id="rappel">
     <h2>Être rappelé pour l'entretien offert (facultatif)</h2>
-    <p class="note">Laissez un moyen de vous joindre. Rien ne part tant que vous n'avez pas cliqué sur « Envoyer ma demande ».</p>
+    <div class="lpd lpd-avant">
+      <p><b>Vos données, en bref, avant de remplir.</b> <b>Qui les reçoit :</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy. <b>Quoi :</b> ce que vous écrivez dans ce formulaire ; votre résultat seulement si vous cochez la case ; jamais le détail de vos réponses.</p>
+      <p><b>Pourquoi :</b> vous rappeler pour l'entretien demandé, rien d'autre. Pas de lettre d'information, aucune transmission à des tiers. <b>Où :</b> notre serveur en Suisse (Infomaniak). <b>Combien de temps :</b> effacées automatiquement 6 mois après votre demande au plus tard.</p>
+      <p><b>Vos droits :</b> pour savoir ce que nous avons gardé, le faire corriger ou effacer plus tôt, écrivez à jocelyn@ateliernaho.ch. Pour éviter qu'un robot envoie des centaines de demandes, nous gardons 24 heures, à part de votre demande, un code calculé à partir de votre connexion et de votre téléphone ou e-mail. Ce code ne permet pas de retrouver votre numéro ou votre adresse ; il est effacé ensuite.</p>
+      <p>Cette page s'adresse aux entreprises établies en Suisse : le traitement suit la loi suisse sur la protection des données (LPD).</p>
+    </div>
+    <p class="note">Votre nom est obligatoire. Pour vous joindre, un téléphone <b>ou</b> un e-mail : l'un des deux suffit. Rien ne part tant que vous n'avez pas cliqué sur « Envoyer ma demande ».</p>
     <form id="form-rappel" novalidate>
-      <label class="champ">Votre nom <input type="text" name="nom" maxlength="80" autocomplete="name"></label>
+      <label class="champ">Votre nom (obligatoire) <input type="text" name="nom" maxlength="80" autocomplete="name"></label>
       <label class="champ">Entreprise (facultatif) <input type="text" name="entreprise" maxlength="100" autocomplete="organization"></label>
       <label class="champ">Téléphone <input type="tel" name="tel" maxlength="30" autocomplete="tel"></label>
-      <label class="champ">ou e-mail <input type="email" name="email" maxlength="120" autocomplete="email"></label>
+      <label class="champ">ou e-mail (l'un des deux suffit) <input type="email" name="email" maxlength="120" autocomplete="email"></label>
       <label class="champ">Le meilleur moment pour vous appeler <select name="moment"><option value="">indifférent</option><option value="matin">le matin</option><option value="apres-midi">l'après-midi</option></select></label>
       <div class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
       <label class="case large"><input type="checkbox" name="joindre" value="1"> <span>Joindre mon résultat : le niveau, la couleur de chaque domaine et les trois points à régler. Le détail de mes réponses n'est jamais envoyé.</span></label>
-      <label class="case large"><input type="checkbox" name="accord" value="1"> <span>J'accepte que ces informations servent à me rappeler pour cet entretien, selon l'information ci-dessous.</span></label>
+      <label class="case large"><input type="checkbox" name="accord" value="1"> <span>J'accepte que ces informations servent à me rappeler pour cet entretien, selon l'information ci-dessus.</span></label>
       <p class="large"><button type="submit" id="rappel-envoyer">Envoyer ma demande</button></p>
       <p class="large" id="rappel-etat" role="status" aria-live="polite"></p>
     </form>
-    <div class="lpd">
-      <p><b>Vos données, en bref.</b> <b>Qui les reçoit :</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy. <b>Quoi :</b> ce que vous écrivez dans ce formulaire ; votre résultat seulement si vous cochez la case ; jamais le détail de vos réponses.</p>
-      <p><b>Pourquoi :</b> vous rappeler pour l'entretien demandé, rien d'autre. Pas de lettre d'information, aucune transmission à des tiers. <b>Où :</b> notre serveur en Suisse (Infomaniak). <b>Combien de temps :</b> effacées automatiquement 6 mois après votre demande au plus tard.</p>
-      <p><b>Vos droits :</b> pour savoir ce que nous avons gardé, le faire corriger ou effacer plus tôt, écrivez à jocelyn@ateliernaho.ch. Pour limiter les envois abusifs, une empreinte brouillée de votre connexion et de votre téléphone ou e-mail (pas l'adresse en clair) est gardée 24 heures, à part de votre demande, puis effacée.</p>
-      <p>Cette page s'adresse aux entreprises établies en Suisse : le traitement suit la loi suisse sur la protection des données (LPD).</p>
-    </div>
   </div>
 
   <p class="mention">Ce test donne une première idée à partir de vos seules réponses. Il ne vérifie rien sur vos appareils, ne remplace pas une analyse sur place et ne garantit aucun niveau de sécurité. Les références à la loi suisse sur la protection des données (LPD) sont données à titre d'information, pas comme un avis juridique. Pour aller plus loin seul, l'Alliance Sécurité Digitale Suisse publie un contrôle gratuit plus complet (Cybersecurity-Check pour les PME, 78 questions) sur digitalsecurityswitzerland.ch.</p>
@@ -233,11 +242,12 @@ const DOMAINES = [
 const QUESTIONS = [
   {id: 's1', grille: 'S1', d: 'sauvegarde', w: 3, critique: true,
    q: "Vos données (comptabilité, dossiers clients, mails) sont-elles sauvegardées automatiquement ?",
+   aide: "Si votre comptabilité ou vos mails sont dans un logiciel en ligne (par exemple bexio, Microsoft 365, ou chez votre fiduciaire), demandez au fournisseur s'il en garde des copies chaque jour. Si oui, cela compte comme « Oui, chaque jour ».",
    o: ["Oui, chaque jour, sans y penser", "Oui, mais à la main ou de temps en temps", "Non"],
    urg: {t: "Mettre en place une sauvegarde automatique", g: "Une copie chaque nuit, sans que personne n'ait à y penser. Sans elle, une panne de disque ou un virus peut emporter des années de travail."}},
   {id: 's2', grille: 'S2', d: 'sauvegarde', w: 3, critique: true,
    q: "Une copie est-elle gardée hors de vos locaux, ou débranchée du réseau ?",
-   aide: "Un virus qui chiffre vos fichiers chiffre aussi le disque de sauvegarde branché en permanence.",
+   aide: "Certains virus verrouillent vos fichiers pour réclamer une rançon : ils les rendent illisibles. Ils verrouillent aussi le disque de sauvegarde s'il reste branché en permanence. Si toutes vos copies sont chez votre fournisseur de logiciel en ligne, et nulle part ailleurs, répondez « Seulement dans un service en ligne ».",
    o: ["Oui, une copie est hors ligne ou ailleurs", "Seulement dans un service en ligne (cloud)", "Non, tout est au même endroit"],
    urg: {t: "Garder une copie hors d'atteinte", g: "Une copie débranchée ou dans un autre lieu, que l'attaque ne peut pas toucher. Elle aide à repartir sans devoir payer une rançon pour récupérer ses fichiers."}},
   {id: 's3', grille: 'S4', d: 'sauvegarde', w: 3, critique: true,
@@ -248,31 +258,32 @@ const QUESTIONS = [
   {id: 'c1', grille: 'C2', d: 'continuite', w: 3, critique: true,
    q: "Si internet tombe une journée, que peut-on encore faire ?",
    o: ["Presque tout", "Une partie du travail", "Presque rien"],
-   urg: {t: "Savoir travailler sans internet", g: "Repérer les deux ou trois tâches qui doivent tenir (facturer, servir un client) et prévoir comment les faire hors ligne, ou avec le partage de connexion d'un téléphone."}},
+   urg: {t: "Savoir travailler sans internet", g: "Repérer les deux ou trois tâches qui doivent tenir (facturer, servir un client) et prévoir comment les faire hors ligne, ou en passant par internet d'un téléphone portable (le « partage de connexion », prévu sur tous les téléphones récents)."}},
   {id: 'c2', grille: 'C1', d: 'continuite', w: 2,
    q: "Si l'ordinateur principal ou le serveur tombe en panne ce matin, en combien de temps repartez-vous ?",
    o: ["Dans la journée", "En quelques jours", "Je n'en ai aucune idée"],
-   urg: {t: "Savoir en combien de temps on repart", g: "Écrire ce qu'il faut pour remettre en route le poste principal (où est la sauvegarde, qui appeler, quel matériel de remplacement) et viser un délai."}},
+   urg: {t: "Savoir en combien de temps on repart", g: "Écrire ce qu'il faut pour remettre en route l'ordinateur principal (où est la sauvegarde, qui appeler, quel matériel de remplacement) et viser un délai."}},
   {id: 'c3', grille: 'C3', d: 'continuite', w: 2,
    q: "Avez-vous une feuille qui dit qui appeler et quoi faire en cas d'attaque ou de grosse panne ?",
    o: ["Oui, à jour et connue", "C'est dans la tête de quelqu'un", "Non"],
    urg: {t: "Écrire le plan de crise sur une page", g: "Qui appeler (informaticien, assurance, banque), quoi débrancher, qui prévenir. Une page imprimée, rangée là où on la trouve même si les ordinateurs ne marchent plus."}},
   {id: 'c4', grille: 'C7', d: 'continuite', w: 1,
-   q: "Une seule personne connaît-elle les codes et le fonctionnement de l'informatique ?",
-   o: ["Non : au moins deux personnes, ou tout est noté et rangé", "Une seule personne, et c'est noté en partie", "Une seule personne, et rien n'est noté"],
-   urg: {t: "Ne pas dépendre d'une seule personne", g: "Noter les accès essentiels dans un coffre à mots de passe partagé avec une deuxième personne de confiance."}},
+   q: "Au moins deux personnes savent-elles faire marcher l'informatique (mots de passe, comptes, qui appeler) ?",
+   o: ["Oui, au moins deux, ou tout est noté et rangé", "Une seule, et c'est noté en partie", "Une seule, et rien n'est noté"],
+   urg: {t: "Ne pas dépendre d'une seule personne", g: "Noter les accès essentiels dans un coffre à mots de passe (un petit logiciel qui garde tous les codes sous clé, derrière un seul mot de passe), partagé avec une deuxième personne de confiance."}},
 
   {id: 'a1', grille: 'A2', d: 'acces', w: 2,
-   q: "Chaque collaborateur a-t-il son propre compte, ou partage-t-on des identifiants ?",
+   q: "Chaque collaborateur a-t-il son propre compte (son nom d'utilisateur et son mot de passe), ou partage-t-on les mêmes ?",
    o: ["Chacun le sien", "Quelques comptes partagés", "Beaucoup de comptes partagés"],
    urg: {t: "Un compte par personne", g: "Avec un compte partagé, on ne sait pas qui a fait quoi et on ne peut pas couper l'accès d'une seule personne."}},
   {id: 'a2', grille: 'A1', d: 'acces', w: 3, critique: true,
-   q: "La double authentification (un code sur le téléphone) est-elle activée sur la messagerie et la banque en ligne ?",
-   o: ["Oui, partout", "Sur une partie seulement", "Non"],
+   q: "Sur vos comptes importants, comme la messagerie ou la banque en ligne, faut-il un code reçu sur le téléphone en plus du mot de passe (la « double authentification ») ?",
+   o: ["Oui, sur tous", "Sur une partie seulement", "Non"],
    urg: {t: "Activer la double authentification", g: "Sur la messagerie d'abord, puis la banque et les outils en ligne. Un mot de passe volé ne suffit alors plus pour entrer."}},
   {id: 'a3', grille: 'A3', d: 'acces', w: 2,
    q: "Quand quelqu'un quitte l'entreprise, ses accès sont-ils coupés le jour même ?",
    o: ["Oui, toujours", "Parfois avec du retard", "Non, ou je ne vérifie pas"],
+   na: "Personne n'est encore parti",
    urg: {t: "Couper les accès au départ", g: "Une liste des comptes de chaque personne, et une heure le dernier jour pour les fermer ou changer les mots de passe."}},
   {id: 'a4', grille: 'A5', d: 'acces', w: 2,
    q: "Les mises à jour des ordinateurs, téléphones et programmes se font-elles automatiquement ?",
@@ -286,15 +297,17 @@ const QUESTIONS = [
   {id: 'm2', grille: 'M1', d: 'mails', w: 3, critique: true,
    q: "Quand un fournisseur annonce un nouveau compte bancaire, vérifiez-vous par téléphone, à un numéro que vous connaissez déjà, avant de payer ?",
    o: ["Toujours", "Parfois", "Non"],
-   urg: {t: "Vérifier tout changement de compte bancaire", g: "Une règle simple : un nouvel IBAN se confirme par un appel au numéro habituel, jamais à celui donné dans le mail. C'est une arnaque courante, qui commence par un mail ou un appel bien imité."}},
+   urg: {t: "Vérifier tout changement de compte bancaire", g: "Une règle simple : un nouveau numéro de compte (IBAN) se confirme par un appel au numéro habituel, jamais à celui donné dans le mail. C'est une arnaque courante, qui commence par un mail ou un appel bien imité."}},
 
   {id: 'i1', grille: 'I1', d: 'ia', w: 3,
    q: "Savez-vous quels outils d'IA (ChatGPT, Copilot, Gemini…) vos collaborateurs utilisent, et avec quel compte ?",
-   o: ["Oui, avec des comptes de l'entreprise", "En partie", "Non"],
+   o: ["Oui, avec des comptes payés par l'entreprise (version professionnelle)", "En partie", "Non"],
+   na: "Personne n'utilise d'IA chez nous",
    urg: {t: "Savoir qui utilise l'IA, et avec quel compte", g: "Un tour de l'équipe en dix minutes. Un compte personnel gratuit peut garder ce qu'on y colle et s'en servir, selon ses conditions."}},
   {id: 'i2', grille: 'I2', d: 'ia', w: 2,
    q: "Existe-t-il une règle écrite sur ce qu'on peut coller dans ces outils (données clients, salaires, contrats) ?",
    o: ["Oui, une règle écrite et connue", "Une consigne orale", "Non"],
+   na: "Personne n'utilise d'IA chez nous",
    urg: {t: "Une règle d'une page sur l'IA", g: "Ce qu'on peut y mettre, ce qu'on n'y met jamais, avec quel compte. Une page lue par tous suffit pour commencer."}},
 
   {id: 'd1', grille: 'D1', d: 'donnees', w: 3,
@@ -307,14 +320,15 @@ const QUESTIONS = [
    o: ["Oui, c'est écrit et à jour", "Il existe un texte, pas à jour", "Non"],
    urg: {t: "Informer vos clients sur leurs données", g: "Un texte clair sur le site et dans les offres : ce que vous gardez, pourquoi, combien de temps, chez qui. La loi suisse le demande."}},
   {id: 'd3', grille: 'D2', d: 'donnees', w: 2, critique: true,
-   q: "Savez-vous ce qu'il faut faire si des données personnelles fuient (annonce au Préposé fédéral, information des personnes) ?",
+   q: "Savez-vous ce qu'il faut faire si des données personnelles fuient (qui prévenir, dans quel délai) ?",
+   aide: "En Suisse, une fuite grave s'annonce au Préposé fédéral à la protection des données, l'autorité qui veille au respect de la loi, et parfois aussi aux personnes touchées.",
    o: ["Oui", "Vaguement", "Non"],
-   urg: {t: "Savoir quoi faire en cas de fuite", g: "Une fuite qui présente un risque élevé pour les personnes s'annonce au Préposé fédéral à la protection des données. Le noter dans le plan de crise."}},
+   urg: {t: "Savoir quoi faire en cas de fuite", g: "Une fuite qui présente un risque élevé pour les personnes s'annonce au plus vite au Préposé fédéral à la protection des données (l'autorité suisse qui veille au respect de la loi). Le noter dans le plan de crise, avec qui s'en charge."}},
 
   {id: 'x1', grille: 'R1+R2', d: 'assurance', w: 2,
-   q: "Avez-vous une assurance cyber, et savez-vous ce qu'elle exige de vous ?",
+   q: "Avez-vous une assurance contre les attaques informatiques (assurance « cyber ») ?",
    aide: "Certains contrats posent des conditions (par exemple une sauvegarde hors ligne), et la prestation peut être réduite si elles ne sont pas tenues.",
-   o: ["Oui, et nous remplissons ses conditions", "Oui, mais je ne connais pas ses conditions", "Non"],
+   o: ["Oui, et nous remplissons ses conditions", "Oui, mais je ne connais pas ses conditions", "Non, pas d'assurance cyber"],
    urg: {t: "Vérifier l'assurance et ses conditions", g: "Relire le contrat, ou demander à votre assureur ce qu'il couvre et ce qu'il exige. Si on ne remplit pas ses conditions, l'assurance peut réduire ce qu'elle paie."}}
 ];
 
@@ -403,7 +417,8 @@ function construire() {
     h += `<div class="dom"><h2>${picto(d.id)}${esc(d.nom)}</h2>`;
     QUESTIONS.filter(q => q.d === d.id).forEach(q => {
       n++;
-      const opts = q.o.concat(["Je ne sais pas"]).map((t, k) =>
+      /* q.na : réponse « sans objet » (personne n'utilise d'IA, personne n'est parti), comptée comme la plus sûre (valeur 0). */
+      const opts = q.o.map((t, k) => [t, k]).concat(q.na ? [[q.na, 0]] : [], [["Je ne sais pas", 3]]).map(([t, k]) =>
         `<label><input type="radio" name="${q.id}" value="${k}">${esc(t)}</label>`).join('');
       h += `<div class="q" id="bloc-${q.id}"><div><span class="num">${n}</span>${esc(q.q)}</div>` +
            (q.aide ? `<div class="aide">${esc(q.aide)}</div>` : '') + `<div class="opts">${opts}</div></div>`;
@@ -435,7 +450,7 @@ function arc(cx, cy, r, f0, f1) {
 function jauge(score, niveau) {
   const cx = 150, cy = 150, r = 110, f = score / 100;
   const segs = [[0, SEUILS.moyen / 100, 'faible', 'faible'], [SEUILS.moyen / 100, SEUILS.eleve / 100, 'moyen', 'moyen'], [SEUILS.eleve / 100, 1, 'eleve', 'élevé']];
-  let s = `<svg viewBox="0 0 300 195" role="img" aria-label="${MOT_GLOBAL[niveau]}, ${score} sur 100">`;
+  let s = `<svg viewBox="0 0 300 212" role="img" aria-label="${MOT_GLOBAL[niveau]}, ${score} points de risque sur 100">`;
   segs.forEach(([a, b, k, mot]) => {
     s += `<path d="${arc(cx, cy, r, a + .004, b - .004)}" stroke="${COUL[k]}" stroke-width="26" fill="none" opacity="${k === niveau ? 1 : .35}"/>`;
     const [tx, ty] = pointArc(cx, cy, r + 26, (a + b) / 2);
@@ -445,6 +460,7 @@ function jauge(score, niveau) {
   s += `<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="#1d1d1f" stroke-width="4" stroke-linecap="round"/>`;
   s += `<circle cx="${cx}" cy="${cy}" r="8" fill="#1d1d1f"/>`;
   s += `<text x="${cx}" y="${cy + 34}" text-anchor="middle" font-size="22" font-weight="700" fill="#1d1d1f">${score} sur 100</text>`;
+  s += `<text x="${cx}" y="${cy + 54}" text-anchor="middle" font-size="13" fill="#444">points de risque : plus c'est haut, plus c'est risqué</text>`;
   return s + '</svg>';
 }
 function barres(doms) {
@@ -514,6 +530,7 @@ function montrer() {
     (r.releve ? " Le score seul serait « faible », mais un domaine est au rouge à cause d'un point qui suffit à causer un gros dégât : le niveau est relevé à « moyen »." : '') +
     (r.repondues < r.total ? ` (Calculé sur ${r.repondues} réponses sur ${r.total}.)` : '');
   document.getElementById('barres').innerHTML = barres(r.domaines);
+  document.getElementById('note-cle').style.display = r.domaines.some(d => d.force) ? 'block' : 'none';
   document.getElementById('urgents').innerHTML = r.urgents.length ? r.urgents.map((u, i) =>
     `<div class="urg">${picto(u.domaine)}<div><b>${i + 1}. ${esc(u.titre)}</b>` +
     (u.inconnu ? '<span class="note">Vous avez répondu « je ne sais pas » : c\'est déjà un signal.</span>' : '') +
@@ -522,15 +539,20 @@ function montrer() {
   const ue = document.getElementById('ue');
   if (r.ue) {
     ue.style.display = 'block';
-    ue.innerHTML = "<b>Clients dans l'Union européenne :</b> en plus de la loi suisse, le règlement européen (RGPD) peut s'appliquer à vous pour ces personnes. On le regarde ensemble à l'entretien.";
+    ue.innerHTML = "<b>Clients dans l'Union européenne :</b> en plus de la loi suisse, la loi européenne sur la protection des données (le RGPD) peut s'appliquer à vous pour ces personnes. On le regarde ensemble à l'entretien.";
   } else ue.style.display = 'none';
+  ligneNom();
+  const res = document.getElementById('resultat');
+  res.classList.add('vu');
+  res.scrollIntoView({behavior: 'smooth'});
+}
+
+/* Ligne « nom · rempli le … » de la feuille : refaite à chaque lettre tapée, pas seulement au calcul du résultat. */
+function ligneNom() {
   const nom = document.getElementById('nom').value.trim();
   const d = new Date();
   document.getElementById('ligne-nom').textContent = (nom ? nom + ' · ' : '') + 'rempli le ' +
     String(d.getDate()).padStart(2, '0') + '.' + String(d.getMonth() + 1).padStart(2, '0') + '.' + d.getFullYear();
-  const res = document.getElementById('resultat');
-  res.classList.add('vu');
-  res.scrollIntoView({behavior: 'smooth'});
 }
 
 function effacer() {
@@ -560,6 +582,7 @@ function exemple() {
 
 construire();
 document.addEventListener('change', lire);
+document.getElementById('nom').addEventListener('input', ligneNom);
 lire();
 exemple();
 window.addEventListener('resize', rebarres);
@@ -629,6 +652,13 @@ function manqueRappel(champs) {
   // Après un envoi réussi, le bouton reste grisé (pas de double envoi) jusqu'à ce qu'on modifie un champ.
   f.addEventListener('input', () => {
     if (bouton.disabled && etat.className === 'ok') { bouton.disabled = false; dire(''); }
+  });
+  // Le nom d'entreprise tapé pour la feuille imprimée se recopie dans le formulaire (visible, modifiable), pour ne pas le retaper.
+  const nomFeuille = document.getElementById('nom');
+  let recopie = '';
+  if (nomFeuille) nomFeuille.addEventListener('input', () => {
+    const champ = f.elements.entreprise;
+    if (!champ.value || champ.value === recopie) { champ.value = nomFeuille.value.trim(); recopie = champ.value; }
   });
   const effacerPage = effacer;
   effacer = function () { effacerPage(); f.reset(); if (location.protocol !== 'file:') { bouton.disabled = false; dire(''); } };
