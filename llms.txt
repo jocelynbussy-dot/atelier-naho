@@ -35,6 +35,7 @@ Atelier : le sur-mesure, au plus près du métier du client. Naho : mot tahitien
 - [Startseite auf Deutsch](https://ateliernaho.ch/de/)
 - [L'IA est déjà chez vous : faire le point, poser un cadre](https://ateliernaho.ch/ia-chez-vous/)
 - [Tenir le choc : votre risque informatique, IA comprise, vérifié avec vos chiffres](https://ateliernaho.ch/tenir-le-choc/)
+- [Durabilité : l'analyse de matérialité, les sujets qui comptent pour votre entreprise](https://ateliernaho.ch/durabilite/)
 - [Autodiagnostic du risque informatique : 19 questions, gratuit, sans inscription](https://ateliernaho.ch/autodiagnostic/)
 
 ## Exemples fictifs par métier
