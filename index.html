@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Atelier Naho · Logiciels sur mesure pour les PME suisses</title>
-<meta name="description" content="Atelier Naho fabrique de petits logiciels sur mesure pour les PME suisses. Le travail qui revient se fait en grande partie seul, et le logiciel reste à vous.">
-<meta property="og:title" content="Atelier Naho · Logiciels sur mesure pour les PME suisses">
-<meta property="og:description" content="Atelier Naho fabrique de petits logiciels sur mesure pour les PME suisses. Le travail qui revient se fait en grande partie seul, et le logiciel reste à vous.">
+<title>Atelier Naho · Le service qu'une PME a rarement en interne</title>
+<meta name="description" content="Atelier Naho aide les PME suisses à voir où elles en sont (risque informatique, usage de l'IA, bientôt durabilité), puis construit avec elles les petits logiciels qui leur manquent.">
+<meta property="og:title" content="Atelier Naho · Le service qu'une PME a rarement en interne">
+<meta property="og:description" content="Atelier Naho aide les PME suisses à voir où elles en sont (risque informatique, usage de l'IA, bientôt durabilité), puis construit avec elles les petits logiciels qui leur manquent.">
 <meta property="og:url" content="https://ateliernaho.ch/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
@@ -24,7 +24,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://ateliernaho.ch/#ateliernaho","name":"Atelier Naho","url":"https://ateliernaho.ch/","logo":"https://ateliernaho.ch/logo.svg","image":"https://ateliernaho.ch/img/entete.jpg",
 "slogan":"Façonner les outils de votre métier.",
-"description":"Atelier Naho fabrique de petits logiciels sur mesure pour les PME suisses. Le travail qui revient se fait en grande partie seul, et le logiciel reste à vous.",
+"description":"Atelier Naho aide les PME suisses à voir où elles en sont (risque informatique, usage de l'IA, bientôt durabilité), puis construit avec elles les petits logiciels qui leur manquent.",
 "email":"jocelyn@ateliernaho.ch","telephone":"+41772690620","founder":{"@type":"Person","name":"Jocelyn Bussy"},
 "address":{"@type":"PostalAddress","streetAddress":"Chemin des Oiseaux 12","postalCode":"1433","addressLocality":"Suchy","addressCountry":"CH"},
 "areaServed":{"@type":"Country","name":"Suisse"},"knowsLanguage":["fr","de"]}
@@ -115,22 +115,44 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 .boutons{display:flex;flex-wrap:wrap;gap:12px}
 .btn-sec{background:transparent;color:#fff;border:2px solid #fff;padding:12px 22px}
 .btn-sec:hover{background:#fff;color:var(--petrole)}</style>
+
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
 </head>
 <body>
-<header><div class="w">
-<a class="logo" href="/"><img src="logo.svg" alt="Atelier Naho"></a>
-<div class="droite"><a class="nav-ex" href="#exemples">Exemples</a><a class="nav-ex" href="/ia-chez-vous/">L'IA chez vous</a><a class="nav-ex" href="/autodiagnostic/">Autodiagnostic</a><a class="nav-ex" href="/tenir-le-choc/">Tenir le choc</a><a class="nav-blog" href="/articles/">Blog</a><nav class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></nav><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
+<header class="site"><div class="w">
+<a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho, retour à l'accueil"></a>
+<nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/">Tenir le choc</a><a href="/autodiagnostic/">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
 </div></header>
 
 <div class="hero">
 <div class="hero-txt">
-<p class="tagline"><!--TAGLINE-->Façonner les outils de votre métier.<!--/TAGLINE--></p>
-<h1>Nous fabriquons de petits logiciels sur mesure pour les PME suisses.</h1>
-<p>Chez un électricien, ça pourrait être le bon de travail : le monteur dicte en sortant de chez le client, l'outil envoie au bureau le rapport et la facture, qui n'attendent plus que d'être validés. Dans une fiduciaire, la liste des pièces manquantes, prête le lundi avec ses relances, à valider d'un clic.</p>
-<p>Ce ne sont que des exemples. Presque toute tâche administrative qui revient peut se faire seule, en grande partie. Vos résultats ou votre stock peuvent aussi devenir un tableau clair en un clic.</p>
-<p>Vos équipes se servent peut-être déjà de ChatGPT ? Nous faisons le point avec vous et posons des règles claires, pour que l'IA travaille pour l'entreprise, et pas à côté d'elle.</p>
+<p class="tagline"><!--TAGLINE-->Voir clair, puis outiller votre métier.<!--/TAGLINE--></p>
+<h1>Le service qu'une PME a rarement en interne.</h1>
+<p>Les grandes entreprises ont quelqu'un pour suivre leur risque informatique, l'usage de l'IA, la durabilité et les outils de tous les jours. Nous le faisons pour vous, à votre taille.</p>
+<p>Nous commençons par voir avec vous où vous en êtes. Ensuite, quand une tâche revient chaque semaine, nous fabriquons le petit logiciel qui la fait : chez un électricien, le bon de travail dicté en sortant de chez le client, qui arrive au bureau avec sa facture, prête à valider.</p>
 <p class="rassure">Le logiciel prépare, vous validez, et il vous appartient. Avant de commencer, nous fixons ensemble où vos données sont traitées et à qui elles restent.</p>
-<div class="boutons"><a class="btn" href="/ia-chez-vous/">Vos équipes utilisent déjà l'IA ?</a><a class="btn btn-sec" href="#exemples">Voir une démo</a></div>
+<div class="boutons"><a class="btn" href="#aiguillage">Où en êtes-vous ?</a><a class="btn btn-sec" href="#exemples">Voir une démo</a></div>
 </div>
 <div class="hero-img" role="img" aria-label="Un artisan façonne une pièce à la lime, vu de près"></div>
 </div>
@@ -139,10 +161,11 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 
 
 <section id="aiguillage" style="padding-bottom:0"><div class="w">
-<h2>Par où commencer ?</h2>
-<div class="portes deux">
-<a class="porte" href="/ia-chez-vous/"><div><span class="tag">L'IA est déjà chez vous</span><h3>Vos équipes utilisent peut-être déjà l'IA. Vous voulez la cadrer.</h3><p>Faire le point, poser des règles qui s'appuient sur la LPD, puis laisser vos équipes construire leurs outils dans ce cadre.</p><span class="voir">Voir la démarche →</span></div></a>
-<a class="porte" href="#exemples"><div><span class="tag">Une tâche qui se répète</span><h3>Vous voulez un outil qui fait le travail répétitif.</h3><p>Des rapports, des pièces à trier, des demandes à préparer : voyez des exemples par métier.</p><span class="voir">Voir les exemples →</span></div></a>
+<h2>Où en êtes-vous ?</h2>
+<div class="portes">
+<a class="porte" href="/tenir-le-choc/"><div><span class="tag">Votre risque informatique</span><h3>Si vos ordinateurs s'arrêtaient demain, combien coûterait une semaine ?</h3><p>Tenir le choc : nous vérifions chez vous et chiffrons avec vos chiffres. Ou d'abord l'autodiagnostic gratuit, 10 minutes, seul et en ligne.</p><span class="voir">Voir Tenir le choc →</span></div></a>
+<a class="porte" href="/ia-chez-vous/"><div><span class="tag">L'IA est déjà chez vous</span><h3>Vos équipes utilisent peut-être déjà l'IA. Si c'est le cas, autant la cadrer.</h3><p>Faire le point, poser des règles qui s'appuient sur la loi sur la protection des données (LPD), puis laisser vos équipes construire leurs outils dans ce cadre.</p><span class="voir">Voir la démarche →</span></div></a>
+<a class="porte" href="mailto:jocelyn@ateliernaho.ch?subject=Analyse%20de%20mat%C3%A9rialit%C3%A9"><div><span class="tag">Durabilité · bientôt</span><h3>Quels sujets de durabilité pèsent vraiment sur votre entreprise ?</h3><p>Une analyse de matérialité, menée avec la direction et le conseil d'administration : quels enjeux pèsent pour l'entreprise et pour ceux qui l'entourent, et par lesquels commencer.</p><span class="voir">Nous écrire pour en parler →</span></div></a>
 </div>
 </div></section>
 <section id="exemples"><div class="w">
@@ -219,7 +242,7 @@ footer img{height:26px;width:auto;margin-bottom:10px}
 <div><img src="logo.svg" alt="Atelier Naho"><p>Des logiciels sur mesure pour les PME suisses.</p></div>
 <div>
 <p><b>Mentions légales.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Suisse · jocelyn@ateliernaho.ch</p>
-<p><b>Protection des données.</b> <span id="dsans">Ce site n'utilise ni cookie ni mesure d'audience.</span> Seul formulaire : la demande de rappel de l'<a href="/autodiagnostic/">autodiagnostic</a>, gardée 6 mois au plus sur notre serveur en Suisse. Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
+<p><b>Protection des données.</b> <span id="dsans">Ce site n'utilise ni cookie ni mesure d'audience.</span> Seul formulaire : la demande de rappel de l'<a href="/autodiagnostic/">autodiagnostic</a>, gardée 6 mois au plus sur notre serveur et dans notre agenda, chez Infomaniak en Suisse (plus 30 jours au plus dans la sauvegarde de l'agenda). Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
 <p>Photos : Unsplash.</p>
 </div>
 </div></footer>
