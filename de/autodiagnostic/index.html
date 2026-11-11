@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Selbsttest zum IT-Risiko · Atelier Naho</title>
+<meta name="description" content="19 Fragen, rund zehn Minuten: Ihr IT-Risiko, ein Balken pro Bereich und die drei Punkte, die Sie zuerst angehen sollten. Kostenlos, ohne Anmeldung, Ihre Antworten bleiben auf Ihrem Computer.">
+<link rel="canonical" href="https://ateliernaho.ch/de/autodiagnostic/">
+<meta property="og:title" content="Selbsttest zum IT-Risiko · Atelier Naho">
+<meta property="og:description" content="19 Fragen, rund zehn Minuten: Ihr IT-Risiko, ein Balken pro Bereich und die drei Punkte, die Sie zuerst angehen sollten. Kostenlos, ohne Anmeldung, Ihre Antworten bleiben auf Ihrem Computer.">
+<meta property="og:url" content="https://ateliernaho.ch/de/autodiagnostic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="de_CH">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--encre:#1d1d1f;--fond:#fbfaf7;--bleu:#1f3a5f;--jaune:#f2c14e;--vert-pale:#eef3ea;--jaune-pale:#fff4d6;--gris:#777}
+body{font:17px/1.45 system-ui,Segoe UI,sans-serif;max-width:900px;margin:0 auto;padding:16px;color:var(--encre);background:var(--fond)}
+h1{font-size:24px;margin:.2em 0} h2{font-size:19px;margin:1.2em 0 .3em} .lead{color:#444}
+button{font:inherit;padding:8px 14px;border:0;border-radius:6px;background:var(--jaune);cursor:pointer}
+.cal{background:var(--vert-pale);padding:10px 14px;border-radius:8px;font-size:15px;margin:10px 0}
+.att{background:var(--jaune-pale);padding:10px 14px;border-radius:8px;font-size:15px;margin:10px 0}
+/* nur für den Selbsttest */
+:root{--vert:#2e7d32;--orange:#d97f00;--rouge:#b3261e;--trait:#ddd}
+.entete{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.marque{color:var(--bleu);font-weight:700}
+.dom{margin-top:22px}
+.dom h2{display:flex;align-items:center;gap:10px;color:var(--bleu)}
+.picto{width:30px;height:30px;flex:none;color:var(--bleu)}
+/* 10.11.2026, Rückmeldung von Jocelyn: regelmässige Blöcke, so sorgfältig wie der Bericht. Jede Frage ist eine Karte;
+   die Antworten bilden ein Raster gleich hoher Felder, egal wie viele Wörter. */
+.q{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:14px 18px 16px;margin:12px 0}
+.q>div:first-child{display:flex;gap:10px;font-weight:600;line-height:1.4}
+.q .num{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8edf4;color:var(--bleu);font-size:15px}
+.q .aide{color:var(--gris);font-size:15px;margin:4px 0 0 38px}
+.q{container-type:inline-size}
+/* Antworten in gleichen Reihen, nie 3 + 1: 4 Antworten in einer Zeile, wenn die Karte breit ist, sonst 2 + 2; 5 Antworten als 3 + 2
+   (die drei Antworten, dann «trifft nicht zu» und «weiss nicht»); eine Spalte auf dem Handy (Wunsch von Jocelyn, 10.11.2026). */
+.opts{margin:12px 0 0 38px;display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:8px}
+@container (min-width:700px){.opts.n4{grid-template-columns:repeat(4,1fr)}.opts.n5{grid-template-columns:repeat(3,1fr)}}
+.opts label{display:flex;align-items:center;gap:8px;min-height:48px;border:1px solid #ccc;border-radius:8px;padding:8px 12px;background:var(--fond);cursor:pointer;line-height:1.3}
+.opts input{margin:0;flex:none}
+.opts label:hover{border-color:var(--bleu)}
+.opts label:has(input:checked){border-color:var(--bleu);background:#e8edf4;font-weight:600}
+@media (max-width:560px){.opts{margin-left:0;grid-template-columns:1fr;grid-auto-rows:auto}.q .aide{margin-left:0}}
+.barre-bas{position:sticky;bottom:0;background:var(--bleu);color:#fff;padding:10px 14px;border-radius:8px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:18px;z-index:2}
+.barre-bas .compte{flex:1}
+button.sec{background:#fff;color:var(--bleu)}
+#resultat{display:none;margin-top:24px}
+#resultat.vu{display:block}
+.carte{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:16px 18px;margin:12px 0}
+.jauge-bloc{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.jauge-bloc svg{width:300px;max-width:100%;height:auto}
+.verdict{font-size:22px;font-weight:700}
+.note{font-size:15px;color:#444}
+.barres svg{width:100%;height:auto}
+.urg{display:flex;gap:14px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--trait)}
+.urg:last-child{border-bottom:0}
+.urg .picto{width:40px;height:40px}
+.urg b{display:block}
+.urg .geste{font-size:15px;color:#333;margin-top:3px}
+.invit{background:var(--bleu);color:#fff;border-radius:10px;padding:16px 18px}
+.invit a{color:#fff}
+.mention{font-size:13px;color:var(--gris)}
+.seulement-imprime{display:none}
+input.nom{font:inherit;padding:5px 8px;border:1px solid #ccc;border-radius:6px;width:min(360px,100%)}
+/* Formular «Rückruf» (Online-Version) */
+.rappel form{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 16px;margin-top:8px}
+.rappel label.champ{display:flex;flex-direction:column;font-size:15px;gap:3px}
+.rappel input[type=text],.rappel input[type=tel],.rappel input[type=email],.rappel select{font:inherit;padding:6px 8px;border:1px solid #bbb;border-radius:6px;background:#fff}
+.rappel .large{grid-column:1/-1}
+.rappel label.case{display:flex;gap:8px;align-items:flex-start;font-size:15px}
+.rappel label.case input{margin-top:4px;flex:none}
+.rappel .piege{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.rappel #rappel-etat{margin:0;font-weight:600}
+.rappel #rappel-etat.ok{color:var(--vert)}
+.rappel #rappel-etat.non{color:var(--rouge)}
+.lpd{font-size:14px;color:#333;border-top:1px solid var(--trait);margin-top:14px;padding-top:8px}
+.lpd p{margin:4px 0}
+.lpd.lpd-avant{border-top:0;border-bottom:1px solid var(--trait);margin:4px 0 10px;padding:0 0 8px}
+@media print{
+  @page{size:A4;margin:10mm}
+  body{background:#fff;font-size:12.5px;padding:0;max-width:none}
+  #questionnaire,.barre-bas,.ecran,button,body>.entete,body>.lead{display:none!important}
+  .barres svg{max-height:160px}
+  .jauge-bloc{gap:12px;flex-wrap:nowrap}
+  .urg .geste{font-size:11.5px;margin-top:1px}
+  .mention{font-size:10px;margin:4px 0 0}
+  #ue{font-size:12px}
+  .note{font-size:12px}
+  #resultat{display:block!important;margin:0}
+  .seulement-imprime{display:block}
+  .carte{border:1px solid #999;padding:6px 12px;margin:5px 0;break-inside:avoid}
+  .jauge-bloc svg{width:170px;flex:none}
+  #jauge{flex:none}
+  .verdict{font-size:18px}
+  h2{font-size:15px;margin:.4em 0 .2em}
+  .urg{padding:3px 0}
+  .urg b{font-size:13px}
+  .urg .note{font-size:11px;margin:0}
+  .urg .picto{width:28px;height:28px}
+  .invit{background:#fff;color:#000;border:2px solid #000;padding:6px 12px;font-size:12px;margin-top:6px}
+  #note-cle{font-size:11px;margin:2px 0 0}
+  /* Das Blatt passt auf eine einzige A4-Seite: am 10.11.2026 als PDF an den drei Beispielen gemessen (gering, mittel, hoch mit EU). */
+  .invit a{color:#000}
+}
+/* 10.11.2026: Stil der Website (Outputs/atelier-naho-site/STYLE.md), gesetzt von gen_site.py */
+:root{--encre:#111111;--fond:#ffffff;--surface:#F2F4F8;--doux:#56646a;--bleu:#203A71;--bleu-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--gris:#56646a;--vert-pale:#F2F4F8;--jaune-pale:#FBEEDD;--police:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body{font:17px/1.6 var(--police);max-width:none;padding:0;background:var(--fond);color:var(--encre)}
+.page{max-width:860px;margin:0 auto;padding:0 20px 24px}
+a{color:var(--bleu)}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:800;line-height:1.1;letter-spacing:-.01em;color:var(--bleu);margin:32px 0 8px}
+h2{font-weight:800;letter-spacing:-.01em}
+.lead{color:var(--doux);font-size:clamp(18px,2vw,20px)}
+body>.page>.entete .marque{display:none}
+button{background:var(--bleu);color:#fff;border-radius:10px;padding:10px 18px;font-weight:600}
+button:hover{background:var(--bleu-fonce)}
+button.sec{background:#fff;color:var(--bleu);border:2px solid #fff}
+.barre-bas button{background:#fff;color:var(--bleu)}
+.barre-bas button:hover{background:var(--surface)}
+.barre-bas button.sec{background:transparent;color:#fff;border:2px solid #fff}
+.cal{background:var(--surface);border:1px solid var(--trait);border-radius:10px}
+.q,.carte{border-color:var(--trait);border-radius:12px}
+.q .num{background:var(--surface)}
+.opts label{background:var(--surface);border-color:var(--trait);border-radius:10px}
+.opts label:has(input:checked){background:#e3e8f2}
+.invit{border-radius:16px}
+.rappel input[type=text],.rappel input[type=tel],.rappel input[type=email],.rappel select{border-color:var(--trait);border-radius:8px;padding:8px 10px}
+#rappel-envoyer{background:var(--cuivre);font-weight:700;padding:12px 24px}
+#rappel-envoyer:hover{background:var(--cuivre-fonce)}
+#rappel-envoyer:disabled{opacity:.55;cursor:default}
+.lpd{color:var(--doux)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{padding:18px 0;border-bottom:1px solid var(--trait)}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--bleu);font-weight:600;text-decoration:none;border:2px solid var(--bleu);padding:7px 16px;border-radius:9px;white-space:nowrap}
+footer.site{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux);margin-top:32px}
+footer.site p{margin:0 0 6px;max-width:62ch}
+footer.site img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+/* Druck: Das Layout setzt Titel und Einleitung in <main class="page">; die Regel «body>.entete» der Seite erfasst sie nicht mehr, darum werden sie hier ausgeblendet (Blatt auf einer einzigen A4-Seite). */
+@media print{header.site,footer.site,.page>.entete,.page>.lead{display:none!important}.page{padding:0;max-width:none}h1{margin:0}}
+</style>
+
+<style>.passerelle{font-size:16px;background:var(--surface);border-radius:10px;padding:10px 14px}.passerelle a{color:var(--bleu)}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="w">
+<a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
+<nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples">Beispiele</a><a href="/de/ia-chez-vous/">KI im Betrieb</a><a href="/de/tenir-le-choc/">Krisenfest</a><a href="/de/durabilite/">Nachhaltigkeit</a><a href="/de/procedures/">Arbeitsanweisungen</a><a href="/de/autodiagnostic/" aria-current="page">Selbsttest</a><a href="/de/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><a href="/autodiagnostic/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
+</div></header>
+<main class="page">
+
+<div class="entete">
+  <h1>Selbsttest zum IT-Risiko</h1>
+  <span class="marque">Atelier Naho</span>
+</div>
+<p class="lead">19 Fragen, rund zehn Minuten. Sie erhalten eine Risikostufe, einen Balken pro Bereich und die drei Punkte, die Sie zuerst angehen sollten, auf einem Blatt zum Ausdrucken.</p>
+<p class="ecran passerelle">Das ist die Kurzversion von <a href="/de/tenir-le-choc/"><b>Krisenfest</b></a>, unserem Audit zum IT-Risiko: Hier antworten Sie allein. Beim Audit prüfen wir bei Ihnen vor Ort anhand von Belegen und schreiben mit Ihnen die rote Seite Ihres Krisenhandbuchs.</p>
+<div class="cal ecran"><b>Ihre Antworten bleiben auf diesem Computer.</b> Die Berechnung läuft in Ihrem Browser: Ihre Antworten werden weder übermittelt noch gespeichert, und wenn Sie die Seite schliessen, sind sie weg. Eine einzige Ausnahme, und die wählen Sie selbst: das Formular «Rückruf» unter dem Ergebnis. Wir erhalten nur, was Sie dort eintragen. Ihr Ergebnis kommt nur dazu, wenn Sie das Kästchen dafür ankreuzen.</div>
+<div class="cal ecran"><b>Bevor Sie beginnen:</b> Wenn Sie eine Antwort nicht wissen, wählen Sie «Weiss nicht». Der Test zählt sie wie die riskanteste Antwort, denn ein Punkt, den niemand kennt, ist meistens nicht geschützt.</div>
+
+<div id="questionnaire"></div>
+
+<div class="barre-bas">
+  <span class="compte" id="compte">0 von 19 beantwortet</span>
+  <button onclick="montrer()">Mein Ergebnis anzeigen</button>
+  <button class="sec" onclick="if (confirm('Alle Antworten löschen? Das lässt sich nicht rückgängig machen.')) effacer()">Alles löschen</button>
+</div>
+
+<section id="resultat" aria-live="polite">
+  <div class="entete">
+    <h2 style="font-size:22px;margin:0">Ihr Ergebnis</h2>
+    <span class="seulement-imprime marque">Atelier Naho · Selbsttest zum IT-Risiko</span>
+  </div>
+  <p class="ecran note">Name der Firma, für das ausgedruckte Blatt (freiwillig, bleibt hier): <input class="nom" id="nom" placeholder="z. B. Schreinerei Huber"></p>
+  <p class="note" id="ligne-nom"></p>
+
+  <div class="carte jauge-bloc">
+    <div id="jauge"></div>
+    <div>
+      <div class="verdict" id="verdict"></div>
+      <div class="note" id="explication"></div>
+    </div>
+  </div>
+
+  <div class="carte barres">
+    <h2>Nach Bereich</h2>
+    <div id="barres"></div>
+    <p class="note" id="note-cle" style="display:none">«Kernpunkt»: Eine einzige solche Antwort genügt, damit der Bereich auf «dringend» steht, weil sie allein grossen Schaden anrichten kann (zum Beispiel gar keine Datensicherung).</p>
+  </div>
+
+  <div class="carte">
+    <h2>Die drei Punkte, die Sie zuerst angehen sollten</h2>
+    <div id="urgents"></div>
+  </div>
+
+  <div class="carte" id="ue" style="display:none"></div>
+
+  <div class="invit">
+    <b>Ein kostenloses Gespräch, um dieses Ergebnis mit Ihnen durchzugehen.</b><br>
+    30 Minuten per Videoanruf, von Ihrem Computer aus (Teams, Zoom oder was Sie sonst haben). Wir schauen, was bei Ihnen stillstehen würde und wie viele Tage Sie durchhalten, und gehen Ihre drei Punkte durch. Das Blatt behalten Sie, ob Sie uns danach beauftragen oder nicht.<br>
+    Atelier Naho · Jocelyn Bussy · <a href="mailto:jocelyn@ateliernaho.ch">jocelyn@ateliernaho.ch</a> · ateliernaho.ch
+  </div>
+
+  <div class="carte rappel ecran" id="rappel">
+    <h2>Rückruf für das kostenlose Gespräch (freiwillig)</h2>
+    <div class="lpd lpd-avant">
+      <p><b>Ihre Daten, kurz erklärt, bevor Sie ausfüllen.</b> <b>Wer sie erhält:</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy. <b>Was:</b> das, was Sie in dieses Formular schreiben; Ihr Ergebnis nur, wenn Sie das Kästchen ankreuzen; nie Ihre einzelnen Antworten.</p>
+      <p><b>Wozu:</b> um Sie für das gewünschte Gespräch zurückzurufen, sonst nichts. Kein Newsletter, keine Weitergabe an Dritte. <b>Wo:</b> auf unserem Server und in unserem Kalender bei Infomaniak in der Schweiz. <b>Wie lange:</b> spätestens 6 Monate nach Ihrer Anfrage automatisch gelöscht. Eine Sicherungskopie unseres Kalenders bei Infomaniak kann sie bis zu 30 Tage länger enthalten.</p>
+      <p><b>Ihre Rechte:</b> Wenn Sie wissen möchten, was wir gespeichert haben, oder es berichtigen oder früher löschen lassen wollen, schreiben Sie an jocelyn@ateliernaho.ch. Damit kein Roboter Hunderte von Anfragen schickt, speichern wir 24 Stunden lang, getrennt von Ihrer Anfrage, einen Code, der aus Ihrer Verbindung und Ihrer Telefonnummer oder E-Mail-Adresse berechnet wird. Aus diesem Code lassen sich Ihre Nummer oder Ihre Adresse nicht zurückgewinnen; danach wird er gelöscht.</p>
+      <p>Diese Seite richtet sich an Unternehmen mit Sitz in der Schweiz: Die Bearbeitung folgt dem Schweizer Datenschutzgesetz (DSG).</p>
+    </div>
+    <p class="note">Ihr Name ist Pflicht. Damit wir Sie erreichen: eine Telefonnummer <b>oder</b> eine E-Mail-Adresse, eines von beiden genügt. Es wird nichts gesendet, bevor Sie auf «Anfrage senden» klicken.</p>
+    <form id="form-rappel" method="post" action="/rappel" novalidate>
+      <label class="champ">Ihr Name (Pflichtfeld) <input type="text" name="nom" maxlength="80" autocomplete="name"></label>
+      <label class="champ">Firma (freiwillig) <input type="text" name="entreprise" maxlength="100" autocomplete="organization"></label>
+      <label class="champ">Telefon <input type="tel" name="tel" maxlength="30" autocomplete="tel"></label>
+      <label class="champ">oder E-Mail (eines von beiden genügt) <input type="email" name="email" maxlength="120" autocomplete="email"></label>
+      <label class="champ">Wann wir Sie am besten anrufen <select name="moment"><option value="">egal</option><option value="matin">am Vormittag</option><option value="apres-midi">am Nachmittag</option></select></label>
+      <div class="piege" aria-hidden="true"><label>Nicht ausfüllen <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
+      <label class="case large"><input type="checkbox" name="joindre" value="1"> <span>Mein Ergebnis mitsenden: die Risikostufe, die Farbe jedes Bereichs und die drei Punkte, die anzugehen sind. Meine einzelnen Antworten werden nie gesendet.</span></label>
+      <label class="case large"><input type="checkbox" name="accord" value="1"> <span>Ich bin einverstanden, dass diese Angaben verwendet werden, um mich für dieses Gespräch zurückzurufen, gemäss den Informationen oben.</span></label>
+      <p class="large note">Die Bestätigung nach dem Senden erscheint auf Deutsch. Bei einzelnen Fehlern antwortet unser Server noch auf Französisch, zum Beispiel wenn eine Telefonnummer nicht lesbar ist oder an einem Tag zu viele Anfragen eingehen.</p>
+      <p class="large"><button type="submit" id="rappel-envoyer">Anfrage senden</button></p>
+      <p class="large" id="rappel-etat" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <p class="mention">Dieser Test gibt eine erste Einschätzung, allein aufgrund Ihrer Antworten. Er prüft nichts auf Ihren Geräten, ersetzt keine Analyse vor Ort und garantiert kein Sicherheitsniveau. Die Hinweise auf das Schweizer Datenschutzgesetz (DSG) dienen der Information und sind keine Rechtsberatung. Wer allein weitergehen will: Die Allianz Digitale Sicherheit Schweiz bietet auf digitalsecurityswitzerland.ch einen ausführlicheren Gratis-Check an (Cybersecurity-Check für KMU, 78 Fragen).</p>
+
+  <p class="ecran"><button onclick="window.print()">Blatt drucken</button> <button class="sec" onclick="document.getElementById('questionnaire').scrollIntoView()">Antworten nochmals ansehen</button></p>
+</section>
+
+<script id="moteur">
+/* Der Motor: Fragen, Gewichte, Berechnung. Keine Daten verlassen die Seite.
+   Antwort: 0 = am sichersten, 1 = dazwischen, 2 = am riskantesten, 3 = weiss nicht (zählt wie 2). */
+/* Abgestimmt auf grille-evaluation.md v1.1 (Projekt naho-offre-securite-ia): Ein Bereich ist grün ab 80 % Schutz,
+   orange von 50 bis 79 %, rot unter 50 %. Hier zählt das Risiko (100 minus Schutz), berechnet auf dem ungerundeten Wert:
+   gering bis 20, mittel bis 50, hoch darüber. */
+const SEUILS = {moyen: 20.0001, eleve: 50.0001};
+
+const DOMAINES = [
+  {id: 'sauvegarde', g: 'S', poids: 3, nom: 'Datensicherung'},
+  {id: 'continuite', g: 'C', poids: 3, nom: "Weiterführung des Betriebs"},
+  {id: 'acces', g: 'A', poids: 2, nom: 'Zugänge'},
+  {id: 'mails', g: 'M', poids: 2, nom: 'E-Mails und betrügerische Anrufe'},
+  {id: 'ia', g: 'I', poids: 2, nom: 'Nutzung von KI'},
+  {id: 'donnees', g: 'D', poids: 2, nom: 'Personendaten'},
+  {id: 'assurance', g: 'R', poids: 1, nom: 'Versicherung'}
+];
+
+const QUESTIONS = [
+  {id: 's1', grille: 'S1', d: 'sauvegarde', w: 3, critique: true,
+   q: "Werden Ihre Daten (Buchhaltung, Kundendossiers, Mails) automatisch gesichert?",
+   aide: "Wenn Ihre Buchhaltung oder Ihre Mails in einer Online-Software liegen (zum Beispiel bexio, Microsoft 365 oder bei Ihrem Treuhänder), fragen Sie den Anbieter, ob er jeden Tag Kopien davon aufbewahrt. Wenn ja, zählt das als «Ja, jeden Tag».",
+   o: ["Ja, jeden Tag, ohne dass wir daran denken müssen", "Ja, aber von Hand oder ab und zu", "Nein"],
+   urg: {t: "Eine automatische Datensicherung einrichten", g: "Jede Nacht eine Kopie, ohne dass jemand daran denken muss. Ohne sie kann ein Festplattendefekt oder ein Virus die Arbeit von Jahren vernichten."}},
+  {id: 's2', grille: 'S2', d: 'sauvegarde', w: 3, critique: true,
+   q: "Wird eine Kopie ausserhalb Ihrer Räume aufbewahrt oder vom Netz getrennt?",
+   aide: "Manche Viren sperren Ihre Dateien, um ein Lösegeld zu verlangen: Sie machen sie unlesbar. Sie sperren auch die Sicherungsfestplatte, wenn diese dauernd angeschlossen bleibt. Wenn alle Ihre Kopien bei Ihrem Anbieter der Online-Software liegen und nirgends sonst, antworten Sie «Nur in einem Online-Dienst».",
+   o: ["Ja, eine Kopie ist offline oder an einem anderen Ort", "Nur in einem Online-Dienst (Cloud)", "Nein, alles ist am selben Ort"],
+   urg: {t: "Eine Kopie ausser Reichweite aufbewahren", g: "Eine abgehängte Kopie oder eine an einem anderen Ort, an die der Angriff nicht herankommt. Mit ihr kommt man wieder in Gang, ohne Lösegeld für die eigenen Dateien zahlen zu müssen."}},
+  {id: 's3', grille: 'S4', d: 'sauvegarde', w: 3, critique: true,
+   q: "Haben Sie dieses Jahr ausprobiert, eine Datei aus der Datensicherung zurückzuholen?",
+   o: ["Ja, und es hat geklappt", "Vor mehr als einem Jahr", "Nie"],
+   urg: {t: "Die Datensicherung einmal testen", g: "Ein echtes Dossier zurückholen und dabei die Zeit messen. Eine nie ausprobierte Sicherung kann unvollständig sein, ohne dass man es weiss, und man merkt es erst an dem Tag, an dem man sie braucht."}},
+
+  {id: 'c1', grille: 'C2', d: 'continuite', w: 3, critique: true,
+   q: "Wenn das Internet einen Tag lang ausfällt, was können Sie dann noch tun?",
+   o: ["Fast alles", "Einen Teil der Arbeit", "Fast nichts"],
+   urg: {t: "Ohne Internet arbeiten können", g: "Die zwei oder drei Aufgaben bestimmen, die weiterlaufen müssen (Rechnungen stellen, Kunden bedienen), und vorsehen, wie man sie offline erledigt oder über das Internet eines Handys (der «persönliche Hotspot», den alle neueren Handys haben)."}},
+  {id: 'c2', grille: 'C1', d: 'continuite', w: 2,
+   q: "Wenn heute Morgen der Hauptcomputer oder der Server ausfällt, wie schnell läuft der Betrieb wieder?",
+   o: ["Am selben Tag", "In ein paar Tagen", "Ich habe keine Ahnung"],
+   urg: {t: "Wissen, wie schnell der Betrieb wieder läuft", g: "Aufschreiben, was es braucht, um den Hauptcomputer wieder in Gang zu bringen (wo die Sicherung ist, wen man anruft, welches Ersatzgerät), und eine Frist anpeilen."}},
+  {id: 'c3', grille: 'C3', d: 'continuite', w: 2,
+   q: "Haben Sie ein Blatt, auf dem steht, wen man bei einem Angriff oder einer grossen Panne anruft und was zu tun ist?",
+   o: ["Ja, aktuell und allen bekannt", "Das ist im Kopf von jemandem", "Nein"],
+   urg: {t: "Die rote Seite Ihres Krisenhandbuchs aufschreiben", g: "Wen man anruft (Informatiker, Versicherung, Bank), was man ausstecken muss, wen man informiert. Eine ausgedruckte Seite, an einem Ort, wo man sie auch findet, wenn die Computer nicht mehr laufen."}},
+  {id: 'c4', grille: 'C7', d: 'continuite', w: 1,
+   q: "Wissen mindestens zwei Personen, wie die Informatik läuft (Passwörter, Konten, wen man anruft)?",
+   o: ["Ja, mindestens zwei, oder alles ist notiert und abgelegt", "Nur eine, und es ist teilweise notiert", "Nur eine, und nichts ist notiert"],
+   urg: {t: "Nicht von einer einzigen Person abhängen", g: "Die wichtigen Zugänge in einem Passwort-Tresor festhalten (ein Programm, das alle Codes hinter einem einzigen Passwort unter Verschluss hält), geteilt mit einer zweiten Vertrauensperson."}},
+
+  {id: 'a1', grille: 'A2', d: 'acces', w: 2,
+   q: "Haben alle Mitarbeitenden ein eigenes Konto (eigener Benutzername und eigenes Passwort), oder teilt man sich dieselben?",
+   o: ["Alle haben ein eigenes", "Einige gemeinsame Konten", "Viele gemeinsame Konten"],
+   urg: {t: "Ein Konto pro Person", g: "Bei einem gemeinsamen Konto weiss man nicht, wer was gemacht hat, und man kann nicht einer einzelnen Person den Zugang sperren."}},
+  {id: 'a2', grille: 'A1', d: 'acces', w: 3, critique: true,
+   q: "Braucht es bei Ihren wichtigen Konten, etwa Mail oder E-Banking, zusätzlich zum Passwort einen Code, den Sie aufs Handy bekommen (die «Zwei-Faktor-Authentifizierung»)?",
+   o: ["Ja, bei allen", "Nur bei einem Teil", "Nein"],
+   urg: {t: "Die Zwei-Faktor-Authentifizierung einschalten", g: "Zuerst beim Mail, dann bei der Bank und den Online-Werkzeugen. Ein gestohlenes Passwort genügt dann nicht mehr, um hineinzukommen."}},
+  {id: 'a3', grille: 'A3', d: 'acces', w: 2,
+   q: "Wenn jemand die Firma verlässt, werden seine Zugänge noch am selben Tag gesperrt?",
+   o: ["Ja, immer", "Manchmal mit Verspätung", "Nein, oder ich prüfe es nicht"],
+   na: "Bisher ist niemand gegangen",
+   urg: {t: "Zugänge beim Austritt sperren", g: "Eine Liste der Konten jeder Person, und am letzten Tag eine Stunde, um sie zu schliessen oder die Passwörter zu ändern."}},
+  {id: 'a4', grille: 'A5', d: 'acces', w: 2,
+   q: "Laufen die Updates der Computer, Handys und Programme automatisch?",
+   o: ["Ja, automatisch", "Wenn man daran denkt", "Nein, oder die Geräte sind zu alt"],
+   urg: {t: "Updates laufen lassen", g: "Automatische Updates einschalten und Geräte ersetzen, die keine mehr erhalten: Viele Pannen und Angriffe nutzen Lücken aus, die mit den Updates geschlossen werden."}},
+
+  {id: 'm1', grille: 'M2', d: 'mails', w: 2,
+   q: "Erkennen Ihre Mitarbeitenden ein gefälschtes Mail oder einen falschen Anruf (falscher Lieferant, falscher Chef, der eine Überweisung verlangt)?",
+   o: ["Ja, wir haben dieses Jahr geübt", "Wir haben einmal darüber gesprochen", "Nein"],
+   urg: {t: "Lernen, gefälschte Nachrichten zu erkennen", g: "Eine Stunde mit dem ganzen Team, an echten Beispielen. Viele Angriffe beginnen mit einem gut nachgemachten Mail oder Anruf."}},
+  {id: 'm2', grille: 'M1', d: 'mails', w: 3, critique: true,
+   q: "Wenn ein Lieferant ein neues Bankkonto meldet, prüfen Sie das vor dem Zahlen telefonisch, unter einer Nummer, die Sie schon kennen?",
+   o: ["Immer", "Manchmal", "Nein"],
+   urg: {t: "Jede Änderung der Bankverbindung überprüfen", g: "Eine einfache Regel: Eine neue Kontonummer (IBAN) wird mit einem Anruf unter der gewohnten Nummer bestätigt, nie unter der Nummer aus dem Mail. Das ist ein häufiger Betrug, der mit einem gut nachgemachten Mail oder Anruf beginnt."}},
+
+  {id: 'i1', grille: 'I1', d: 'ia', w: 3,
+   q: "Wissen Sie, welche KI-Werkzeuge (ChatGPT, Copilot, Gemini…) Ihre Mitarbeitenden nutzen, und mit welchem Konto?",
+   o: ["Ja, mit Konten, die die Firma bezahlt (Business-Version)", "Teilweise", "Nein"],
+   na: "Bei uns nutzt niemand KI",
+   urg: {t: "Wissen, wer KI nutzt, und mit welchem Konto", g: "Eine Umfrage im Team, in zehn Minuten erledigt. Ein privates Gratis-Konto kann je nach seinen Bedingungen behalten, was man hineinkopiert, und es weiterverwenden."}},
+  {id: 'i2', grille: 'I2', d: 'ia', w: 2,
+   q: "Gibt es eine schriftliche Regel dazu, was man in diese Werkzeuge kopieren darf (Kundendaten, Löhne, Verträge)?",
+   o: ["Ja, eine schriftliche Regel, die alle kennen", "Eine mündliche Anweisung", "Nein"],
+   na: "Bei uns nutzt niemand KI",
+   urg: {t: "Eine KI-Regel auf einer Seite", g: "Was man hineingeben darf, was nie, mit welchem Konto. Für den Anfang genügt eine Seite, die alle gelesen haben."}},
+
+  {id: 'd1', grille: 'D1', d: 'donnees', w: 3,
+   q: "Wissen Sie, wo die Daten Ihrer Kunden und Mitarbeitenden gespeichert sind (welche Online-Werkzeuge, in welchem Land)?",
+   o: ["Ja, die Liste gibt es", "Ungefähr", "Nein"],
+   urg: {t: "Auflisten, wo Ihre Daten liegen", g: "Buchhaltungsprogramm, Mail, Kalender, Online-Werkzeuge: wo die Daten liegen, in welchem Land, wer Zugriff hat. Das ist die Grundlage für alles Weitere."}},
+  {id: 'd2', grille: 'D8', d: 'donnees', w: 2,
+   q: "Wissen Ihre Kunden, was Sie mit ihren Daten machen (Datenschutzerklärung auf der Website, in den Offerten oder Verträgen)?",
+   aide: "Das Schweizer Datenschutzgesetz verlangt, dass man Personen informiert, wenn man ihre Daten beschafft.",
+   o: ["Ja, schriftlich und aktuell", "Es gibt einen Text, aber nicht aktuell", "Nein"],
+   urg: {t: "Ihre Kunden über ihre Daten informieren", g: "Ein klarer Text auf der Website und in den Offerten: was Sie aufbewahren, wozu, wie lange, bei wem. Das Schweizer Gesetz verlangt es."}},
+  {id: 'd3', grille: 'D2', d: 'donnees', w: 2, critique: true,
+   q: "Wissen Sie, was zu tun ist, wenn Personendaten in falsche Hände geraten (wen man informiert, in welcher Frist)?",
+   aide: "In der Schweiz wird ein schweres Datenleck dem Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) gemeldet, der Behörde, die über die Einhaltung des Gesetzes wacht, und manchmal auch den betroffenen Personen.",
+   o: ["Ja", "Ungefähr", "Nein"],
+   urg: {t: "Wissen, was bei einem Datenleck zu tun ist", g: "Ein Datenleck, das ein hohes Risiko für die betroffenen Personen mit sich bringt, wird so rasch wie möglich dem EDÖB gemeldet (der Schweizer Behörde, die über die Einhaltung des Gesetzes wacht). Das im Krisenhandbuch festhalten, und wer sich darum kümmert."}},
+
+  {id: 'x1', grille: 'R1+R2', d: 'assurance', w: 2,
+   q: "Haben Sie eine Versicherung gegen Angriffe auf Ihre Informatik (eine «Cyberversicherung»)?",
+   aide: "Manche Verträge stellen Bedingungen (zum Beispiel eine Sicherung, die offline aufbewahrt wird), und die Leistung kann gekürzt werden, wenn sie nicht eingehalten sind.",
+   o: ["Ja, und wir erfüllen ihre Bedingungen", "Ja, aber ich kenne ihre Bedingungen nicht", "Nein, keine Cyberversicherung"],
+   urg: {t: "Die Versicherung und ihre Bedingungen prüfen", g: "Den Vertrag nochmals lesen oder Ihren Versicherer fragen, was er deckt und was er verlangt. Wer die Bedingungen nicht erfüllt, riskiert, dass die Versicherung weniger zahlt."}}
+];
+
+/* Eigene Frage, nicht gezählt: entscheidet, ob zur DSG die europäische DSGVO hinzukommt (R9). */
+const QUESTION_UE = {id: 'ue', grille: 'D0', q: "Verkaufen Sie an Personen, die in der Europäischen Union wohnen, oder machen Sie bei ihnen Werbung?",
+  o: ["Ja", "Nein"]};
+
+function niveauDe(pct) {
+  return pct >= SEUILS.eleve ? 'eleve' : pct >= SEUILS.moyen ? 'moyen' : 'faible';
+}
+
+function evaluer(rep) {
+  /* Gleiche Regel wie grille-evaluation.md: Bereichswert nach Fragen gewichtet; ein Kernpunkt (critique) auf Rot
+     setzt seinen Bereich auf Rot; Gesamtstufe = Mittel der Bereiche nach ihrem Gewicht, nie «gering», wenn ein
+     Bereich rot ist; Dringendes = riskanteste Zeilen, geordnet nach Gewicht der Frage mal Gewicht des Bereichs. */
+  const parD = {};
+  DOMAINES.forEach(d => parD[d.id] = {pts: 0, max: 0, bloque: false});
+  let repondues = 0;
+  const candidats = [];
+  QUESTIONS.forEach((q, i) => {
+    const v = rep[q.id];
+    if (v === undefined || v === null) return;
+    const r = Math.min(v, 2);
+    repondues++;
+    parD[q.d].pts += q.w * r; parD[q.d].max += q.w * 2;
+    if (q.critique && r === 2) parD[q.d].bloque = true;
+    const pd = DOMAINES.find(d => d.id === q.d).poids;
+    if (r > 0) candidats.push({q, rouge: r === 2, prio: q.w * pd, i, inconnu: v === 3});
+  });
+  let somme = 0, poidsTot = 0;
+  const domaines = DOMAINES.map(d => {
+    const x = parD[d.id];
+    const brut = x.max ? 100 * x.pts / x.max : null, pct = brut === null ? null : Math.round(brut);
+    if (brut !== null) { somme += brut * d.poids; poidsTot += d.poids; }
+    let niveau = brut === null ? null : niveauDe(brut);
+    const force = x.bloque && niveau !== 'eleve';
+    if (x.bloque) niveau = 'eleve';
+    return {id: d.id, nom: d.nom, pct, niveau, force};
+  });
+  const brutG = poidsTot ? somme / poidsTot : 0, score = Math.round(brutG);
+  let niveau = niveauDe(brutG), releve = false;
+  if (niveau === 'faible' && domaines.some(d => d.niveau === 'eleve')) { niveau = 'moyen'; releve = true; }
+  /* Raster: unter den roten Zeilen die drei mit dem höchsten P mal Gewicht des Bereichs. Orange ergänzt nur, wenn es
+     weniger als drei rote gibt. Bei Gleichstand «das Günstigste zuerst»: Die Seite kennt die Kosten nicht, sie nimmt den
+     Kernpunkt, dann die Reihenfolge der Fragen (Abweichung notiert in analyse-systeme.md). */
+  candidats.sort((a, b) => (b.rouge - a.rouge) || b.prio - a.prio || (b.q.critique ? 1 : 0) - (a.q.critique ? 1 : 0) || a.i - b.i);
+  return {score, niveau, releve, critiques: QUESTIONS.filter(q => q.critique && rep[q.id] >= 2).map(q => q.id), domaines,
+          urgents: candidats.slice(0, 3).map(c => ({id: c.q.id, domaine: c.q.d, titre: c.q.urg.t, geste: c.q.urg.g, inconnu: c.inconnu})),
+          repondues, total: QUESTIONS.length, ue: rep.ue === 0};
+}
+
+if (typeof module !== 'undefined') module.exports = {DOMAINES, QUESTIONS, QUESTION_UE, SEUILS, evaluer, niveauDe};
+</script>
+
+<script>
+/* Anzeige. SVG-Zeichnungen direkt in der Seite, keine externen Ressourcen. */
+const P = {
+  sauvegarde: '<rect x="5" y="6" width="22" height="20" rx="3"/><path d="M5 13h22M11 9.5h2M16 17v6M13 20l3 3 3-3"/>',
+  continuite: '<path d="M18 3 8 18h7l-2 11 10-15h-7z"/>',
+  acces: '<circle cx="11" cy="16" r="6"/><path d="M17 16h12M25 16v5M29 16v4"/>',
+  mails: '<rect x="4" y="8" width="24" height="17" rx="2"/><path d="m4 10 12 9 12-9"/>',
+  ia: '<rect x="8" y="8" width="16" height="16" rx="3"/><path d="M12 4v4M20 4v4M12 24v4M20 24v4M4 12h4M4 20h4M24 12h4M24 20h4M13 16h6"/>',
+  donnees: '<path d="M4 9a2 2 0 0 1 2-2h7l3 3h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="16" cy="16" r="2.5"/><path d="M11.5 23a4.5 4.5 0 0 1 9 0"/>',
+  assurance: '<path d="M4 16a12 12 0 0 1 24 0z"/><path d="M16 4v2M16 16v9a3 3 0 0 1-6 0"/>'
+};
+const COUL = {faible: 'var(--vert)', moyen: 'var(--orange)', eleve: 'var(--rouge)'};
+const MOT_GLOBAL = {faible: 'Geringes Risiko', moyen: 'Mittleres Risiko', eleve: 'Hohes Risiko'};
+const MOT_DOMAINE = {faible: 'gut', moyen: 'beobachten', eleve: 'dringend'};
+const EXPLI = {
+  faible: "Nach Ihren Antworten sind die Grundlagen vorhanden. Am nützlichsten ist jetzt: das Bestehende testen (eine Sicherung zurückspielen, das Krisenhandbuch nochmals lesen) und es aktuell halten.",
+  moyen: "Nach Ihren Antworten ist ein Teil der Schutzmassnahmen vorhanden, aber schon eine gewöhnliche Panne oder ein gewöhnlicher Angriff könnte Ihren Betrieb mehrere Tage lahmlegen. Die drei Punkte unten machen den grössten Unterschied.",
+  eleve: "Nach Ihren Antworten könnte eine Panne, ein Virus oder eine gefälschte Zahlungsaufforderung Sie teuer zu stehen kommen, und zwar schnell. Die drei Punkte unten bringen am meisten; manche lassen sich an einem Vormittag erledigen."
+};
+const rep = {};
+let dernier = null;
+function rebarres() { if (dernier) document.getElementById('barres').innerHTML = barres(dernier.domaines); }
+
+function picto(id, cls) {
+  return `<svg class="${cls || 'picto'}" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[id]}</svg>`;
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c])); }
+
+function construire() {
+  let h = '', n = 0;
+  DOMAINES.forEach(d => {
+    h += `<div class="dom"><h2>${picto(d.id)}${esc(d.nom)}</h2>`;
+    QUESTIONS.filter(q => q.d === d.id).forEach(q => {
+      n++;
+      /* q.na: Antwort «trifft nicht zu» (niemand nutzt KI, niemand ist gegangen), zählt wie die sicherste (Wert 0). */
+      const opts = q.o.map((t, k) => [t, k]).concat(q.na ? [[q.na, 0]] : [], [["Weiss nicht", 3]]).map(([t, k]) =>
+        `<label><input type="radio" name="${q.id}" value="${k}">${esc(t)}</label>`).join('');
+      h += `<div class="q" id="bloc-${q.id}"><div><span class="num">${n}</span>${esc(q.q)}</div>` +
+           (q.aide ? `<div class="aide">${esc(q.aide)}</div>` : '') + `<div class="opts n${q.o.length + (q.na ? 2 : 1)}">${opts}</div></div>`;
+    });
+    h += '</div>';
+  });
+  const u = QUESTION_UE;
+  h += `<div class="dom"><h2>Eine letzte Frage, die nicht in die Bewertung einfliesst</h2><div class="q"><div>${esc(u.q)}</div>` +
+       `<div class="opts n${u.o.length}">${u.o.map((t, k) => `<label><input type="radio" name="ue" value="${k}">${esc(t)}</label>`).join('')}</div></div></div>`;
+  document.getElementById('questionnaire').innerHTML = h;
+}
+
+function lire() {
+  Object.keys(rep).forEach(k => delete rep[k]);
+  document.querySelectorAll('#questionnaire input:checked').forEach(i => rep[i.name] = +i.value);
+  const n = QUESTIONS.filter(q => rep[q.id] !== undefined).length;
+  document.getElementById('compte').textContent = `${n} von ${QUESTIONS.length} beantwortet`;
+  return n;
+}
+
+function pointArc(cx, cy, r, f) {
+  const a = Math.PI * (1 - f);
+  return [cx + r * Math.cos(a), cy - r * Math.sin(a)];
+}
+function arc(cx, cy, r, f0, f1) {
+  const [x0, y0] = pointArc(cx, cy, r, f0), [x1, y1] = pointArc(cx, cy, r, f1);
+  return `M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+}
+function jauge(score, niveau) {
+  const cx = 150, cy = 150, r = 110, f = score / 100;
+  const segs = [[0, SEUILS.moyen / 100, 'faible', 'gering'], [SEUILS.moyen / 100, SEUILS.eleve / 100, 'moyen', 'mittel'], [SEUILS.eleve / 100, 1, 'eleve', 'hoch']];
+  let s = `<svg viewBox="0 0 300 212" role="img" aria-label="${MOT_GLOBAL[niveau]}, ${score} von 100 Risikopunkten">`;
+  segs.forEach(([a, b, k, mot]) => {
+    s += `<path d="${arc(cx, cy, r, a + .004, b - .004)}" stroke="${COUL[k]}" stroke-width="26" fill="none" opacity="${k === niveau ? 1 : .35}"/>`;
+    const [tx, ty] = pointArc(cx, cy, r + 26, (a + b) / 2);
+    s += `<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" text-anchor="middle" font-size="12" fill="#444">${mot}</text>`;
+  });
+  const [nx, ny] = pointArc(cx, cy, r - 22, f);
+  s += `<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="#1d1d1f" stroke-width="4" stroke-linecap="round"/>`;
+  s += `<circle cx="${cx}" cy="${cy}" r="8" fill="#1d1d1f"/>`;
+  s += `<text x="${cx}" y="${cy + 34}" text-anchor="middle" font-size="22" font-weight="700" fill="#1d1d1f">${score} von 100</text>`;
+  s += `<text x="${cx}" y="${cy + 54}" text-anchor="middle" font-size="13" fill="#444">Risikopunkte: je höher, desto riskanter</text>`;
+  return s + '</svg>';
+}
+function barres(doms) {
+  if (window.matchMedia && matchMedia('(max-width: 600px)').matches) return barresEtroites(doms);
+  const L = 760, hL = 40, x0 = 260, larg = 300;
+  let s = `<svg viewBox="0 0 ${L} ${doms.length * hL + 24}" role="img" aria-label="Risiko nach Bereich">`;
+  s += `<text x="${x0}" y="12" font-size="12" fill="#777">geringes Risiko</text><text x="${x0 + larg}" y="12" text-anchor="end" font-size="12" fill="#777">hohes Risiko</text>`;
+  doms.forEach((d, i) => {
+    const y = 22 + i * hL;
+    s += `<g transform="translate(0,${y})" color="#1f3a5f"><svg x="0" y="4" width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${P[d.id]}</svg>`;
+    s += `<text x="34" y="21" font-size="15" fill="#1d1d1f">${esc(d.nom)}</text>`;
+    s += `<rect x="${x0}" y="7" width="${larg}" height="18" rx="4" fill="#eceae4"/>`;
+    if (d.pct === null) {
+      s += `<text x="${x0 + larg + 12}" y="21" font-size="15" fill="#777">keine Antwort</text>`;
+    } else {
+      const w = Math.max(6, larg * d.pct / 100);
+      s += `<rect x="${x0}" y="7" width="${w.toFixed(1)}" height="18" rx="4" fill="${COUL[d.niveau]}"/>`;
+      s += `<text x="${x0 + larg + 12}" y="21" font-size="15" font-weight="700" fill="${COUL[d.niveau]}">${MOT_DOMAINE[d.niveau]}${d.force ? ' (Kernpunkt)' : ''}</text>`;
+    }
+    s += '</g>';
+  });
+  return s + '</svg>';
+}
+
+/* Handy: Beschriftung über dem Balken, damit der Text lesbar bleibt. */
+function barresEtroites(doms) {
+  const L = 340, hL = 54, larg = 230;
+  let s = `<svg viewBox="0 0 ${L} ${doms.length * hL + 6}" role="img" aria-label="Risiko nach Bereich">`;
+  doms.forEach((d, i) => {
+    const y = 4 + i * hL;
+    s += `<g transform="translate(0,${y})" color="#1f3a5f"><svg x="0" y="0" width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${P[d.id]}</svg>`;
+    s += `<text x="28" y="15" font-size="15" fill="#1d1d1f">${esc(d.nom)}</text>`;
+    s += `<rect x="0" y="24" width="${larg}" height="16" rx="4" fill="#eceae4"/>`;
+    if (d.pct === null) s += `<text x="${larg + 10}" y="37" font-size="14" fill="#777">keine Antwort</text>`;
+    else {
+      s += `<rect x="0" y="24" width="${Math.max(6, larg * d.pct / 100).toFixed(1)}" height="16" rx="4" fill="${COUL[d.niveau]}"/>`;
+      s += `<text x="${larg + 10}" y="37" font-size="14" font-weight="700" fill="${COUL[d.niveau]}">${MOT_DOMAINE[d.niveau]}${d.force ? ' (Kernpunkt)' : ''}</text>`;
+    }
+    s += '</g>';
+  });
+  return s + '</svg>';
+}
+
+function montrer() {
+  const n = lire();
+  const MIN = Math.ceil(QUESTIONS.length * 2 / 3);
+  if (n < MIN) {
+    alert(`Für ein Ergebnis braucht es mindestens ${MIN} von ${QUESTIONS.length} Antworten (Sie haben ${n}). «Weiss nicht» zählt als Antwort.`);
+    const premiere = QUESTIONS.find(q => rep[q.id] === undefined);
+    if (premiere) document.getElementById('bloc-' + premiere.id).scrollIntoView({behavior: 'smooth', block: 'center'});
+    return;
+  }
+  if (n < QUESTIONS.length) {
+    const manque = QUESTIONS.filter(q => rep[q.id] === undefined).length;
+    if (!confirm(`${manque} ${manque > 1 ? 'Fragen' : 'Frage'} ohne Antwort. Das Ergebnis trotzdem anzeigen? (Unbeantwortete Fragen zählen nicht mit.)`)) {
+      const premiere = QUESTIONS.find(q => rep[q.id] === undefined);
+      document.getElementById('bloc-' + premiere.id).scrollIntoView({behavior: 'smooth', block: 'center'});
+      return;
+    }
+  }
+  const r = evaluer(rep);
+  dernier = r;
+  document.getElementById('jauge').innerHTML = jauge(r.score, r.niveau);
+  const v = document.getElementById('verdict');
+  v.textContent = MOT_GLOBAL[r.niveau] + ", nach Ihren Antworten"; v.style.color = COUL[r.niveau];
+  document.getElementById('explication').textContent = EXPLI[r.niveau] +
+    (r.releve ? " Nach der Punktzahl allein wäre das Risiko «gering», aber ein Bereich steht auf Rot, wegen eines Punktes, der allein grossen Schaden anrichten kann: Die Stufe wird deshalb auf «mittel» angehoben." : '') +
+    (r.repondues < r.total ? ` (Berechnet aus ${r.repondues} von ${r.total} Antworten.)` : '');
+  document.getElementById('barres').innerHTML = barres(r.domaines);
+  document.getElementById('note-cle').style.display = r.domaines.some(d => d.force) ? 'block' : 'none';
+  document.getElementById('urgents').innerHTML = r.urgents.length ? r.urgents.map((u, i) =>
+    `<div class="urg">${picto(u.domaine)}<div><b>${i + 1}. ${esc(u.titre)}</b>` +
+    (u.inconnu ? '<span class="note">Sie haben «Weiss nicht» geantwortet: Das ist schon ein Warnzeichen.</span>' : '') +
+    `<div class="geste">${esc(u.geste)}</div></div></div>`).join('')
+    : '<p>Nach Ihren Antworten ist kein Punkt dringend. Testen Sie weiterhin einmal pro Jahr Ihre Datensicherung und lesen Sie Ihr Krisenhandbuch nochmals durch.</p>';
+  const ue = document.getElementById('ue');
+  if (r.ue) {
+    ue.style.display = 'block';
+    ue.innerHTML = "<b>Kunden in der Europäischen Union:</b> Zusätzlich zum Schweizer Gesetz kann für diese Personen das europäische Datenschutzrecht (die DSGVO) für Sie gelten. Das schauen wir im Gespräch gemeinsam an.";
+  } else ue.style.display = 'none';
+  ligneNom();
+  const res = document.getElementById('resultat');
+  res.classList.add('vu');
+  res.scrollIntoView({behavior: 'smooth'});
+}
+
+/* Zeile «Name · ausgefüllt am …» auf dem Blatt: bei jedem getippten Buchstaben neu gesetzt, nicht nur bei der Berechnung. */
+function ligneNom() {
+  const nom = document.getElementById('nom').value.trim();
+  const d = new Date();
+  document.getElementById('ligne-nom').textContent = (nom ? nom + ' · ' : '') + 'ausgefüllt am ' +
+    String(d.getDate()).padStart(2, '0') + '.' + String(d.getMonth() + 1).padStart(2, '0') + '.' + d.getFullYear();
+}
+
+function effacer() {
+  document.querySelectorAll('#questionnaire input:checked').forEach(i => i.checked = false);
+  document.getElementById('resultat').classList.remove('vu');
+  document.getElementById('nom').value = '';
+  lire();
+  window.scrollTo(0, 0);
+}
+
+/* Beispiele für eine Vorführung im Termin: die Seite mit #exemple=faible, #exemple=moyen oder #exemple=eleve öffnen. */
+const EXEMPLES = {
+  faible: {s1: 0, s2: 0, s3: 0, c1: 1, c2: 0, c3: 0, c4: 1, a1: 0, a2: 0, a3: 0, a4: 0, m1: 1, m2: 0, i1: 0, i2: 1, d1: 0, d2: 0, d3: 1, x1: 0, ue: 1},
+  moyen: {s1: 0, s2: 1, s3: 2, c1: 1, c2: 1, c3: 1, c4: 1, a1: 1, a2: 1, a3: 1, a4: 0, m1: 1, m2: 0, i1: 1, i2: 2, d1: 1, d2: 1, d3: 2, x1: 1, ue: 1},
+  eleve: {s1: 1, s2: 2, s3: 2, c1: 2, c2: 3, c3: 2, c4: 2, a1: 2, a2: 2, a3: 2, a4: 1, m1: 2, m2: 1, i1: 2, i2: 2, d1: 3, d2: 2, d3: 2, x1: 2, ue: 0}
+};
+function exemple() {
+  const m = null; /* Online-Version: kein Vorführbeispiel */
+  if (!m || !EXEMPLES[m[1]]) return;
+  Object.entries(EXEMPLES[m[1]]).forEach(([k, v]) => {
+    const i = document.querySelector(`input[name="${k}"][value="${v}"]`);
+    if (i) i.checked = true;
+  });
+  document.getElementById('nom').value = 'Musterfirma (fiktives Beispiel)';
+  montrer();
+}
+
+construire();
+document.addEventListener('change', lire);
+document.getElementById('nom').addEventListener('input', ligneNom);
+lire();
+exemple();
+window.addEventListener('resize', rebarres);
+window.addEventListener('beforeprint', rebarres);
+window.addEventListener('afterprint', rebarres);
+window.addEventListener('hashchange', () => { effacer(); exemple(); });
+</script>
+</main>
+<footer class="site"><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Impressum.</b> Atelier Naho, Jocelyn Bussy, Chemin des Oiseaux 12, 1433 Suchy · Schweiz · jocelyn@ateliernaho.ch</p>
+<p><b>Datenschutz.</b> <span id="dsans">Diese Seite verwendet keine Cookies.</span> Ihre Antworten bleiben in Ihrem Browser, wo auch die Berechnung läuft: Sie gelangen nie zu uns. Nur das Formular «Rückruf» erreicht uns mit Ihren Kontaktangaben, wenn Sie es senden. Wo es gespeichert wird: auf unserem Server und in unserem Kalender bei Infomaniak in der Schweiz. Es wird spätestens 6 Monate nach Ihrer Anfrage gelöscht. Eine Sicherungskopie unseres Kalenders bei Infomaniak kann es bis zu 30 Tage länger enthalten. Wenn Sie über den Link in einem unserer Mails kommen, enthält dieser Link einen Code, der zu Ihrer Firma gehört. Er sagt uns, dass jemand bei Ihnen diese Seite geöffnet hat, und wann, damit wir wissen, ob unsere Nachricht Sie interessiert hat. GoatCounter sieht diesen Code, ohne zu wissen, wem er gehört; die Zuordnung bleibt bei uns und wird spätestens 6 Monate nach dem Versand gelöscht. Wenn Sie nicht erkannt werden möchten, löschen Sie «?ref=…» aus der Adresse.</p>
+</div></footer>
+<script id="rappel-script">
+/* Rückrufanfrage (Online-Version). Wird nur beim Klick auf «Anfrage senden» gesendet, und nur an diese Website.
+   Das Ergebnis kommt nur dazu, wenn das Kästchen «mitsenden» angekreuzt ist, beschränkt auf Stufe, Punktzahl, Farbe
+   jedes Bereichs und die Kennungen der drei Punkte: nie die Antworten selbst. */
+const RAPPEL = {adresse: "/rappel", contact: "jocelyn@ateliernaho.ch"};
+function corpsRappel(champs, resultat) {
+  const p = new URLSearchParams();
+  ['nom', 'entreprise', 'tel', 'email', 'moment', 'site_web'].forEach(k => p.set(k, String(champs[k] || '').trim()));
+  p.set('accord', champs.accord ? '1' : '0');
+  if (champs.joindre && resultat) {
+    p.set('joindre', '1');
+    p.set('resultat', JSON.stringify({niveau: resultat.niveau, score: resultat.score,
+      domaines: resultat.domaines.map(d => ({id: d.id, niveau: d.niveau})),
+      urgents: resultat.urgents.map(u => u.id)}));
+  }
+  return p;
+}
+function manqueRappel(champs) {
+  if (!String(champs.nom || '').trim()) return 'Bitte geben Sie Ihren Namen an.';
+  if (!String(champs.tel || '').trim() && !String(champs.email || '').trim()) return 'Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an, damit wir Sie erreichen können.';
+  if (!champs.accord) return 'Bitte kreuzen Sie das Einverständnis an: Ohne dieses können wir Ihre Kontaktangaben nicht speichern.';
+  return '';
+}
+(function () {
+  const f = document.getElementById('form-rappel'), etat = document.getElementById('rappel-etat'), bouton = document.getElementById('rappel-envoyer');
+  if (!f) return;
+  const dire = (texte, genre) => { etat.textContent = texte; etat.className = genre || ''; };
+  if (location.protocol === 'file:') {
+    bouton.disabled = true;
+    dire('Das Formular funktioniert auf der veröffentlichten Seite. Schreiben Sie uns hier bitte an ' + RAPPEL.contact + '.');
+  }
+  f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const champs = {};
+    ['nom', 'entreprise', 'tel', 'email', 'moment', 'site_web'].forEach(k => champs[k] = f.elements[k].value);
+    champs.joindre = f.elements.joindre.checked; champs.accord = f.elements.accord.checked;
+    const manque = manqueRappel(champs);
+    if (manque) return dire(manque, 'non');
+    bouton.disabled = true; dire('Wird gesendet…');
+    try {
+      const r = await fetch(RAPPEL.adresse, {method: 'POST', body: corpsRappel(champs, dernier), credentials: 'omit', cache: 'no-store'});
+      let j = {}; try { j = await r.json(); } catch (e) { j = {}; }
+      if (r.ok && j.ok) {
+        f.reset();
+        dire('Danke, Ihre Anfrage ist angekommen. Wir melden uns auf dem angegebenen Weg bei Ihnen.', 'ok');
+        return;
+      }
+      dire((j.erreur || 'Die Anfrage ist nicht durchgekommen.') + ' Sie können uns auch schreiben: ' + RAPPEL.contact + '.', 'non');
+    } catch (e) {
+      dire('Die Anfrage ist nicht durchgekommen (Verbindung?). Sie können uns auch schreiben: ' + RAPPEL.contact + '.', 'non');
+    }
+    bouton.disabled = false;
+  });
+  // Nach einem erfolgreichen Versand bleibt der Knopf grau (kein doppelter Versand), bis man ein Feld ändert.
+  f.addEventListener('input', () => {
+    if (bouton.disabled && etat.className === 'ok') { bouton.disabled = false; dire(''); }
+  });
+  // Der für das Blatt getippte Firmenname wird ins Formular übernommen (sichtbar, änderbar), damit man ihn nicht nochmals tippt.
+  const nomFeuille = document.getElementById('nom');
+  let recopie = '';
+  if (nomFeuille) nomFeuille.addEventListener('input', () => {
+    const champ = f.elements.entreprise;
+    if (!champ.value || champ.value === recopie) { champ.value = nomFeuille.value.trim(); recopie = champ.value; }
+  });
+  const effacerPage = effacer;
+  effacer = function () { effacerPage(); f.reset(); if (location.protocol !== 'file:') { bouton.disabled = false; dire(''); } };
+})();
+</script>
+</body>
+</html>
