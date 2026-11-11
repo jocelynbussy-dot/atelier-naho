@@ -251,6 +251,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
       <label class="champ">Téléphone <input type="tel" name="tel" maxlength="30" autocomplete="tel"></label>
       <label class="champ">ou e-mail (l'un des deux suffit) <input type="email" name="email" maxlength="120" autocomplete="email"></label>
       <label class="champ">Le meilleur moment pour vous appeler <select name="moment"><option value="">indifférent</option><option value="matin">le matin</option><option value="apres-midi">l'après-midi</option></select></label>
+      <label class="champ">Langue de l'appel <select name="langue"><option value="fr">français</option><option value="de">allemand</option></select></label>
       <div class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
       <label class="case large"><input type="checkbox" name="joindre" value="1"> <span>Joindre mon résultat : le niveau, la couleur de chaque domaine et les trois points à régler. Le détail de mes réponses n'est jamais envoyé.</span></label>
       <label class="case large"><input type="checkbox" name="accord" value="1"> <span>J'accepte que ces informations servent à me rappeler pour cet entretien, selon l'information ci-dessus.</span></label>
@@ -646,7 +647,7 @@ window.addEventListener('hashchange', () => { effacer(); exemple(); });
 const RAPPEL = {adresse: "/rappel", contact: "jocelyn@ateliernaho.ch"};
 function corpsRappel(champs, resultat) {
   const p = new URLSearchParams();
-  ['nom', 'entreprise', 'tel', 'email', 'moment', 'site_web'].forEach(k => p.set(k, String(champs[k] || '').trim()));
+  ['nom', 'entreprise', 'tel', 'email', 'moment', 'langue', 'site_web'].forEach(k => p.set(k, String(champs[k] || '').trim()));
   p.set('accord', champs.accord ? '1' : '0');
   if (champs.joindre && resultat) {
     p.set('joindre', '1');
@@ -673,7 +674,7 @@ function manqueRappel(champs) {
   f.addEventListener('submit', async ev => {
     ev.preventDefault();
     const champs = {};
-    ['nom', 'entreprise', 'tel', 'email', 'moment', 'site_web'].forEach(k => champs[k] = f.elements[k].value);
+    ['nom', 'entreprise', 'tel', 'email', 'moment', 'langue', 'site_web'].forEach(k => champs[k] = f.elements[k].value);
     champs.joindre = f.elements.joindre.checked; champs.accord = f.elements.accord.checked;
     const manque = manqueRappel(champs);
     if (manque) return dire(manque, 'non');
