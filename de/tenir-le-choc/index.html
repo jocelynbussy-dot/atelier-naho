@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krisenfest · Atelier Naho</title>
+<meta name="description" content="Wenn Ihre Computer morgen ausfallen würden: Wüsste Ihr Betrieb, was zu tun ist? Ein Audit bei Ihnen vor Ort und die rote Seite Ihres Krisenhandbuchs, gemeinsam mit Ihnen geschrieben. Für KMU ohne eigene IT-Fachperson in Vollzeit.">
+<meta property="og:title" content="Krisenfest · Atelier Naho">
+<meta property="og:description" content="Ein Krisenhandbuch, damit Ihr Betrieb weiterläuft, wenn die Informatik ausfällt. Das Audit zum Pauschalpreis, das vollständige Handbuch nach Offerte.">
+<meta property="og:url" content="https://ateliernaho.ch/de/tenir-le-choc/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="de_CH">
+<link rel="canonical" href="https://ateliernaho.ch/de/tenir-le-choc/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--fond:#ffffff;--surface:#F2F4F8;--encre:#111111;--doux:#56646a;--petrole:#203A71;--petrole-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--titre:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--petrole)}
+a:focus-visible{outline:3px solid var(--petrole);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.etroit{max-width:760px}
+header{padding:18px 0;border-bottom:1px solid var(--trait)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
+.hero{background:var(--petrole);color:#fff;padding:64px 0 56px}
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.tagline{color:#fff;opacity:.85;font-weight:600;font-size:17px;margin:0 0 14px}
+h1{font:800 clamp(30px,4.2vw,46px)/1.1 var(--titre);letter-spacing:-.01em;color:#fff;margin:0 0 18px;max-width:20em}
+.hero p{font-size:clamp(18px,2vw,20px);color:rgba(255,255,255,.9);margin:0 0 16px;max-width:36em}
+.hero p.rassure{font-size:17px;color:#fff;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:10px;margin-top:22px}
+.btn-sec{display:inline-block;color:#fff;border:2px solid #fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px;margin-top:6px}
+.btn-sec:hover{background:#fff;color:var(--petrole)}
+.duo{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}.duo .btn-sec{margin-top:0}
+.btn-prim{display:inline-block;background:var(--cuivre);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:10px}
+.btn-prim:hover{background:var(--cuivre-fonce)}
+.duo-note{font-size:15px;opacity:.9;margin-top:12px}
+.illus{width:100%;height:auto;display:block}
+.photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;display:block;margin:0 0 26px}
+section{padding:60px 0}
+.bande{background:var(--surface)}
+h2{font:800 30px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin:0 0 22px}
+h3{font:800 21px/1.3 var(--titre);color:var(--petrole);margin:0 0 8px}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.chiffres li{border-top:3px solid var(--petrole);padding-top:14px}
+.chiffres b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
+.chiffres small{display:block;color:var(--doux);font-size:14px;margin-top:8px}
+.trois{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.trois li{background:#fff;border:1px solid var(--trait);border-radius:14px;padding:22px}
+.trois .n{display:block;font:800 34px/1.1 var(--titre);color:var(--petrole);margin-bottom:10px}
+.trois p{margin:0}
+.etapes{list-style:none;margin:0;padding:0}
+.etapes li{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--trait)}
+.etapes li:first-child{border-top:0;padding-top:0}
+.num{font:800 64px/1 var(--titre);letter-spacing:-.02em;color:var(--petrole)}
+.etapes p{margin:0 0 8px}
+.qui{color:var(--doux);font-size:15px}
+ul.q{margin:0 0 14px;padding-left:22px}
+ul.q li{margin-bottom:6px}
+.livre{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:12px 16px;margin:16px 0 0;color:var(--encre)}
+.livre b{color:var(--petrole)}
+.prix{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px;margin:0 0 18px;padding:0;list-style:none}
+.prix li{border-top:3px solid var(--petrole);padding-top:14px}
+.prix b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
+.eng{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin:0;padding:0;list-style:none}
+.eng b{display:block;color:var(--petrole)}
+.eng span{color:var(--doux)}
+.contact{background:var(--petrole);color:#fff;border-radius:18px;padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0;opacity:.9;font-size:18px}
+.contact .liens{white-space:nowrap}
+.contact .liens a{display:inline-block;color:var(--petrole);background:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;margin:4px 8px 4px 0}
+.contact .liens a.sec{background:transparent;color:#fff;border:2px solid #fff}
+.sources{font-size:14px;color:var(--doux)}
+.sources ol{padding-left:20px;margin:0}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux)}
+footer p{margin:0 0 6px;max-width:62ch}
+footer img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:860px){
+ .hero .w{grid-template-columns:1fr}.illus{max-width:440px;margin:0 auto}
+ .chiffres,.trois,.prix,.eng{grid-template-columns:1fr}
+ .etapes li{grid-template-columns:1fr;gap:4px}
+ .num{font-size:44px}
+ section{padding:44px 0}
+ .hero{padding:40px 0 40px}
+ .contact{padding:30px 22px;grid-template-columns:1fr}.contact .liens{white-space:normal}
+}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+@media (max-width:340px){.logo img{height:26px}header .w{gap:8px}.nav-cta{padding:5px 9px;font-size:14px}}
+@media print{.nav-cta,.contact .liens,.btn-sec,.btn-prim{display:none}.hero{background:#fff;color:#111}.hero h1,.hero p,.tagline{color:#111}}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="w">
+<a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
+<nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples">Beispiele</a><a href="/de/ia-chez-vous/">KI im Betrieb</a><a href="/de/tenir-le-choc/" aria-current="page">Krisenfest</a><a href="/de/durabilite/">Nachhaltigkeit</a><a href="/de/procedures/">Arbeitsanweisungen</a><a href="/de/autodiagnostic/">Selbsttest</a><a href="/de/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><a href="/tenir-le-choc/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
+</div></header>
+
+<div class="hero"><div class="w">
+<div>
+<p class="tagline">Krisenfest · weiterarbeiten, wenn die Informatik ausfällt</p>
+<h1>Wenn Ihre Computer morgen ausfallen würden: Wüsste Ihr Betrieb, was zu tun ist?</h1>
+<p>Eine Datensicherung haben Sie vermutlich. Die eigentliche Frage ist, ob sie sich wiederherstellen lässt, wie lange das dauert und was der Betrieb in der Zwischenzeit tut.</p>
+<p>Wir prüfen das gemeinsam mit Ihnen vor Ort. Danach schreiben wir zusammen die rote Seite Ihres Krisenhandbuchs: wer entscheidet, wen man anruft, wie lange Sie durchhalten. Dazu die kurze Liste dessen, was vorher zu beheben ist, und auf Wunsch das vollständige Handbuch (als Option, nach Offerte).</p>
+<p class="rassure">Kurz gesagt: eine rote Seite, die das ganze Team versteht, eine Bewertung auf einem Blatt und das, was zuerst zu tun ist.</p>
+<div class="duo"><a class="btn-prim" href="/de/autodiagnostic/">Den kostenlosen Selbsttest machen, 10 Minuten</a><a class="btn-sec" href="mailto:jocelyn@ateliernaho.ch?subject=Krisenfest%3A%20kostenloses%20Gespr%C3%A4ch">Kostenloses Gespräch anfragen</a></div>
+<p class="duo-note">Der Selbsttest ist die schnelle Variante, allein und online. Krisenfest ist die vollständige: Wir kommen zu Ihnen und schreiben mit Ihnen die rote Seite Ihres Krisenhandbuchs.</p>
+</div>
+<svg class="illus" viewBox="0 0 480 340" role="img" aria-label="Beispiel einer Seite aus einem Krisenhandbuch: wer entscheidet, wen man in welcher Reihenfolge anruft, wie lange man durchhält, wo die Kopie der Daten liegt.">
+<g font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<rect x="20" y="14" width="440" height="312" rx="18" fill="#fff"/>
+<rect x="20" y="14" width="440" height="312" rx="18" fill="none" stroke="#b3261e" stroke-width="5"/>
+<text x="44" y="52" font-size="17" font-weight="800" fill="#b3261e">Krisenhandbuch · die rote Seite</text>
+<rect x="318" y="33" width="118" height="24" rx="12" fill="#F2F4F8"/><text x="377" y="50" text-anchor="middle" font-size="13" fill="#56646a">Beispiel</text>
+<g font-size="14" fill="#111">
+<text x="44" y="92" font-weight="700">Wer entscheidet</text><text x="210" y="92" fill="#56646a">Geschäftsleitung, sonst Vertretung</text>
+<text x="44" y="126" font-weight="700">Wen anrufen</text>
+<text x="210" y="126" fill="#56646a">1. IT-Dienstleister</text>
+<text x="210" y="148" fill="#56646a">2. Versicherung, vor jeder Ausgabe</text>
+<text x="210" y="170" fill="#56646a">3. Hersteller der Software</text>
+<text x="44" y="210" font-weight="700">Durchhalten</text><text x="210" y="210" fill="#56646a">2 Tage ohne die Software</text>
+<text x="44" y="252" font-weight="700">Datenkopie</text><text x="210" y="252" fill="#56646a">ausser Haus, und wer sie zurückholt</text>
+<text x="44" y="306" font-size="13" fill="#56646a">Eine Seite, auf Papier, griffbereit auch ohne Computer.</text>
+</g></g></svg>
+</div></div>
+
+<section><div class="w">
+<h2>Was eine aktuelle Studie zeigt</h2>
+<ul class="chiffres">
+<li><b>90 %</b><span>der Schweizer KMU mit 1 bis 49 Mitarbeitenden machen Datensicherungen.</span></li>
+<li><b>27 %</b><span>prüfen regelmässig, ob sich diese Sicherungen wiederherstellen lassen.</span></li>
+<li><b>28 %</b><span>haben einen schriftlichen Notfallplan.</span></li>
+</ul>
+<p style="margin:22px 0 0;color:var(--doux);font-size:15px">KMU-Cyberstudie 2026 der Mobiliar und ihrer Partner, unterstützt vom Bundesamt für Cybersicherheit, 507 befragte KMU-Führungskräfte, veröffentlicht am 22.10.2026 <a href="#s1">[1]</a>. Ob eine Sicherung, die nie wiederhergestellt wurde, im Ernstfall taugt, weiss niemand.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<img class="photo" src="/img/tenir-bureau.jpg" alt="Eine Mitarbeiterin arbeitet am Computer, ein Blatt in der Hand, in einem kleinen Büro" loading="lazy">
+<h2>Für wen dieses Audit gedacht ist</h2>
+<p>Für Unternehmen <b>ohne eigene IT-Fachperson in Vollzeit</b>, oft mit 5 bis 100 Mitarbeitenden. Meist kümmert sich ein Dienstleister um die Geräte, und niemand hat wirklich Zeit zu prüfen, was an dem Tag geschähe, an dem alles stillsteht.</p>
+<p>Und für Unternehmen, in denen KI schon angekommen ist, mit oder ohne Regeln: eine umformulierte E-Mail, ein zusammengefasster Vertrag, eine übersetzte Offerte. Das ist nützlich, es ist aber auch ein zusätzliches Einfallstor.</p>
+<p style="color:var(--doux)">Kleiner oder grösser? Schreiben Sie uns, wir schauen gemeinsam, was für Ihre Grösse sinnvoll ist.</p>
+</div></section>
+
+<section><div class="w">
+<h2>Was Sie erhalten</h2>
+<ul class="trois">
+<li><span class="n">1</span><h3>Die rote Seite Ihres Krisenhandbuchs</h3><p>Eine Seite, mit Ihnen in einfachen Worten geschrieben: wer entscheidet, dass der Krisenfall gilt, wen man in welcher Reihenfolge anruft, wie lange Sie ohne Ihre wichtigste Software durchhalten, wo die Kopie Ihrer Daten und die Notfallzugänge liegen. Ausgedruckt und dort abgelegt, wo man sie findet, wenn kein Bildschirm mehr angeht.</p></li>
+<li><span class="n">2</span><h3>Die Risikobewertung</h3><p>Ein einziges Blatt: eine Gesamtnote, ein Balken für jeden der 7 Bereiche, die 3 dringendsten Punkte und was ein Ausfall bei Ihnen kosten würde. So wissen Sie, was zuerst zu beheben ist.</p></li>
+<li><span class="n">3</span><h3>Die Massnahmen</h3><p>Die 5 wichtigsten Massnahmen, um krisenfest zu werden, in der richtigen Reihenfolge: für jede, wer sie umsetzt (Sie, Ihr Dienstleister oder wir), mit welchem Aufwand oder welchen Kosten zu rechnen ist, und ein Zieldatum.</p></li>
+</ul>
+<p class="livre"><b>Die 7 Bereiche:</b> Datensicherung, Weiterführung des Betriebs, Zugänge, E-Mails und betrügerische Anrufe, Nutzung von KI, Personendaten, Versicherung. 43 Fragen, jede Antwort anhand eines Nachweises geprüft, den Sie uns zeigen.</p>
+<p class="livre"><b>Zur Bewertung dazu:</b> Regeln auf einer Seite für den Einsatz von KI in Ihrem Betrieb.</p>
+<p class="livre"><b>Als Option das vollständige Krisenhandbuch.</b> Aufbauend auf der roten Seite: was jeder Arbeitsplatz während des Ausfalls von Hand erledigt, die Papierformulare, vorbereitete Nachrichten an Ihre Kunden, die Rückkehr zum Normalbetrieb und eine Übung unter echten Bedingungen. Es umfasst wenige Seiten oder eine ganze Logistik, je nachdem, was bei Ihnen vorzusehen ist: ab CHF 4'900, den genauen Preis legen wir in einer Offerte fest.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<img class="photo" src="/img/tenir-releve.jpg" alt="Eine Person zeigt einem Kollegen etwas auf dem Bildschirm eines Laptops" loading="lazy">
+<h2>So läuft es ab</h2>
+<ol class="etapes">
+<li><div class="num">0</div><div><h3>Ein kostenloses Gespräch</h3><p>30 Minuten per Videoanruf mit Ihnen. Fünf Fragen: wie viele Tage Sie ohne Computer durchhalten, Marge und Löhne eines Tages, wann zuletzt eine Sicherung wiederhergestellt wurde, ob es eine Kopie ausserhalb des Netzwerks gibt und ob ein schriftliches Krisenhandbuch existiert.</p><p class="qui">Danach kennen Sie die ersten Lücken in Ihrem Krisenhandbuch, jene, die zuerst zu schliessen sind. Ob das Audit für Sie in Frage kommt, entscheiden Sie anschliessend.</p></div></li>
+<li><div class="num">1</div><div><h3>Eine anonyme Umfrage</h3><p>Acht Fragen an Ihre Mitarbeitenden: welche KI sie nutzen und welche verdächtigen E-Mails und Anrufe sie erhalten. Anonym, damit alle offen antworten.</p><p class="qui">5 Minuten pro Person.</p></div></li>
+<li><div class="num">2</div><div><h3>Die Bestandesaufnahme bei Ihnen</h3><p>Wir gehen den Fragebogen Zeile für Zeile durch, mit Ihnen und der Person, die sich um die Informatik kümmert. Sie zeigen, wir notieren. Und wir machen vor Ihren Augen einen ersten Wiederherstellungsversuch: Sie wählen einen Ordner, wir stoppen die Zeit.</p><p class="qui">Etwa ein halber Tag.</p></div></li>
+<li><div class="num">3</div><div><h3>Die rote Seite, die Bewertung und die Massnahmen</h3><p>Wir stellen mit Ihnen die rote Seite fertig, übergeben Ihnen dann die Bewertung auf einem Blatt und die wichtigsten Massnahmen und besprechen sie mit Ihnen.</p><p class="qui">30 Minuten per Video. Vom ersten Gespräch bis zur Übergabe rechnen wir mit zwei bis drei Wochen.</p></div></li>
+<li><div class="num">4</div><div><h3>Danach liegt es bei Ihnen</h3><p>Die Massnahmen setzen Sie selbst um, mit Ihrem Dienstleister oder mit uns, wenn es unser Fach ist (zum Beispiel das vollständige Krisenhandbuch). Auf Wunsch kommen wir jedes Quartal wieder: eine Wiederherstellung vor Ihren Augen, eine kurze Ausfallübung, um die rote Seite zu testen, danach Seite und Bewertung aktualisiert. Der Preis dieser Begleitung hängt davon ab, was bei Ihnen zu begleiten ist: Wir besprechen ihn bei der Übergabe der Bewertung.</p></div></li>
+</ol>
+</div></section>
+
+<section><div class="w etroit">
+<h2>Der Preis des Audits</h2>
+<ul class="prix">
+<li><b>CHF 3'900</b><span>bis 20 Personen</span></li>
+<li><b>CHF 5'400</b><span>21 bis 50 Personen</span></li>
+<li><b>Nach Offerte</b><span>über 50 Personen</span></li>
+</ul>
+<p>Ohne MWST. Ein Pauschalpreis, den wir vor dem Start nennen, keine Abrechnung nach Stunden. Das Gespräch von 30 Minuten ist kostenlos und unverbindlich. Das vollständige Krisenhandbuch als Option: ab CHF 4'900, genauer Preis nach Offerte.</p>
+</div></section>
+
+<section class="bande"><div class="w">
+<h2>Was wir versprechen und was nicht</h2>
+<ul class="eng">
+<li><b>Wir halten fest, was geprüft wurde und wann</b><span>Jeder Punkt der Bewertung sagt, was am Tag der Bestandesaufnahme gezeigt wurde. Ein grüner Punkt heisst: erledigt und an jenem Tag gezeigt.</span></li>
+<li><b>Wir behalten Ihre Daten nicht</b><span>Sie öffnen Ihre Systeme, wir schauen hin und notieren. Wir kopieren keine Daten aus Ihren Systemen. Die rote Seite und das ausgefüllte Handbuch gehören Ihnen: Nach der Übergabe behalten wir keine Kopie davon, ausser Sie sind schriftlich damit einverstanden.</span></li>
+<li><b>Wir versprechen nicht, dass nichts passiert</b><span>Niemand kann garantieren, dass ein Unternehmen nie angegriffen wird oder dass nie ein Ausfall eintritt. Ein Wiederherstellungsversuch mit einem Ordner beweist auch nicht, dass sich alle Ihre Daten zurückholen lassen. Wir sagen Ihnen, wo Sie stehen und womit Sie anfangen sollten.</span></li>
+<li><b>Wir sagen Ihnen nicht, ob Sie das Gesetz einhalten</b><span>Wir zeigen, welche Punkte des Datenschutzgesetzes (DSG) Sie betreffen, und nennen jene, bei denen sich der Rat einer Anwältin oder eines Anwalts lohnt. Das ist keine Rechtsberatung.</span></li>
+<li><b>Kein Penetrationstest</b><span>Wir führen weder Scans noch simulierte Angriffe durch. Wenn ein solcher Test für Sie nützlich wäre, sagen wir es Ihnen, und eine Fachperson führt ihn durch.</span></li>
+<li><b>Keine Überwachung rund um die Uhr</b><span>Das ist die Aufgabe eines IT-Dienstleisters. Wir ersetzen ihn nicht, wir arbeiten mit ihm zusammen.</span></li>
+</ul>
+</div></section>
+
+<section style="padding-top:60px"><div class="w">
+<div class="contact">
+<div><h2>Mit 30 Minuten beginnen</h2><p>Ein kostenloses Gespräch per Video: Danach wissen Sie, welche Punkte zuerst zu regeln sind, damit Ihr Betrieb weiterläuft, wenn die Informatik ausfällt.</p></div>
+<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+</div>
+<p style="margin:26px 0 0"><a href="/de/autodiagnostic/">Möchten Sie sich zuerst allein ein Bild machen? Der Selbsttest, 19 Fragen, etwa zehn Minuten</a></p>
+<p style="margin:8px 0 0"><a href="/de/ia-chez-vous/">KI ist schon in Ihrem Betrieb: einen Rahmen setzen</a></p>
+</div></section>
+
+<section class="sources"><div class="w">
+<p><b>Quelle</b> (abgerufen am 09.11.2026). Diese Seite beschreibt unsere Methode; sie ersetzt weder eine Rechtsberatung noch die Beurteilung Ihrer Versicherung.</p>
+<ol>
+<li id="s1">Die Mobiliar und Partner, mit Unterstützung des Bundesamts für Cybersicherheit (BACS), KMU-Cyberstudie 2026, 22.10.2026: <a href="https://www.cyberstudie.ch">cyberstudie.ch</a> und <a href="https://www.mobiliere.ch/etude/cybersecurite-suisse">mobiliere.ch</a></li>
+</ol>
+</div></section>
+
+<footer><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Impressum.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Schweiz · jocelyn@ateliernaho.ch</p>
+<p><b>Datenschutz.</b> Diese Seite verwendet keine Cookies. Einziges Formular: die Rückrufanfrage des <a href="/de/autodiagnostic/">Selbsttests</a>, höchstens 6 Monate auf unserem Server und in unserem Kalender bei Infomaniak in der Schweiz gespeichert (zuzüglich höchstens 30 Tage in der Sicherungskopie des Kalenders). Wenn Sie uns schreiben, dient Ihre Nachricht nur dazu, Ihnen zu antworten.</p>
+<p>Fotos: Unsplash.</p>
+</div></footer>
+</body>
+</html>
