@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KI ist schon in Ihrem Betrieb · Atelier Naho</title>
+<meta name="description" content="Ihre Teams nutzen vielleicht schon ChatGPT oder ein anderes KI-Werkzeug. Eine Bestandesaufnahme machen, einen Rahmen setzen, der sich auf das DSG stützt, und dann Ihre Teams in diesem Rahmen eigene Werkzeuge bauen lassen.">
+<meta property="og:title" content="KI ist schon in Ihrem Betrieb · Atelier Naho">
+<meta property="og:description" content="Eine Bestandesaufnahme machen, einen Rahmen setzen und dann Ihre Teams in diesem Rahmen eigene Werkzeuge bauen lassen.">
+<meta property="og:url" content="https://ateliernaho.ch/de/ia-chez-vous/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ateliernaho.ch/img/entete.jpg">
+<meta property="og:site_name" content="Atelier Naho">
+<meta property="og:locale" content="de_CH">
+<link rel="canonical" href="https://ateliernaho.ch/de/ia-chez-vous/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script src="/compteur.js" defer></script>
+<style>
+:root{--fond:#ffffff;--surface:#F2F4F8;--encre:#111111;--doux:#56646a;--petrole:#203A71;--petrole-fonce:#172B54;--cuivre:#DE3146;--cuivre-fonce:#B3243A;--trait:#D9DEE8;--titre:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--petrole)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.etroit{max-width:760px}
+header{padding:18px 0;border-bottom:1px solid var(--trait)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:40px;width:auto;display:block}
+.nav-cta{color:var(--petrole);font-weight:600;text-decoration:none;border:2px solid var(--petrole);padding:7px 16px;border-radius:9px;white-space:nowrap}
+.hero{background:var(--petrole);color:#fff;padding:64px 0 56px}
+.tagline{color:#fff;opacity:.85;font-weight:600;font-size:17px;margin:0 0 14px}
+h1{font:800 clamp(30px,4.2vw,46px)/1.1 var(--titre);letter-spacing:-.01em;color:#fff;margin:0 0 18px;max-width:20em}
+.hero p{font-size:clamp(18px,2vw,20px);color:rgba(255,255,255,.9);margin:0 0 16px;max-width:36em}
+.hero p.rassure{font-size:17px;color:#fff;background:rgba(255,255,255,.1);padding:12px 16px;border-radius:10px;margin-top:22px}
+section{padding:60px 0}
+.bande{background:var(--surface)}
+h2{font:800 30px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin:0 0 22px}
+h3{font:800 21px/1.3 var(--titre);color:var(--petrole);margin:28px 0 8px}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.chiffres li{border-top:3px solid var(--petrole);padding-top:14px}
+.chiffres b{display:block;font:800 34px/1.1 var(--titre);letter-spacing:-.01em;color:var(--petrole);margin-bottom:6px}
+.chiffres span{color:var(--encre)}
+.chiffres small{display:block;color:var(--doux);font-size:14px;margin-top:8px}
+.marche{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start}
+.num{font:800 64px/1 var(--titre);letter-spacing:-.02em;color:var(--petrole)}
+.marche p{margin:0 0 14px}
+ul.q{margin:0 0 14px;padding-left:22px}
+ul.q li{margin-bottom:6px}
+.livre{background:#fff;border:1px solid var(--trait);border-radius:10px;padding:12px 16px;margin:16px 0 0;color:var(--encre)}
+.livre b{color:var(--petrole)}
+.loi{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 36px;margin:0;padding:0;list-style:none}
+.loi li{padding:0}
+.loi b{display:block;color:var(--petrole)}
+.loi span{color:var(--doux)}
+.contact{background:var(--petrole);color:#fff;border-radius:18px;padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0;opacity:.9;font-size:18px}
+.contact .liens{white-space:nowrap}
+.contact .liens a{display:inline-block;color:var(--petrole);background:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;margin:4px 8px 4px 0}
+.contact .liens a.sec{background:transparent;color:#fff;border:2px solid #fff}
+.sources{font-size:14px;color:var(--doux)}
+.sources ol{padding-left:20px;margin:0}
+.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--trait);padding:26px 0 44px;font-size:14px;color:var(--doux)}
+footer p{margin:0 0 6px;max-width:62ch}
+footer img{height:26px;width:auto;margin-bottom:10px;display:block}
+@media (max-width:860px){
+ .chiffres,.loi{grid-template-columns:1fr}
+ .marche{grid-template-columns:1fr;gap:4px}
+ .num{font-size:44px}
+ section{padding:44px 0}
+ .hero{padding:40px 0 40px}
+ .contact{padding:30px 22px;grid-template-columns:1fr}.contact .liens{white-space:normal}
+}
+@media (max-width:420px){.logo img{height:32px}.nav-cta{padding:6px 12px;font-size:15px}}
+@media (max-width:340px){.logo img{height:26px}header .w{gap:8px}.nav-cta{padding:5px 9px;font-size:14px}}
+@media print{.nav-cta,.contact .liens{display:none}}
+
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.illus{width:100%;height:auto;display:block}
+.photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;display:block;margin:0 0 26px}
+.donut{width:84px;height:84px;display:block;margin-bottom:10px}
+.ico{width:52px;height:52px;display:block;margin-top:10px}
+.flux{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0 6px}
+.flux span{background:var(--surface);border:1px solid var(--trait);border-radius:8px;padding:8px 12px;font-size:15px}
+.flux span.fin{background:var(--petrole);color:#fff;border-color:var(--petrole)}
+.flux b{color:var(--petrole);font-size:20px}
+@media (max-width:860px){.hero .w{grid-template-columns:1fr}.illus{max-width:440px;margin:0 auto}.ico{display:none}.flux{flex-direction:column;align-items:stretch}.flux b{text-align:center;transform:rotate(90deg)}}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="w">
+<a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
+<nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples">Beispiele</a><a href="/de/ia-chez-vous/" aria-current="page">KI im Betrieb</a><a href="/de/tenir-le-choc/">Krisenfest</a><a href="/de/durabilite/">Nachhaltigkeit</a><a href="/de/procedures/">Arbeitsanweisungen</a><a href="/de/autodiagnostic/">Selbsttest</a><a href="/de/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><a href="/ia-chez-vous/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
+</div></header>
+
+<div class="hero"><div class="w">
+<div>
+<p class="tagline">KI ist schon in Ihrem Betrieb</p>
+<h1>Ihre Teams nutzen vielleicht schon KI. Dann am besten in einem klaren Rahmen.</h1>
+<p>Ein Mitarbeiter formuliert eine E-Mail mit ChatGPT um, eine Kollegin fasst einen Vertrag zusammen, ein weiterer lässt eine Offerte übersetzen. Manchmal mit einem privaten Konto, manchmal ohne darüber zu reden. Wenn das so ist, dann vor allem, weil das Werkzeug nützlich ist.</p>
+<p>Die wichtigere Frage ist eher: Was verlässt den Betrieb, und wer entscheidet darüber?</p>
+<p class="rassure">Diese Seite zeigt, was man weiss, was das Schweizer Recht sagt und wie man in drei Schritten vorgeht.</p>
+</div>
+<svg class="illus" viewBox="0 0 480 320" role="img" aria-label="Links verstreute KI-Nutzungen, private Konten und offene Fragen. Rechts dieselben Nutzungen in einem Rahmen: Werkzeuge des Betriebs, geprüft und freigegeben.">
+<g font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+<g opacity=".9">
+<rect x="14" y="40" width="118" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="73" y="65" text-anchor="middle" font-size="13" fill="#56646a">ChatGPT privat</text>
+<rect x="40" y="104" width="104" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="92" y="129" text-anchor="middle" font-size="13" fill="#56646a">Vertrag kopiert</text>
+<rect x="10" y="168" width="122" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="71" y="193" text-anchor="middle" font-size="13" fill="#56646a">eine Übersetzung</text>
+<rect x="46" y="232" width="92" height="40" rx="20" fill="#fff" stroke="#D9DEE8" stroke-dasharray="4 4"/><text x="92" y="257" text-anchor="middle" font-size="13" fill="#56646a">wer bestimmt?</text>
+</g>
+<path d="M160 160 H206" stroke="#ffffff" stroke-width="3" fill="none"/><path d="M200 152 L212 160 L200 168" stroke="#ffffff" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<rect x="226" y="22" width="240" height="276" rx="18" fill="#fff" stroke="#203A71" stroke-width="3"/>
+<rect x="246" y="10" width="112" height="24" rx="12" fill="#203A71"/><text x="302" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Ihr Rahmen</text>
+<g font-size="13" fill="#111">
+<rect x="246" y="52" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="79">Erlaubte Werkzeuge</text>
+<rect x="246" y="106" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="133">Geschützte Daten</text>
+<rect x="246" y="160" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="187">Eigene Werkzeuge</text>
+<rect x="246" y="214" width="200" height="44" rx="10" fill="#F2F4F8"/><text x="264" y="241">Vor Einsatz geprüft</text>
+</g>
+<circle cx="430" cy="282" r="20" fill="#203A71"/><path d="M420 282 l7 7 l13 -14" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>
+</div></div>
+
+<section><div class="w">
+<h2>Was Studien zeigen</h2>
+<ul class="chiffres">
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="158.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">74 %</text></svg><b>3 von 4</b><span>Schweizer KMU setzen KI bei der Arbeit ein oder probieren sie gerade aus.</span><small>Sotomo für AXA, 336 KMU, März 2026 <a href="#s1">[1]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="71.1 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">1/3</text></svg><b>Nur 1 von 3</b><span>KMU, die KI nutzen, hat eine klare Regel zum Datenschutz. Bei Betrieben mit 5 bis 9 Personen: 23 %.</span><small>Sotomo für AXA, 300 KMU, März 2025 <a href="#s2">[2]</a></small></li>
+<li><svg class="donut" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#D9DEE8" stroke-width="12"/><circle cx="42" cy="42" r="34" fill="none" stroke="#203A71" stroke-width="12" stroke-dasharray="55.5 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#203A71">26 %</text></svg><b>In 26 %</b><span>der Fälle kam KI in die Arbeit, ohne dass die direkte vorgesetzte Person davon wusste.</span><small>Deloitte Schweiz, 1'002 Personen, 2023, nicht repräsentative Stichprobe <a href="#s3">[3]</a></small></li>
+</ul>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<div class="marche">
+<div><div class="num">1</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="24" cy="24" r="14" fill="none" stroke="#203A71" stroke-width="4"/><path d="M34 34 L48 48" stroke="#203A71" stroke-width="5" stroke-linecap="round"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-bureau.jpg" alt="Eine Angestellte arbeitet in einem Büro an ihrem Laptop" loading="lazy">
+<h2>Bestandesaufnahme machen</h2>
+<p>Bevor man eine Regel aufstellt, muss man wissen, was wirklich läuft. Ein paar Fragen genügen:</p>
+<ul class="q">
+<li>Wer nutzt welches Werkzeug, und wofür?</li>
+<li>Mit einem Konto des Betriebs oder mit einem privaten Konto?</li>
+<li>Was wird dort hineinkopiert: Kundennamen, Offerten, Löhne, Verträge?</li>
+<li>Haben Sie im Team schon darüber gesprochen?</li>
+</ul>
+<p>Wir stellen diese Fragen Ihren Teams, einfach und ohne Schuldige zu suchen. Die Leute sagen eher, was sie tun, wenn sie wissen, dass es darum geht, ihnen zu helfen, es richtig zu machen.</p>
+<p class="livre"><b>Was Sie erhalten:</b> eine Bestandesaufnahme auf einer Seite. Was genutzt wird, was nützlich ist, was Fragen aufwirft.</p>
+</div>
+</div>
+</div></section>
+
+<section><div class="w">
+<h2>Was das Schweizer Recht sagt, kurz gefasst</h2>
+<ul class="loi">
+<li><b>Das DSG gilt schon heute für KI</b><span>Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB) hat es 2023 gesagt und 2025 bestätigt: Das geltende Gesetz ist direkt auf Datenbearbeitungen mit KI anwendbar. Man muss nicht auf ein Spezialgesetz warten. <a href="#s4">[4]</a></span></li>
+<li><b>Was man in ein Online-Werkzeug kopiert, geht an einen Anbieter</b><span>Personendaten einem Anbieter anzuvertrauen, kann eine Auftragsbearbeitung sein, geregelt in Art. 9 DSG. Werden die Daten im Ausland bearbeitet, können auch Art. 16 und 17 DSG gelten. <a href="#s5">[5]</a></span></li>
+<li><b>Der einfachste Rat</b><span>Der EDÖB empfiehlt, Personendaten zu entfernen, bevor man eine Anfrage in ein KI-Werkzeug eingibt. <a href="#s6">[6]</a></span></li>
+<li><b>Der Arbeitgeber darf die Regeln festlegen</b><span>Das Obligationenrecht erlaubt ihm, allgemeine Anordnungen über die Ausführung der Arbeit zu erlassen (Art. 321d OR). Eine Weisung dazu, welche Werkzeuge man nutzen darf, KI eingeschlossen, kann sich darauf stützen. <a href="#s7">[7]</a></span></li>
+</ul>
+<p style="margin:26px 0 0;color:var(--doux)">Und wenn Sie mit der Europäischen Union arbeiten, kann die DSGVO dazukommen, und die EU-Verordnung über künstliche Intelligenz kann ein Schweizer Unternehmen betreffen, wenn die Ergebnisse eines KI-Systems in der EU verwendet werden <a href="#s8">[8]</a>. Das klärt man im Einzelfall.</p>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<div class="marche">
+<div><div class="num">2</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="10" y="6" width="34" height="44" rx="4" fill="none" stroke="#203A71" stroke-width="4"/><path d="M18 18 H36 M18 27 H36" stroke="#203A71" stroke-width="3"/><path d="M19 38 l5 5 l10 -11" stroke="#203A71" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-atelier-outils.jpg" alt="In einer Werkstatt tippen Hände auf einem Laptop, der neben dem Werkzeug steht" loading="lazy">
+<h2>Den Rahmen setzen</h2>
+<p>Verbieten reicht offenbar nicht: Eine grosse internationale Studie stellt fest, dass unangemessene Nutzung dort häufiger ist, wo generative KI verboten ist <a href="#s9">[9]</a>. Besser ist es, klar zu sagen, was erlaubt ist.</p>
+<ul class="q">
+<li>Die erlaubten Werkzeuge, mit Konten auf den Namen des Betriebs.</li>
+<li>Die Daten, die dort nie hineingehören.</li>
+<li>Wer entscheidet, wenn eine neue Nutzung auftaucht.</li>
+<li>Wie alle lernen, richtig damit umzugehen.</li>
+</ul>
+<p class="livre"><b>Was Sie erhalten:</b> eine kurze Weisung in den Worten Ihres Betriebs und eine Sitzung, um sie dem Team vorzustellen.</p>
+</div>
+</div>
+</div></section>
+
+<section><div class="w etroit">
+<div class="marche">
+<div><div class="num">3</div><svg class="ico" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="8" fill="none" stroke="#203A71" stroke-width="3" stroke-dasharray="5 4"/><rect x="12" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="12" width="14" height="14" rx="3" fill="#203A71"/><rect x="12" y="30" width="14" height="14" rx="3" fill="#203A71"/><rect x="30" y="30" width="14" height="14" rx="3" fill="none" stroke="#203A71" stroke-width="2.5"/></svg></div>
+<div>
+<img class="photo" src="/img/ia-collegues.jpg" alt="Zwei Kollegen lächeln vor einem Bildschirm" loading="lazy">
+<h2>Ihre Werkstatt für interne Werkzeuge</h2>
+<p>Mit KI lässt sich heute in kurzer Zeit ein eigenes Programm für Ihren Betrieb bauen: eine Auftragsverfolgung, eine Berechnung, ein Formular, eine Übersicht, genau auf Ihre Arbeitsweise zugeschnitten. Für ein KMU ist das sehr nützlich.</p>
+<p>Das Risiko ist das Gegenteil eines Rahmens: viele kleine Werkzeuge, die niemand kennt, mit verstreuten Daten. Die interne Werkstatt regelt das von Anfang an:</p>
+<ul class="q">
+<li><b>Im Voraus festgelegte Regeln</b>, die jedes neue Werkzeug einhält.</li>
+<li><b>Ein einziger Ort</b>, an dem die Werkzeuge und ihre Daten liegen.</li>
+<li><b>Eine Prüfung vor der Inbetriebnahme</b>, durch jemanden, der das Werkzeug nicht gebaut hat.</li>
+<li><b>Eine verantwortliche Person und ein geplanter Ausstieg</b> für jedes Werkzeug: Man weiss, wer sich darum kümmert und wie man es übernimmt, wenn es eingestellt wird.</li>
+</ul>
+<div class="flux" aria-label="Der Weg eines internen Werkzeugs">
+<span>Jemand aus dem Team beschreibt den Bedarf</span><b aria-hidden="true">→</b><span>Das Werkzeug entsteht mit KI</span><b aria-hidden="true">→</b><span>Prüfung durch eine andere Person</span><b aria-hidden="true">→</b><span class="fin">Im Einsatz, im Rahmen</span>
+</div>
+<p>Ihre Mitarbeitenden beschreiben das Werkzeug, das sie brauchen, es entsteht mit KI und bleibt im Rahmen. Wir setzen diesen Rahmen mit Ihnen auf und begleiten die ersten Werkzeuge, bis Ihre Teams das selbst übernehmen.</p>
+<p class="livre"><b>Was Sie erhalten:</b> die Regeln der Werkstatt, einen einzigen Ort für die Werkzeuge und ihre Daten und einen Prüfablauf vor jeder Inbetriebnahme.</p>
+<p class="livre" style="background:var(--surface)"><b>Warum wir:</b> Genau so arbeiten wir jeden Tag. Unsere eigenen KI-Werkzeuge folgen schriftlichen Regeln, eine Person, die die Arbeit nicht selbst gemacht hat, prüft sie, und was den Betrieb verpflichtet oder heikle Daten betrifft, gibt ein Mensch frei. Wir zeigen es Ihnen gern.</p>
+</div>
+</div>
+</div></section>
+
+<section class="bande"><div class="w etroit">
+<h2>Warum jemand von aussen?</h2>
+<p>Diese Arbeit braucht vor allem Zeit: allen zuhören, die Regeln aufschreiben, die ersten Werkzeuge begleiten. Das ist ein wenig wie bei einer Zertifizierung oder bei der Umsetzung neuer Vorschriften: Man weiss oft, dass man es tun sollte, und findet die Zeit dafür kaum.</p>
+<p>Ein Blick von aussen hat noch einen Vorteil: Er stellt die Fragen, die man sich intern nicht mehr stellt, und sieht leichter, was von selbst laufen könnte. Wir nehmen uns diese Zeit für Sie und übergeben dann wieder an Sie.</p>
+</div></section>
+
+<section style="padding-top:60px"><div class="w">
+<div class="contact">
+<div><h2>Mit einer Stunde beginnen</h2><p>Eine Stunde bei Ihnen für eine Bestandesaufnahme: was genutzt wird, was Fragen aufwirft und mit welchem Schritt man beginnt.</p></div>
+<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+</div>
+<p style="margin:26px 0 0"><a href="/de/#exemples">Suchen Sie eher ein Werkzeug für eine bestimmte Aufgabe? Zu unseren Beispielen</a></p>
+</div></section>
+
+<section class="sources"><div class="w">
+<p><b>Quellen</b> (abgerufen am 14.10.2026). Diese Seite fasst öffentliche Quellen zusammen; sie ersetzt keine Rechtsberatung.</p>
+<ol>
+<li id="s1">AXA, KMU-Arbeitsmarktstudie 2026 (Sotomo), 15.09.2026: <a href="https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2026/20260915-kmu-arbeitsmarktstudie-kuenstliche-intelligenz.html">axa.ch</a></li>
+<li id="s2">AXA, KMU-Arbeitsmarktstudie 2025 (Sotomo), 08.10.2025: <a href="https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2025/20251008-kmu-arbeitsmarktstudie-2025-ki.html">axa.ch</a></li>
+<li id="s3">Deloitte Schweiz, Studie zu generativer KI am Arbeitsplatz, 28.08.2023: <a href="https://www.deloitte.com/ch/de/about/press-room/ai-study-almost-half-of-all-employees-are-worried-about-losing-their-jobs.html">deloitte.com</a></li>
+<li id="s4">EDÖB, Mitteilung zur direkten Anwendbarkeit des geltenden Datenschutzgesetzes auf KI, 09.11.2023, und ihre Aktualisierung vom 08.05.2025 (Link auf Französisch): <a href="https://www.edoeb.admin.ch/fr/update-loi-actuelle-applicable-ia">edoeb.admin.ch</a></li>
+<li id="s5">Bundesgesetz über den Datenschutz (DSG), SR 235.1, Art. 9, 16 und 17: <a href="https://www.fedlex.admin.ch/eli/cc/2022/491/de">fedlex.admin.ch</a></li>
+<li id="s6">EDÖB, Seite zu KI im Alltag (Link auf Französisch): <a href="https://www.edoeb.admin.ch/fr/ia-au-quotidien">edoeb.admin.ch</a></li>
+<li id="s7">Obligationenrecht, SR 220, Art. 321d: <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de">fedlex.admin.ch</a></li>
+<li id="s8">Verordnung (EU) 2024/1689 über künstliche Intelligenz, Art. 2 Abs. 1 Bst. c: <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32024R1689">eur-lex.europa.eu</a></li>
+<li id="s9">KPMG und Universität Melbourne, «Trust, attitudes and use of AI: A global study 2025», 47 Länder, darunter die Schweiz, S. 75: <a href="https://assets.kpmg.com/content/dam/kpmgsites/xx/pdf/2025/05/trust-attitudes-and-use-of-ai-global-report.pdf">kpmg.com</a></li>
+</ol>
+</div></section>
+
+<footer><div class="w">
+<img src="/logo.svg" alt="Atelier Naho">
+<p><b>Impressum.</b> Atelier Naho · Jocelyn Bussy · Chemin des Oiseaux 12<br>1433 Suchy · Schweiz · jocelyn@ateliernaho.ch</p>
+<p><b>Datenschutz.</b> Diese Website verwendet keine Cookies. Einziges Formular: die Rückrufanfrage des <a href="/de/autodiagnostic/">Selbsttests</a>, höchstens 6 Monate auf unserem Server und in unserem Kalender bei Infomaniak in der Schweiz gespeichert (zuzüglich höchstens 30 Tage in der Sicherungskopie des Kalenders). Wenn Sie uns schreiben, dient Ihre Nachricht nur dazu, Ihnen zu antworten.</p>
+<p>Fotos: Unsplash.</p>
+</div></footer>
+</body>
+</html>
