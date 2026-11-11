@@ -113,14 +113,36 @@ footer{padding-block:0 40px;font-size:13.5px;color:var(--doux)}
 .g-pill.att{background:#fbeedd;color:#9a5a12}
 @media (max-width:700px){.cmp-liste{grid-template-columns:1fr 1fr}}
 </style>
+<style id="nav-naho">
+header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
+header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+header.site .logo{display:block;line-height:0}
+header.site .logo img{height:40px;width:auto;display:block}
+.nav-naho{display:flex;align-items:center;gap:6px 20px;flex-wrap:wrap}
+.nav-naho a{color:var(--petrole,#203A71);font-weight:600;font-size:16px;text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:3px solid transparent}
+.nav-naho a:hover{border-bottom-color:var(--trait,#D9DEE8)}
+.nav-naho a[aria-current=page]{border-bottom-color:var(--petrole,#203A71)}
+header.site .droite{display:flex;align-items:center;gap:16px}
+header.site .lang{font-size:15px;color:var(--doux,#56646A);white-space:nowrap}
+header.site .lang a{color:var(--doux,#56646A);text-decoration:none}
+header.site .lang b{color:var(--petrole,#203A71)}
+header.site .nav-cta{color:var(--petrole,#203A71);font-weight:600;text-decoration:none;border:2px solid var(--petrole,#203A71);padding:7px 16px;border-radius:9px;white-space:nowrap}
+header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
+.bande-fictif{background:var(--surface,#F2F4F8);border-bottom:1px solid var(--trait,#D9DEE8);font-size:14px;color:var(--doux,#56646A);text-align:center;padding:6px 16px}
+@media (max-width:1060px){.nav-naho{order:3;width:100%;padding-top:8px;border-top:1px solid var(--trait,#D9DEE8)}}
+@media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
+@media print{.nav-naho,header.site .droite{display:none}}
+</style>
 </head>
 <body>
 
 
-<header><div class="w">
-  <a class="marque" href="https://ateliernaho.ch/de/"><img src="/logo.svg" alt="Atelier Naho"></a>
-  <span class="fictif">Fiktives Beispiel: Namen und Beträge erfunden</span>
+<header class="site"><div class="w">
+<a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
+<nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples" aria-current="page">Beispiele</a><a href="/de/ia-chez-vous/">KI im Betrieb</a><a href="/de/tenir-le-choc/">Krisenfest</a><a href="/de/durabilite/">Nachhaltigkeit</a><a href="/de/procedures/">Arbeitsanweisungen</a><a href="/de/autodiagnostic/">Selbsttest</a><a href="/de/articles/">Blog</a></nav>
+<div class="droite"><span class="lang"><a href="/exemples/fiduciaire/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
 </div></header>
+<div class="bande-fictif">Fiktives Beispiel: Namen und Beträge erfunden</div>
 
 <div class="intro"><div class="w">
   <p class="tag">Beispiel · Treuhand</p>
