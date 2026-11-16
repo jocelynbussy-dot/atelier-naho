@@ -101,6 +101,7 @@ h2{font:800 25px/1.2 var(--titre);letter-spacing:-.01em;color:var(--petrole);mar
 .fin h2{color:#fff}
 .fin p{margin:0 0 14px;opacity:.92;max-width:36em}
 .fin .coord{font-weight:600;user-select:all}
+.fin .liens{display:flex;flex-wrap:wrap;gap:10px}.fin .liens a{display:inline-block;background:#fff;color:var(--petrole);text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}.fin .liens a.tel{background:transparent;color:#fff;border:2px solid #fff}
 footer{padding-block:0 40px;font-size:13.5px;color:var(--doux)}
 @media (max-width:700px){
   .duo{grid-template-columns:1fr}
@@ -158,6 +159,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 @media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
 @media print{.nav-naho,header.site .droite{display:none}}
 </style>
+<style id="secours-mail">p.secours-mail{font-size:15px;margin:10px 0 0;opacity:.9;grid-column:1/-1;max-width:none}p.secours-mail button{font:inherit;font-size:14px;margin-left:8px;padding:3px 10px;border-radius:7px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}@media print{.secours-mail{display:none}}</style>
 </head>
 <body>
 
@@ -165,7 +167,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <header class="site"><div class="w">
 <a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho, retour à l'accueil"></a>
 <nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples" aria-current="page">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/">Tenir le choc</a><a href="/durabilite/">Durabilité</a><a href="/procedures/">Procédures</a><a href="/autodiagnostic/">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
-<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/exemples/transmission/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
+<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/exemples/transmission/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch?subject=Diagnostic%20offert%20%3A%20demande%20d%27entretien&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20le%20diagnostic%20offert%20de%2030%20minutes%20en%20visio.%0D%0A%0D%0AEntreprise%20%3A%0D%0ACe%20qui%20nous%20prend%20du%20temps%20chaque%20semaine%20%3A%0D%0AQuand%20me%20joindre%20%28jours%2C%20matin%20ou%20apr%C3%A8s-midi%29%20%3A%0D%0AT%C3%A9l%C3%A9phone%20%28si%20vous%20pr%C3%A9f%C3%A9rez%20m%27appeler%29%20%3A%0D%0A%0D%0AMerci.">Nous écrire</a></div>
 </div></header>
 <div class="bande-fictif">Exemple fictif : entreprise et personnes inventées</div>
 
@@ -259,9 +261,10 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <div class="fin">
   <h2>Et chez vous ?</h2>
   <p>Cet exemple est fictif. Chez vous, on partirait de ce que vous seul savez aujourd'hui. Je m'appuie sur la loi suisse sur la protection des données (LPD) ; selon le cas, le RGPD peut aussi s'appliquer, cela se vérifie avec vous. Où les données sont traitées et conservées, et à qui elles restent, se décide avec vous avant tout démarrage.</p>
-  <p>Ce n'est qu'un exemple : presque toute tâche administrative qui revient peut se faire seule, en grande partie. Vos résultats ou votre stock peuvent aussi devenir un tableau clair en un clic, pour savoir vite où vous en êtes.</p>
-  <p>Écrivez-moi ou appelez-moi pour une première séance :<br>
-  <span class="coord">jocelyn@ateliernaho.ch</span> · <span class="coord">+41 77 269 06 20</span></p>
+  <p>Ce n'est qu'un exemple : presque toute tâche administrative qui revient peut se faire seule, en grande partie. Vos résultats ou votre stock peuvent aussi tenir sur une page, à jour toute seule, pour savoir vite où vous en êtes.</p>
+  <p>Écrivez-moi ou appelez-moi pour un diagnostic offert, 30 minutes en visio :</p>
+  <div class="liens"><a href="mailto:jocelyn@ateliernaho.ch?subject=Diagnostic%20offert%20%3A%20demande%20d%27entretien&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20le%20diagnostic%20offert%20de%2030%20minutes%20en%20visio.%0D%0A%0D%0AEntreprise%20%3A%0D%0ACe%20qui%20nous%20prend%20du%20temps%20chaque%20semaine%20%3A%0D%0AQuand%20me%20joindre%20%28jours%2C%20matin%20ou%20apr%C3%A8s-midi%29%20%3A%0D%0AT%C3%A9l%C3%A9phone%20%28si%20vous%20pr%C3%A9f%C3%A9rez%20m%27appeler%29%20%3A%0D%0A%0D%0AMerci.">Demander le diagnostic</a><a class="tel" href="tel:+41772690620">+41 77 269 06 20</a></div>
+<p class="secours-mail">Rien ne s'ouvre ? Écrivez à jocelyn@ateliernaho.ch<button type="button" onclick="navigator.clipboard.writeText('jocelyn@ateliernaho.ch');this.textContent='Adresse copiée'">Copier l'adresse</button></p>
 </div>
 
 </main>
