@@ -130,12 +130,13 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 @media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
 @media print{.nav-naho,header.site .droite{display:none}}
 </style>
+<style id="secours-mail">p.secours-mail{font-size:15px;margin:10px 0 0;opacity:.9;grid-column:1/-1;max-width:none}p.secours-mail button{font:inherit;font-size:14px;margin-left:8px;padding:3px 10px;border-radius:7px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}@media print{.secours-mail{display:none}}</style>
 </head>
 <body>
 <header class="site"><div class="w">
 <a class="logo" href="/"><img src="/logo.svg" alt="Atelier Naho, retour à l'accueil"></a>
 <nav class="nav-naho" aria-label="Menu principal"><a href="/#exemples">Exemples</a><a href="/ia-chez-vous/">L'IA chez vous</a><a href="/tenir-le-choc/" aria-current="page">Tenir le choc</a><a href="/durabilite/">Durabilité</a><a href="/procedures/">Procédures</a><a href="/autodiagnostic/">Autodiagnostic</a><a href="/articles/">Blog</a></nav>
-<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/tenir-le-choc/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a></div>
+<div class="droite"><span class="lang"><b>FR</b> · <a href="/de/tenir-le-choc/" hreflang="de" lang="de">DE</a></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch?subject=Diagnostic%20offert%20%3A%20demande%20d%27entretien&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20le%20diagnostic%20offert%20de%2030%20minutes%20en%20visio.%0D%0A%0D%0AEntreprise%20%3A%0D%0ACe%20qui%20nous%20prend%20du%20temps%20chaque%20semaine%20%3A%0D%0AQuand%20me%20joindre%20%28jours%2C%20matin%20ou%20apr%C3%A8s-midi%29%20%3A%0D%0AT%C3%A9l%C3%A9phone%20%28si%20vous%20pr%C3%A9f%C3%A9rez%20m%27appeler%29%20%3A%0D%0A%0D%0AMerci.">Nous écrire</a></div>
 </div></header>
 
 <div class="hero"><div class="w">
@@ -145,7 +146,8 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <p>Vous avez sans doute une sauvegarde. La question est plutôt de savoir si elle se restaure, en combien de temps, et ce que l'entreprise fait pendant ce temps-là.</p>
 <p>Nous venons le vérifier avec vous. Puis nous écrivons ensemble la page rouge de votre manuel de crise : qui décide, qui appeler, combien de temps vous tenez. Avec la liste courte de ce qu'il faut corriger avant, et si vous le souhaitez, le manuel complet (en option, sur devis).</p>
 <p class="rassure">En mots simples : une page rouge que toute l'équipe comprend, une note sur une feuille, et ce qu'il faut faire en premier.</p>
-<div class="duo"><a class="btn-prim" href="/autodiagnostic/">Faire l'autodiagnostic gratuit, 10 minutes</a><a class="btn-sec" href="mailto:jocelyn@ateliernaho.ch?subject=Tenir%20le%20choc%20%3A%20entretien%20offert">Demander l'entretien offert</a></div>
+<div class="duo"><a class="btn-prim" href="/autodiagnostic/">Faire l'autodiagnostic gratuit, 10 minutes</a><a class="btn-sec" href="mailto:jocelyn@ateliernaho.ch?subject=Tenir%20le%20choc%20%3A%20demande%20d%27entretien&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20le%20diagnostic%20offert%20de%2030%20minutes%20en%20visio.%0D%0A%0D%0AEntreprise%20%3A%0D%0ACe%20qui%20nous%20prend%20du%20temps%20chaque%20semaine%20%3A%0D%0AQuand%20me%20joindre%20%28jours%2C%20matin%20ou%20apr%C3%A8s-midi%29%20%3A%0D%0AT%C3%A9l%C3%A9phone%20%28si%20vous%20pr%C3%A9f%C3%A9rez%20m%27appeler%29%20%3A%0D%0A%0D%0AMerci.">Demander le diagnostic offert</a></div>
+<p class="secours-mail">Rien ne s'ouvre ? Écrivez à jocelyn@ateliernaho.ch<button type="button" onclick="navigator.clipboard.writeText('jocelyn@ateliernaho.ch');this.textContent='Adresse copiée'">Copier l'adresse</button></p>
 <p class="duo-note">L'autodiagnostic, c'est la version rapide, seul et en ligne. Tenir le choc, c'est la version complète : nous venons chez vous et écrivons avec vous la page rouge de votre manuel de crise.</p>
 </div>
 <svg class="illus" viewBox="0 0 480 340" role="img" aria-label="Exemple d'une page de manuel de crise : qui décide, qui appeler dans l'ordre, combien de temps on tient, où est la copie des données.">
@@ -200,10 +202,10 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <img class="photo" src="/img/tenir-releve.jpg" alt="Une personne montre quelque chose sur l'écran d'un ordinateur portable à un collègue" loading="lazy">
 <h2>Comment ça se passe</h2>
 <ol class="etapes">
-<li><div class="num">0</div><div><h3>Un entretien offert</h3><p>30 minutes en appel vidéo avec vous. Cinq questions : combien de jours vous tenez sans ordinateurs, la marge et les salaires d'une journée, la dernière fois qu'une sauvegarde a été restaurée, s'il existe une copie hors du réseau, et un manuel de crise écrit.</p><p class="qui">Vous repartez avec les premiers trous de votre manuel de crise, ceux à combler d'abord. Vous décidez ensuite si l'audit vous intéresse.</p></div></li>
+<li><div class="num">0</div><div><h3>Un diagnostic offert</h3><p>30 minutes en appel vidéo avec vous. Cinq questions : combien de jours vous tenez sans ordinateurs, la marge et les salaires d'une journée, la dernière fois qu'une sauvegarde a été restaurée, s'il existe une copie hors du réseau, et un manuel de crise écrit.</p><p class="qui">Vous repartez avec les premiers trous de votre manuel de crise, ceux à combler d'abord. Vous décidez ensuite si l'audit vous intéresse.</p></div></li>
 <li><div class="num">1</div><div><h3>Un sondage anonyme</h3><p>Huit questions à votre personnel, sur l'IA qu'ils utilisent et sur les mails et appels douteux qu'ils reçoivent. Anonyme, pour que chacun réponde franchement.</p><p class="qui">5 minutes par personne.</p></div></li>
 <li><div class="num">2</div><div><h3>Le relevé chez vous</h3><p>Nous passons la grille ligne par ligne, avec vous et la personne qui s'occupe de l'informatique. Vous nous montrez, nous notons. Et nous faisons un premier essai de restauration devant vous : vous choisissez un dossier, on chronomètre.</p><p class="qui">Environ une demi-journée.</p></div></li>
-<li><div class="num">3</div><div><h3>La page rouge, la note et les gestes</h3><p>Nous finissons avec vous la page rouge, puis nous vous remettons la note d'une feuille et les gestes prioritaires, et nous en parlons ensemble.</p><p class="qui">30 minutes en visio. Du premier entretien à la remise, nous visons deux à trois semaines.</p></div></li>
+<li><div class="num">3</div><div><h3>La page rouge, la note et les gestes</h3><p>Nous finissons avec vous la page rouge, puis nous vous remettons la note d'une feuille et les gestes prioritaires, et nous en parlons ensemble.</p><p class="qui">30 minutes en visio. Du diagnostic offert à la remise, nous visons deux à trois semaines.</p></div></li>
 <li><div class="num">4</div><div><h3>Ensuite, à vous</h3><p>Les gestes, vous les faites vous-même, avec votre prestataire, ou avec nous quand c'est notre métier (le manuel de crise complet, par exemple). Si vous le souhaitez, nous revenons chaque trimestre : une restauration devant vous, un court exercice de panne pour tester la page rouge, puis la page et la note remises à jour. Le prix de ce suivi dépend de ce qu'il y a à suivre chez vous : nous en parlons à la remise de la note.</p></div></li>
 </ol>
 </div></section>
@@ -232,8 +234,9 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 
 <section style="padding-top:60px"><div class="w">
 <div class="contact">
-<div><h2>Commencer par 30 minutes</h2><p>Un entretien en visio, offert : vous repartez avec les premiers points à régler pour que votre entreprise continue le jour où l'informatique s'arrête.</p></div>
-<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch">Nous écrire</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+<div><h2>Commencer par 30 minutes</h2><p>Un diagnostic offert en visio : vous repartez avec les premiers points à régler pour que votre entreprise continue le jour où l'informatique s'arrête.</p></div>
+<div class="liens"><a href="mailto:jocelyn@ateliernaho.ch?subject=Tenir%20le%20choc%20%3A%20demande%20d%27entretien&body=Bonjour%2C%0D%0A%0D%0AJe%20souhaite%20le%20diagnostic%20offert%20de%2030%20minutes%20en%20visio.%0D%0A%0D%0AEntreprise%20%3A%0D%0ACe%20qui%20nous%20prend%20du%20temps%20chaque%20semaine%20%3A%0D%0AQuand%20me%20joindre%20%28jours%2C%20matin%20ou%20apr%C3%A8s-midi%29%20%3A%0D%0AT%C3%A9l%C3%A9phone%20%28si%20vous%20pr%C3%A9f%C3%A9rez%20m%27appeler%29%20%3A%0D%0A%0D%0AMerci.">Nous écrire</a><a class="sec" href="tel:+41772690620">+41 77 269 06 20</a></div>
+<p class="secours-mail">Rien ne s'ouvre ? Écrivez à jocelyn@ateliernaho.ch<button type="button" onclick="navigator.clipboard.writeText('jocelyn@ateliernaho.ch');this.textContent='Adresse copiée'">Copier l'adresse</button></p>
 </div>
 <p style="margin:26px 0 0"><a href="/autodiagnostic/">Vous préférez d'abord vous faire une idée seul ? L'autodiagnostic, 19 questions, une dizaine de minutes</a></p>
 <p style="margin:8px 0 0"><a href="/ia-chez-vous/">L'IA est déjà chez vous : poser un cadre</a></p>
