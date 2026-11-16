@@ -85,6 +85,7 @@ td.rien{color:var(--doux);text-align:center;padding:28px 16px}
 .fin h2{color:#fff}
 .fin p{margin:0 0 14px;opacity:.92;max-width:36em}
 .fin .coord{font-weight:600;user-select:all}
+.fin .liens{display:flex;flex-wrap:wrap;gap:10px}.fin .liens a{display:inline-block;background:#fff;color:var(--petrole);text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}.fin .liens a.tel{background:transparent;color:#fff;border:2px solid #fff}
 footer{padding-block:0 40px;font-size:13.5px;color:var(--doux)}
 @media (max-width:700px){
   .bulle{max-width:92%}
@@ -105,6 +106,21 @@ footer{padding-block:0 40px;font-size:13.5px;color:var(--doux)}
 .g-pill.att{background:#fbeedd;color:#9a5a12}
 @media (max-width:700px){.cmp-liste{grid-template-columns:1fr 1fr}}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style id="nav-naho">
 header.site{padding:16px 0;border-bottom:1px solid var(--trait,#D9DEE8);background:#fff}
 header.site .w{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
@@ -125,6 +141,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 @media (max-width:420px){header.site .w{column-gap:10px}header.site .logo img{height:28px}.nav-naho{gap:4px 16px}.nav-naho a{font-size:15px}header.site .droite{gap:10px}header.site .lang{font-size:14px}header.site .nav-cta{padding:6px 12px;font-size:15px}}
 @media print{.nav-naho,header.site .droite{display:none}}
 </style>
+<style id="secours-mail">p.secours-mail{font-size:15px;margin:10px 0 0;opacity:.9;grid-column:1/-1;max-width:none}p.secours-mail button{font:inherit;font-size:14px;margin-left:8px;padding:3px 10px;border-radius:7px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}@media print{.secours-mail{display:none}}</style>
 </head>
 <body>
 
@@ -132,7 +149,7 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <header class="site"><div class="w">
 <a class="logo" href="/de/"><img src="/logo.svg" alt="Atelier Naho, zurück zur Startseite"></a>
 <nav class="nav-naho" aria-label="Hauptmenü"><a href="/de/#exemples" aria-current="page">Beispiele</a><a href="/de/ia-chez-vous/">KI im Betrieb</a><a href="/de/tenir-le-choc/">Krisenfest</a><a href="/de/durabilite/">Nachhaltigkeit</a><a href="/de/procedures/">Arbeitsanweisungen</a><a href="/de/autodiagnostic/">Selbsttest</a><a href="/de/articles/">Blog</a></nav>
-<div class="droite"><span class="lang"><a href="/exemples/regie/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch">Schreiben Sie uns</a></div>
+<div class="droite"><span class="lang"><a href="/exemples/regie/" hreflang="fr" lang="fr">FR</a> · <b>DE</b></span><a class="nav-cta" href="mailto:jocelyn@ateliernaho.ch?subject=Kostenlose%20Erstanalyse%3A%20Gespr%C3%A4chsanfrage&body=Guten%20Tag%0D%0A%0D%0AIch%20interessiere%20mich%20f%C3%BCr%20die%20kostenlose%20Erstanalyse%20%2830%20Minuten%20per%20Video%29.%0D%0A%0D%0AFirma%3A%0D%0AWas%20uns%20jede%20Woche%20Zeit%20kostet%3A%0D%0AWann%20ich%20erreichbar%20bin%20%28Tage%2C%20vormittags%20oder%20nachmittags%29%3A%0D%0ATelefon%20%28falls%20Sie%20mich%20lieber%20anrufen%29%3A%0D%0A%0D%0AFreundliche%20Gr%C3%BCsse">Schreiben Sie uns</a></div>
 </div></header>
 <div class="bande-fictif">Fiktives Beispiel: Liegenschaften, Personen und Reglemente erfunden</div>
 
@@ -215,9 +232,10 @@ header.site .nav-cta:hover{background:var(--petrole,#203A71);color:#fff}
 <div class="fin">
   <h2>Und bei Ihnen?</h2>
   <p>Dieses Beispiel ist fiktiv. Bei Ihnen würde der Assistent von Ihren Reglementen, Ihren Notfallweisungen und Ihrer Art zu antworten ausgehen. Ich stütze mich auf das Schweizer Datenschutzgesetz (DSG); je nach Fall kann auch die DSGVO gelten, das klären wir gemeinsam. Wo die Daten bearbeitet und aufbewahrt werden und bei wem sie bleiben, legen wir mit Ihnen fest, bevor wir starten.</p>
-  <p>Das ist nur ein Beispiel: Fast jede wiederkehrende Verwaltungsaufgabe kann zu einem grossen Teil von selbst laufen. Auch Ihre Zahlen oder Ihr Lager können mit einem Klick zu einer klaren Übersicht werden, damit Sie schnell wissen, wo Sie stehen.</p>
-  <p>Schreiben Sie mir oder rufen Sie mich an, ich zeige es Ihnen an den Fragen, die Sie wirklich erhalten:<br>
-  <span class="coord">jocelyn@ateliernaho.ch</span> · <span class="coord">+41 77 269 06 20</span></p>
+  <p>Das ist nur ein Beispiel: Fast jede wiederkehrende Verwaltungsaufgabe kann zu einem grossen Teil von selbst laufen. Auch Ihre Zahlen oder Ihr Lager können auf einer Seite Platz finden, die von selbst aktuell bleibt, damit Sie schnell wissen, wo Sie stehen.</p>
+  <p>Schreiben Sie mir oder rufen Sie mich an, ich zeige es Ihnen an einem Fall wie Ihrem:</p>
+  <div class="liens"><a href="mailto:jocelyn@ateliernaho.ch?subject=Kostenlose%20Erstanalyse%3A%20Gespr%C3%A4chsanfrage&body=Guten%20Tag%0D%0A%0D%0AIch%20interessiere%20mich%20f%C3%BCr%20die%20kostenlose%20Erstanalyse%20%2830%20Minuten%20per%20Video%29.%0D%0A%0D%0AFirma%3A%0D%0AWas%20uns%20jede%20Woche%20Zeit%20kostet%3A%0D%0AWann%20ich%20erreichbar%20bin%20%28Tage%2C%20vormittags%20oder%20nachmittags%29%3A%0D%0ATelefon%20%28falls%20Sie%20mich%20lieber%20anrufen%29%3A%0D%0A%0D%0AFreundliche%20Gr%C3%BCsse">Erstanalyse anfragen</a><a class="tel" href="tel:+41772690620">+41 77 269 06 20</a></div>
+<p class="secours-mail">Öffnet sich nichts? Schreiben Sie an jocelyn@ateliernaho.ch<button type="button" onclick="navigator.clipboard.writeText('jocelyn@ateliernaho.ch');this.textContent='Adresse kopiert'">Adresse kopieren</button></p>
 </div>
 
 </main>
